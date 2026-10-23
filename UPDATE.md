@@ -33,3 +33,7 @@ claude.ai 대시보드 '전략지원 이슈레이더'(https://claude.ai/artifact
 
 ## 5. 브리핑 전송
 완성된 '오늘의 브리핑' 텍스트를 SendUserMessage로 사용자에게 보낸다(텔레그램 붙여넣기용).
+
+## 6. 텔레그램 자동 전송
+`build.py`가 `docs/latest-brief.txt`(브리핑 + 리포트 링크)를 만들고, main에 push되면 GitHub Actions(`.github/workflows/telegram.yml`)가 텔레그램으로 보낸다.
+필요한 저장소 시크릿: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 수동 재전송은 Actions 탭에서 'Run workflow'.

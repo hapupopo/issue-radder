@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 DATA, OUT = ROOT / 'data', ROOT / 'docs'
+SITE = 'https://hapupopo.github.io/issue-radder'
 FILES = ['today', 'ministry', 'assembly', 'news', 'press', 'support', 'focus', 'people']
 WD = '월화수목금토일'
 e = lambda s: html.escape(str(s or ''), quote=True)
@@ -47,7 +48,7 @@ def is_today_news(r, day):
 
 
 def brief(D, day):
-    L = [f"📡 전략지원 이슈레이더 | {fmt(day)}", '', '■ 정부 주요일정']
+    L = [f"📡 전략지원 이슈레이더 | {fmt(day)}", f'🔗 {SITE}/reports/{day}.html', '', '■ 정부 주요일정']
     for r in [r for r in D['today'] if r.get('rel')][:8]:
         L.append(f"• {(r['time'] + ' ') if r.get('time') else ''}{r['org']} {r['title']} [{r['rel']}]")
     asm = [r for r in D['assembly'] if (n := diff(day, r['date'])) is not None and n > 0 and (n <= 14 or (r.get('must') and n <= 30))]
@@ -208,6 +209,7 @@ def main():
     (OUT / 'archive.html').write_text(page('이슈레이더 지난 리포트', f'<header><h1>지난 리포트</h1><div class="asof">총 {len(days)}건 · <a href="index.html">최신 리포트</a></div></header><div class="card arch">{rows}</div>'), encoding='utf-8')
     (OUT / 'robots.txt').write_text('User-agent: *\nDisallow: /\n', encoding='utf-8')
     (OUT / '.nojekyll').write_text('', encoding='utf-8')
+    (OUT / 'latest-brief.txt').write_text(brief(load(latest), latest) + '\n', encoding='utf-8')
     print('built', len(days), 'reports; latest', latest)
 
 
