@@ -1,7 +1,8 @@
 name: 키워드 기사 알림
 on:
-  schedule:
-    - cron: '*/30 21-23,0-13 * * *'   # 한국시간 06:00~22:30, 30분마다
+  # 자동 실행 중지(2026-10-24). 다시 켜려면 아래 두 줄의 # 를 지우세요.
+  # schedule:
+  #   - cron: '*/30 21-23,0-13 * * *'   # 한국시간 06:00~22:30, 30분마다
   workflow_dispatch:
 concurrency: keyword-alerts
 jobs:

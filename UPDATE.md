@@ -38,5 +38,5 @@ claude.ai 대시보드 '전략지원 이슈레이더'(https://claude.ai/artifact
 `build.py`가 `docs/latest-brief.txt`(브리핑 + 리포트 링크)를 만들고, main에 push되면 GitHub Actions(`.github/workflows/telegram.yml`)가 텔레그램으로 보낸다.
 필요한 저장소 시크릿: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 수동 재전송은 Actions 탭에서 'Run workflow'.
 
-## 7. 키워드 기사 알림 (자동, 예약 작업과 별개)
+## 7. 키워드 기사 알림 (현재 중지됨 — 수동 실행만 가능)
 `.github/workflows/keyword-alerts.yml` 이 한국시간 06:00~22:30 사이 30분마다 `alerts/keywords.txt` 키워드로 Google 뉴스를 검색해 새 기사만 채널에 보낸다. 키워드는 그 파일만 고치면 된다.
