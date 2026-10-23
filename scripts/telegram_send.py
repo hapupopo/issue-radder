@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """docs/latest-brief.txt 를 텔레그램으로 전송 (4,000자 단위로 나눠 보냄)."""
 import json, os, sys, urllib.request
-token, chat = os.environ.get('TELEGRAM_BOT_TOKEN'), os.environ.get('TELEGRAM_CHAT_ID')
+token, chat = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip(), (os.environ.get('TELEGRAM_CHAT_ID') or '').strip()
+token = token[3:] if token.lower().startswith('bot') else token
 if not token or not chat:
     sys.exit('TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 시크릿이 없습니다.')
 text = open('docs/latest-brief.txt', encoding='utf-8').read().strip()
