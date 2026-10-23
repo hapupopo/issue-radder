@@ -1,0 +1,46 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "통상업무",
+  "place": "",
+  "rel": "",
+  "note": "공개 일정 없음",
+  "url": "https://www.news1.kr/politics/assembly/6330467"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "11:30",
+  "title": "제7회 열린 브런치(초등돌봄)",
+  "place": "서울공관",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6330467"
+ },
+ {
+  "id": "t03",
+  "cat": "총리",
+  "org": "총리",
+  "time": "17:30",
+  "title": "10·29 이태원참사 4주기 시민추모대회",
+  "place": "서울 중구",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6330467"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "국회",
+  "time": "",
+  "title": "국정감사 휴일(토) — 26일(월) 기후환노위 기후에너지환경부 감사 재개",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ }
+]

@@ -51,6 +51,8 @@ def brief(D, day):
     L = [f"📡 전략지원 이슈레이더 | {fmt(day)}", f'🔗 {SITE}/reports/{day}.html', '', '■ 정부 주요일정']
     for r in [r for r in D['today'] if r.get('rel')][:8]:
         L.append(f"• {(r['time'] + ' ') if r.get('time') else ''}{r['org']} {r['title']} [{r['rel']}]")
+    if L[-1] == '■ 정부 주요일정':
+        L.append('• 당사 관련 공개 일정 없음')
     asm = [r for r in D['assembly'] if (n := diff(day, r['date'])) is not None and n > 0 and (n <= 14 or (r.get('must') and n <= 30))]
     if asm:
         L += ['', '■ 국회 주요일정'] + [f"• {fmt(r['date'])} {r['title']} (D-{diff(day, r['date'])})" for r in sorted(asm, key=lambda r: r['date'])]
