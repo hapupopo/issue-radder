@@ -47,8 +47,9 @@ def norm(t):
     return re.sub(r'[\W_]+', '', t).lower()
 
 def send(text):
+  for target in [x.strip() for x in chat.split(',') if x.strip()]:
     req = urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage',
-        data=json.dumps({'chat_id': chat, 'text': text, 'parse_mode': 'HTML', 'disable_web_page_preview': True}).encode(),
+        data=json.dumps({'chat_id': target, 'text': text, 'parse_mode': 'HTML', 'disable_web_page_preview': True}).encode(),
         headers={'Content-Type': 'application/json'})
     with urllib.request.urlopen(req, timeout=20) as r:
         if not json.load(r).get('ok'):
