@@ -1,0 +1,172 @@
+[
+ {
+  "id": "f01",
+  "keyword": "식품물가",
+  "kind": "정부발표",
+  "date": "2026-10-02",
+  "title": "9월 소비자물가 2.9%, 가공식품 2.1%",
+  "summary": "가공식품 상승률 2%대 유지 — 다음 발표(10월분)는 11월 초",
+  "signal": "관찰",
+  "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148972952"
+ },
+ {
+  "id": "f02",
+  "keyword": "식품물가",
+  "kind": "기사",
+  "date": "2026-10-21",
+  "title": "하반기 식품값 줄인상",
+  "summary": "해태 과자 25종 평균 7.8% 등 인상 확산, 소비자단체는 밀가루·설탕 하락 근거로 반발",
+  "signal": "유의",
+  "url": "https://www.g-enews.com/article/Distribution/2026/10/202610211458093896740eacf404_1"
+ },
+ {
+  "id": "f03",
+  "keyword": "식품물가",
+  "kind": "국회",
+  "date": "2026-10-07",
+  "title": "국감 설탕·밀가루 담합 — CJ·삼양사 대표 사과",
+  "summary": "담합 이슈가 가격 인상 여론과 연결될 위험",
+  "signal": "유의",
+  "url": "https://www.biztribune.co.kr/news/articleView.html?idxno=360240"
+ },
+ {
+  "id": "f04",
+  "keyword": "생분해·PHA",
+  "kind": "국회",
+  "date": "2026-10-21",
+  "title": "국감 '생분해 빨대 발암영향 3.34배' 질의",
+  "summary": "기후부 용역 LCA 결과 — 생분해 소재 전반에 대한 부정적 인식 확산 가능성",
+  "signal": "유의",
+  "url": "https://www.newspim.com/news/view/20261021000281"
+ },
+ {
+  "id": "f05",
+  "keyword": "생분해·PHA",
+  "kind": "규제·법제",
+  "date": "2026-04-28",
+  "title": "탈플라스틱 종합대책 — 2030년 폐플라스틱 30% 감축",
+  "summary": "대체재 전환·부담금 조정 — 생분해 소재 위상은 미명시",
+  "signal": "관찰",
+  "url": "https://www.khan.co.kr/article/202604281744001"
+ },
+ {
+  "id": "f06",
+  "keyword": "생분해·PHA",
+  "kind": "트렌드",
+  "date": "2026-08-21",
+  "title": "CJ PHA, 미국 AP통신서 우수 소재로 소개",
+  "summary": "해외 인지도 상승",
+  "signal": "기회",
+  "url": "https://www.thevaluenews.co.kr/news/200961"
+ },
+ {
+  "id": "f07",
+  "keyword": "생분해·PHA",
+  "kind": "타사",
+  "date": "",
+  "title": "PHA 경쟁 구도",
+  "summary": "대니머(미)·카네카(일)는 scPHA만 양산, 비결정형 aPHA 상업생산은 CJ 유일 (2022년 양산 개시 보도 기준)",
+  "signal": "관찰",
+  "url": "https://www.inews24.com/view/1479128"
+ },
+ {
+  "id": "f08",
+  "keyword": "정부 R&D",
+  "kind": "정부발표",
+  "date": "2026-09-01",
+  "title": "2027 정부 R&D 예산안 39.5조, 역대 최대",
+  "summary": "신규사업 3.3조 — 국회 심사 중(12/2 기한)",
+  "signal": "기회",
+  "url": "https://nocutnews.co.kr/news/6571103"
+ },
+ {
+  "id": "f09",
+  "keyword": "정부 R&D",
+  "kind": "정부발표",
+  "date": "2026-09-04",
+  "title": "첨단바이오 예산 15%↑",
+  "summary": "바이오산업 혁신기술개발 R&D 신규 편입",
+  "signal": "기회",
+  "url": "https://newstomato.com/ReadNews.aspx?no=1312628"
+ },
+ {
+  "id": "f10",
+  "keyword": "가공식품 수출",
+  "kind": "정부발표",
+  "date": "2026-07-05",
+  "title": "상반기 K-푸드+ 수출 70.5억 달러 역대 최고",
+  "summary": "라면 28%↑ — 하반기도 증가세",
+  "signal": "기회",
+  "url": "https://www.fnnews.com/news/202607051100444453"
+ },
+ {
+  "id": "f11",
+  "keyword": "가공식품 수출",
+  "kind": "정부발표",
+  "date": "2026-10-20",
+  "title": "EU K-푸드 수출 23.5%↑",
+  "summary": "외식·급식 판로로 확대 지원",
+  "signal": "기회",
+  "url": "https://www.youngnong.co.kr/news/articleView.html?idxno=71192"
+ },
+ {
+  "id": "f12",
+  "keyword": "육상김",
+  "kind": "당사",
+  "date": "2026-06-15",
+  "title": "CJ 천안 육상양식 김 상업화 시설 착공 계획",
+  "summary": "2027 상반기 완공, 2028년 비비고 김 판매 목표",
+  "signal": "기회",
+  "url": "https://www.khan.co.kr/article/202606151800001/amp"
+ },
+ {
+  "id": "f13",
+  "keyword": "육상김",
+  "kind": "타사",
+  "date": "2026-09-11",
+  "title": "육상김 경쟁 — 대상·풀무원·동원",
+  "summary": "대상(고흥, 2030 상품화)·풀무원(새만금, 2027 제품화)·동원(제주 용암해수)",
+  "signal": "관찰",
+  "url": "https://www.inthenews.co.kr/news/article.html?no=70613"
+ },
+ {
+  "id": "f14",
+  "keyword": "김 수출",
+  "kind": "정부발표",
+  "date": "2026-06-04",
+  "title": "해수부 김 공급망 혁신방안 — 2030 수출 18억 달러",
+  "summary": "2025년 11.3억 달러 최대. 양식면적 확대·물류비 지원 — 대기업 참여 지원은 미포함",
+  "signal": "기회",
+  "url": "https://www.mt.co.kr/economy/2026/06/04/2026060409585079349"
+ },
+ {
+  "id": "f15",
+  "keyword": "김 수출",
+  "kind": "당사",
+  "date": "2026-10-19",
+  "title": "'비비고 캔김' 출시",
+  "summary": "김부각에 이어 프리미엄 스낵김 확대",
+  "signal": "기회",
+  "url": "https://www.fntimes.com/html/view.php?ud=202610191526361729923defd0cc_18"
+ },
+ {
+  "id": "f16",
+  "keyword": "CJ제일제당",
+  "kind": "기사",
+  "date": "2026-10-21",
+  "title": "3분기 실적 컨센서스 하회 전망",
+  "summary": "영업익 3,328억(-21.7%), 바이오 선방·식품 부진",
+  "signal": "유의",
+  "url": "https://www.ket.kr/news/article.html?no=41535"
+ },
+ {
+  "id": "f17",
+  "keyword": "CJ제일제당",
+  "kind": "기사",
+  "date": "2026-10-21",
+  "title": "그룹 정기인사 전망",
+  "summary": "경영 연속성 무게, 제일제당 수익성 회복 과제",
+  "signal": "관찰",
+  "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1728683"
+ }
+]

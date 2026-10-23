@@ -1,0 +1,211 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "10:00",
+  "title": "초안전사회 범정부 대응 회의",
+  "place": "청와대 본관",
+  "rel": "",
+  "note": "관계성·이상동기 범죄 대책",
+  "url": "https://www.newspim.com/news/view/20261022001444"
+ },
+ {
+  "id": "t02",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "14:00",
+  "title": "규제합리화위원회 제2차 전체회의",
+  "place": "청와대 영빈관",
+  "rel": "규제",
+  "note": "지방 성장·국가창업시대 전환 규제 개선",
+  "url": "https://www.newspim.com/news/view/20261022001444"
+ },
+ {
+  "id": "t03",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "16:40",
+  "title": "한일재계회의 대표단 접견",
+  "place": "청와대 본관",
+  "rel": "경제계",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261022001444"
+ },
+ {
+  "id": "t04",
+  "cat": "총리",
+  "org": "총리",
+  "time": "",
+  "title": "공개 일정 없음",
+  "place": "",
+  "rel": "",
+  "note": "총리실 일정 게시판 기준",
+  "url": "https://www.opm.go.kr/opm/prime/daily.do"
+ },
+ {
+  "id": "t05",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "10:00",
+  "title": "장·차관 국회 농해수위 종합감사",
+  "place": "국회",
+  "rel": "육상김·김 수출",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "t06",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "09:30",
+  "title": "장·차관 국정과제·현안 점검회의",
+  "place": "세종",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "t07",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "제1회 한식의 날 기념 한식 대축제 개막",
+  "place": "",
+  "rel": "K-푸드",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "기후부",
+  "time": "14:30",
+  "title": "장관, 2026 대한민국 ESG 친환경대전",
+  "place": "서울",
+  "rel": "PHA·생분해",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "기후부",
+  "time": "15:30",
+  "title": "장관, 재생에너지의 날 기념식",
+  "place": "서울",
+  "rel": "바이오가스화",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "t10",
+  "cat": "부처",
+  "org": "산업부",
+  "time": "09:00",
+  "title": "통상교섭본부장, 한일재계회의",
+  "place": "FKI타워",
+  "rel": "통상",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "조간",
+  "title": "3/4분기 가축동향조사 결과 발표",
+  "place": "",
+  "rel": "식품 원료",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "t12",
+  "cat": "국회",
+  "org": "농해수위",
+  "time": "10:00",
+  "title": "해양수산부 및 소관기관 종합감사",
+  "place": "국회",
+  "rel": "육상김·김 수출",
+  "note": "",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ },
+ {
+  "id": "t13",
+  "cat": "국회",
+  "org": "교육위",
+  "time": "10:00",
+  "title": "교육부·국가교육위원회 종합감사",
+  "place": "국회",
+  "rel": "인조잔디 충전재",
+  "note": "",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ },
+ {
+  "id": "t14",
+  "cat": "국회",
+  "org": "과방위",
+  "time": "10:00",
+  "title": "과기정통부·원안위·우주항공청 국정감사",
+  "place": "국회",
+  "rel": "정부 R&D",
+  "note": "2027 R&D 예산 질의",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ },
+ {
+  "id": "t15",
+  "cat": "국회",
+  "org": "재경위",
+  "time": "10:00",
+  "title": "기획예산처·한국은행 등 국정감사",
+  "place": "국회",
+  "rel": "예산",
+  "note": "",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ },
+ {
+  "id": "t16",
+  "cat": "국회",
+  "org": "산자위",
+  "time": "10:00",
+  "title": "중기부·지식재산처 종합감사②",
+  "place": "국회",
+  "rel": "",
+  "note": "",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ },
+ {
+  "id": "t17",
+  "cat": "국회",
+  "org": "기후환노위",
+  "time": "10:00",
+  "title": "근로복지공단·산업안전보건공단 등",
+  "place": "국회",
+  "rel": "",
+  "note": "",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ },
+ {
+  "id": "t18",
+  "cat": "국회",
+  "org": "문체위",
+  "time": "10:00",
+  "title": "문화체육관광부·국가유산청 종합감사",
+  "place": "국회",
+  "rel": "",
+  "note": "",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ },
+ {
+  "id": "t19",
+  "cat": "국회",
+  "org": "국토위",
+  "time": "10:00",
+  "title": "국토교통부 종합감사(확인감사)",
+  "place": "국회",
+  "rel": "",
+  "note": "",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ }
+]

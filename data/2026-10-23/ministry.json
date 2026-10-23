@@ -1,0 +1,132 @@
+[
+ {
+  "id": "m01",
+  "date": "2026-10-21",
+  "org": "기후부",
+  "time": "",
+  "title": "2026 대한민국 ESG 친환경대전 개막",
+  "rel": "PHA·생분해",
+  "why": "친환경 소재 전시 — PHA 홍보 접점",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m02",
+  "date": "2026-10-21",
+  "org": "복지부",
+  "time": "",
+  "title": "2026 세계 바이오 서밋 개막",
+  "rel": "바이오",
+  "why": "바이오 정책 네트워크 접점",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m03",
+  "date": "2026-10-21",
+  "org": "농식품부",
+  "time": "",
+  "title": "베트남 닭고기 선적식",
+  "rel": "가공식품 수출",
+  "why": "육가공품 수출 확대 접점",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m04",
+  "date": "2026-10-22",
+  "org": "농식품부",
+  "time": "10:00",
+  "title": "장·차관 농해수위 종합국정감사",
+  "rel": "식품정책",
+  "why": "가공식품 물가·담합 후속 질의 가능",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m05",
+  "date": "2026-10-22",
+  "org": "해수부",
+  "time": "11:00",
+  "title": "장관, 원양산업 업계 간담회",
+  "rel": "수산",
+  "why": "수산업계 간담 — 김 업계 확대 여부 관찰",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m06",
+  "date": "2026-10-22",
+  "org": "복지부",
+  "time": "09:30",
+  "title": "장관·2차관, 세계 바이오 서밋",
+  "rel": "바이오",
+  "why": "",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m07",
+  "date": "2026-10-23",
+  "org": "해수부",
+  "time": "10:00",
+  "title": "장·차관 농해수위 종합감사",
+  "rel": "육상김·김 수출",
+  "why": "육상김 R&D·김 수출지원 질의 확인",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m08",
+  "date": "2026-10-23",
+  "org": "기후부",
+  "time": "14:30",
+  "title": "장관, ESG 친환경대전 참석",
+  "rel": "PHA·생분해",
+  "why": "장관 동선상 PHA 소개 기회",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m09",
+  "date": "2026-10-23",
+  "org": "기후부",
+  "time": "15:30",
+  "title": "장관, 재생에너지의 날 기념식",
+  "rel": "바이오가스화",
+  "why": "바이오가스 실증 연계 메시지",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m10",
+  "date": "2026-10-23",
+  "org": "농식품부",
+  "time": "",
+  "title": "제1회 한식의 날 한식 대축제 개막",
+  "rel": "K-푸드",
+  "why": "비비고 등 K-푸드 홍보 연계",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m11",
+  "date": "2026-10-23",
+  "org": "농식품부",
+  "time": "09:30",
+  "title": "장·차관 국정과제·현안 점검회의",
+  "rel": "식품정책",
+  "why": "",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m12",
+  "date": "2026-10-23",
+  "org": "산업부",
+  "time": "09:00",
+  "title": "통상교섭본부장, 한일재계회의",
+  "rel": "통상",
+  "why": "대일 수출·통상 이슈",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ },
+ {
+  "id": "m13",
+  "date": "2026-10-23",
+  "org": "재경부",
+  "time": "조간",
+  "title": "3/4분기 가축동향조사 발표",
+  "rel": "식품 원료",
+  "why": "육가공 원료 수급 참고",
+  "url": "https://www.etoday.co.kr/news/view/2636974"
+ }
+]
