@@ -1,6 +1,11 @@
 name: 텔레그램 채팅 ID 찾기
 on:
   workflow_dispatch:
+    inputs:
+      channel:
+        description: '공개 채널이면 @채널아이디 (비공개면 비워두고, 채널 글을 봇에게 전달한 뒤 실행)'
+        required: false
+        default: ''
 jobs:
   find:
     runs-on: ubuntu-latest
@@ -9,4 +14,5 @@ jobs:
       - name: Find chat id
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHANNEL: ${{ inputs.channel }}
         run: python3 scripts/telegram_find_chat.py
