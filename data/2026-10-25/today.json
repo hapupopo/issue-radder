@@ -1,0 +1,35 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "통상업무",
+  "place": "",
+  "rel": "",
+  "note": "공개 일정 없음",
+  "url": "https://www.news1.kr/politics/assembly/6330822"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "",
+  "title": "통상업무",
+  "place": "",
+  "rel": "",
+  "note": "공개 일정 없음",
+  "url": "https://www.news1.kr/politics/assembly/6330822"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "",
+  "title": "국정감사 휴일(일) — 26일(월) 기후환노위 기후에너지환경부 감사",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.lawmake.kr/issues/audit-2026"
+ }
+]
