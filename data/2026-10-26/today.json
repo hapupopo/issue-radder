@@ -1,0 +1,46 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "14:00",
+  "title": "'농어민과의 대화' — 농지 전수조사·CPTPP 가입 의견 수렴",
+  "place": "청와대 영빈관",
+  "rel": "식품정책",
+  "note": "타운홀 미팅 형식",
+  "url": "https://m.sedaily.com/article/20105896"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "",
+  "title": "통상업무",
+  "place": "",
+  "rel": "",
+  "note": "공개 일정 없음",
+  "url": "https://www.news1.kr/politics/assembly/6331223"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "기후환노위 종합감사 — 기후에너지환경부·기상청·고준위방폐물관리위",
+  "place": "국회 본관 622호",
+  "rel": "PHA·생분해",
+  "note": "법사위·국방위·행안위 종합감사 동시 진행",
+  "url": "https://www.newspim.com/news/view/20261025000141"
+ },
+ {
+  "id": "t04",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "친환경농어업·유기식품법 등 5개 개정 법률 공포",
+  "place": "",
+  "rel": "식품정책",
+  "note": "식물방역·도농교류·가축전염병·동물보호법 포함",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ }
+]
