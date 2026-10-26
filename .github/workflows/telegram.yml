@@ -9,7 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: 새 날짜 리포트일 때만 자동 전송(같은 날 수정은 생략)
+        id: guard
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "send=yes" >> $GITHUB_OUTPUT; exit 0; fi
+          NEW=$(head -1 docs/latest-brief.txt)
+          OLD=$(git show HEAD~1:docs/latest-brief.txt 2>/dev/null | head -1 || true)
+          if [ "$NEW" != "$OLD" ]; then echo "send=yes" >> $GITHUB_OUTPUT; else echo "같은 날짜 리포트 수정 — 전송 생략"; echo "send=no" >> $GITHUB_OUTPUT; fi
       - name: Send to Telegram
+        if: steps.guard.outputs.send == 'yes'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
