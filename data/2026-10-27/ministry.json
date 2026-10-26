@@ -1,0 +1,202 @@
+[
+ {
+  "id": "m01",
+  "date": "2026-10-26",
+  "org": "기후부",
+  "time": "10:00",
+  "title": "장관·1·2차관 기후환노위 종합감사",
+  "rel": "PHA·생분해",
+  "why": "생분해·포장규제 질의 여부 확인",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m02",
+  "date": "2026-10-26",
+  "org": "농식품부",
+  "time": "",
+  "title": "친환경농어업·유기식품법 등 5개 개정법 공포",
+  "rel": "식품정책",
+  "why": "유기식품 인증 등 제도 변경 확인",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m03",
+  "date": "2026-10-27",
+  "org": "농식품부",
+  "time": "10:00",
+  "title": "차관, 농해수위 법안심사소위",
+  "rel": "식품정책",
+  "why": "식품·농업 관련 법안 심사 동향",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m04",
+  "date": "2026-10-27",
+  "org": "농식품부",
+  "time": "",
+  "title": "파리 국제식품박람회(SIAL) K-푸드 홍보 결과",
+  "rel": "가공식품 수출",
+  "why": "유럽 K-푸드 수출 동향",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m05",
+  "date": "2026-10-27",
+  "org": "해수부",
+  "time": "",
+  "title": "김장철 수산물 기획전",
+  "rel": "수산",
+  "why": "수산물 소비·물가 동향",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m06",
+  "date": "2026-10-27",
+  "org": "재경부",
+  "time": "10:00",
+  "title": "부총리, 국무회의",
+  "rel": "식품물가",
+  "why": "",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m07",
+  "date": "2026-10-28",
+  "org": "농식품부",
+  "time": "",
+  "title": "차관, 제26차 아세안+3 농림장관회의",
+  "rel": "가공식품 수출",
+  "why": "아세안 농식품 통상 협력",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m08",
+  "date": "2026-10-28",
+  "org": "농식품부",
+  "time": "",
+  "title": "K-농산물 수출 잔류농약 안전관리 결과",
+  "rel": "가공식품 수출",
+  "why": "수출 원료 안전관리",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m09",
+  "date": "2026-10-28",
+  "org": "해수부",
+  "time": "",
+  "title": "해양 AX 전략 발표(석간)",
+  "rel": "수산",
+  "why": "해양수산 R&D 방향 참고",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m10",
+  "date": "2026-10-28",
+  "org": "산업부",
+  "time": "10:30",
+  "title": "통상교섭본부장, EU 산업가속화법(IAA) 대응 민관 TF",
+  "rel": "통상",
+  "why": "EU 통상규제 동향",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m11",
+  "date": "2026-10-28",
+  "org": "재경부",
+  "time": "10:00",
+  "title": "부총리, 경제관계장관회의 겸 과학기술관계장관회의",
+  "rel": "정부 R&D",
+  "why": "물가·R&D 안건 확인",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m12",
+  "date": "2026-10-29",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 수산양식 박람회 개막",
+  "rel": "육상김",
+  "why": "양식 기술·육상양식 전시",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m13",
+  "date": "2026-10-29",
+  "org": "산업부",
+  "time": "10:00",
+  "title": "통상교섭본부장, 머크 대전 바이오프로세싱 공장 준공식",
+  "rel": "바이오",
+  "why": "바이오 제조 투자 정책 메시지",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m14",
+  "date": "2026-10-29",
+  "org": "기후부",
+  "time": "10:00",
+  "title": "장관, 산업 열 탈탄소화 포럼·녹색성장 정상회의 특별연설",
+  "rel": "바이오가스화",
+  "why": "산업 공정 탈탄소 정책 방향",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m15",
+  "date": "2026-10-29",
+  "org": "복지부",
+  "time": "",
+  "title": "K-제약바이오 프런티어 기업 육성 방안",
+  "rel": "바이오",
+  "why": "바이오 육성 정책",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m16",
+  "date": "2026-10-30",
+  "org": "해수부",
+  "time": "14:30",
+  "title": "차관, 전남 수산식품 수출단지 준공식(목포)",
+  "rel": "김 수출",
+  "why": "김 등 수산식품 수출 인프라",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m17",
+  "date": "2026-10-30",
+  "org": "해수부",
+  "time": "",
+  "title": "장관, 수산양식 박람회 참석(서울)",
+  "rel": "육상김",
+  "why": "",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m18",
+  "date": "2026-10-30",
+  "org": "재경부",
+  "time": "",
+  "title": "9월 산업활동동향(석간)",
+  "rel": "식품물가",
+  "why": "음식료품 생산·소비 지표",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m19",
+  "date": "2026-10-30",
+  "org": "농식품부",
+  "time": "09:30",
+  "title": "장관, 국정과제 점검회의",
+  "rel": "식품정책",
+  "why": "",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m20",
+  "date": "2026-11-04",
+  "org": "농식품부",
+  "time": "",
+  "title": "2027 식품외식산업전망(11/4~5, 코엑스 401호)",
+  "rel": "식품정책",
+  "why": "K-푸드 과제·EU 포장재 규제(PPWR) 대응·AI 스마트제조 세션",
+  "url": "https://foodtoday.or.kr/news/article.html?no=209116"
+ }
+]

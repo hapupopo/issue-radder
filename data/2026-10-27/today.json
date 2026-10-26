@@ -1,0 +1,79 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "10:00",
+  "title": "제46회 국무회의 주재",
+  "place": "청와대 본관",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261027000006"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "10:00",
+  "title": "국무회의 참석 / 16:00 범부처 주택 신속공급 점검회의",
+  "place": "청와대 / 정부서울청사",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6332453"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "복지위 종합감사 — 복지부·질병청·식약처",
+  "place": "국회",
+  "rel": "식품정책",
+  "note": "외통위·기후환노위(고용노동부) 종합감사 동시 진행",
+  "url": "https://www.newspim.com/news/view/20261026001186"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "농해수위 법안심사소위(농식품부 차관 참석)",
+  "place": "국회",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "국회",
+  "time": "14:00",
+  "title": "푸드스마트유통 산업 육성 및 혁신전략 정책포럼",
+  "place": "국회의원회관 제2소회의실",
+  "rel": "식품정책",
+  "note": "박상웅 의원실 주최",
+  "url": "https://www.newspim.com/news/view/20261026001250"
+ },
+ {
+  "id": "t06",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "파리 국제식품박람회(SIAL) K-푸드 홍보 결과 발표",
+  "place": "",
+  "rel": "가공식품 수출",
+  "note": "주간 일정 기준",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "t07",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "김장철 수산물 기획전",
+  "place": "",
+  "rel": "",
+  "note": "주간 일정 기준",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ }
+]
