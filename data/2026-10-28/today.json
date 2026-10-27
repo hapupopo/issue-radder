@@ -1,0 +1,101 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "14:00",
+  "title": "국민생명안전위원회 제2차 전체회의",
+  "place": "청와대 본관",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261027001518"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "09:30",
+  "title": "제2회 기후위기 대응 글로벌 협력 컨퍼런스",
+  "place": "정동1928 아트센터",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6333980"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "정보위·성평등가족위 국정감사",
+  "place": "국회 본관",
+  "rel": "",
+  "note": "겸임 상임위 국감 30일 종료",
+  "url": "https://www.newspim.com/news/view/20261027001341"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "어린이집 급간식비 격차해소 정책토론회",
+  "place": "국회도서관 대강당",
+  "rel": "식품정책",
+  "note": "고민정 의원실 주최",
+  "url": "https://www.newspim.com/news/view/20261027001463"
+ },
+ {
+  "id": "t05",
+  "cat": "부처",
+  "org": "재경부·과기정통부",
+  "time": "10:00",
+  "title": "경제관계장관회의-과학기술관계장관회의 연석회의",
+  "place": "정부서울청사",
+  "rel": "정부 R&D",
+  "note": "물가·R&D 안건 확인",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14775858"
+ },
+ {
+  "id": "t06",
+  "cat": "부처",
+  "org": "과기정통부",
+  "time": "10:00",
+  "title": "1차관, 국제 연구산업 컨벤션 2026",
+  "place": "수원컨벤션센터",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14775858"
+ },
+ {
+  "id": "t07",
+  "cat": "부처",
+  "org": "산업부",
+  "time": "10:30",
+  "title": "통상교섭본부장, EU 산업가속화법(IAA) 대응 민관협력 TF",
+  "place": "대한상공회의소",
+  "rel": "통상",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14775858"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "제26차 아세안+3 농림장관회의 · K-농산물 수출 잔류농약 안전관리 결과",
+  "place": "",
+  "rel": "가공식품 수출",
+  "note": "주간 일정 기준",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "해양 AX 전략 발표(석간)",
+  "place": "",
+  "rel": "정부 R&D",
+  "note": "주간 일정 기준",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ }
+]
