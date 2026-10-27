@@ -53,6 +53,9 @@ def brief(D, day):
         L.append(f"• {(r['time'] + ' ') if r.get('time') else ''}{r['org']} {r['title']} [{r['rel']}]")
     if L[-1] == '■ 정부 주요일정':
         L.append('• 당사 관련 공개 일정 없음')
+    cjw = sorted([r for r in D['ministry'] if r.get('cj') and r['date'] >= day], key=lambda r: (r['date'], r.get('time') or '99'))
+    if cjw:
+        L += ['', '■ 이번 주 CJ그룹 관련 정부일정'] + [f"• {fmt(r['date'])} {(r['time'] + ' ') if r.get('time') else ''}{r['org']} {r['title']} [{r['cj']}]" for r in cjw]
     asm = [r for r in D['assembly'] if (n := diff(day, r['date'])) is not None and n > 0 and (n <= 14 or (r.get('must') and n <= 30))]
     if asm:
         L += ['', '■ 국회 주요일정'] + [f"• {fmt(r['date'])} {r['title']} (D-{diff(day, r['date'])})" for r in sorted(asm, key=lambda r: r['date'])]
@@ -93,10 +96,11 @@ def render(day, D, days):
     s_today = ''.join(item([b(r['org']), e(r.get('time')), e(r.get('place'))], r['title'], r.get('url'), r.get('note'), r.get('rel')) for r in today_rows)
 
     mins, cur = '', None
-    for r in sorted(D['ministry'], key=lambda r: (r['date'], r.get('time') or '99'), reverse=False)[::-1]:
+    for r in sorted(D['ministry'], key=lambda r: (r['date'], r.get('time') or '99')):
         if r['date'] != cur:
             cur = r['date']; mins += f'<div class="day">{fmt(cur)}{" · 오늘" if cur == day else ""}</div>'
-        mins += item([b(r['org']), e(r.get('time'))], r['title'], r.get('url'), r.get('why'), r.get('rel'), 'past' if r['date'] < day else '')
+        cj = r.get('cj')
+        mins += item(([tag('CJ그룹 · ' + cj, 'cj')] if cj else []) + [b(r['org']), e(r.get('time'))], r['title'], r.get('url'), r.get('why'), '' if cj else r.get('rel'), ('past ' if r['date'] < day else '') + ('cj' if cj else ''))
 
     asm = sorted(D['assembly'], key=lambda r: r['date'] + ('-31' if len(r['date']) == 7 else ''))
     up = [r for r in asm if (diff(day, r['date']) is None or diff(day, r['date']) >= 0)]
@@ -148,7 +152,7 @@ def render(day, D, days):
 <section class="card" id="brief"><h2>오늘의 브리핑 <span class="n">텔레그램 공유용</span></h2><pre id="bt">{e(br)}</pre>
 <div class="btns"><button class="btn primary" id="share">공유하기</button><button class="btn" id="copy">복사</button></div></section>
 {section('today', '금일 정부·국회 주요일정', '대통령·총리는 전체, 부처는 당사·그룹 관련만. 노란 선은 당사 연결 이슈.', s_today)}
-{section('ministry', '정부 부처별 주요일정', '이투데이 경제·사회부처 주간 일정 중 당사 관련 항목 요약.', mins)}
+{section('ministry', '정부 부처별 주요일정', '이투데이 경제·사회부처 주간 일정 중 당사 관련 항목 요약. 날짜순, 보라색은 CJ그룹 계열사 방문·간담회.', mins)}
 {section('assembly', '국회동향', '국감 · 예결위 · 정기국회 · 국회 주최 행사 · 관련 세미나.', s_asm)}
 {section('news', '주요기사 모니터링', '최근 7일. 굵은 테두리는 오늘 기사(전일 12시 이후 석간 포함).', s_news)}
 {section('press', '정부기관 보도자료', '대한민국 정책브리핑 등 당사 직접 관련 자료.', s_press)}
@@ -161,9 +165,9 @@ def render(day, D, days):
 
 
 CSS = '''
-:root{--bg:#f7f6f2;--panel:#fff;--fg:#1f1e1b;--muted:#6b6862;--line:#e4e1d8;--warn:#b26b00;--bad:#b3261e;--ok:#1d7a46;--r:10px}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1b1a18;--panel:#24231f;--fg:#ecebe6;--muted:#a7a49c;--line:#3a3833;--warn:#e0a03a;--bad:#ef7a70;--ok:#5cc28a}}
-:root[data-theme=dark]{--bg:#1b1a18;--panel:#24231f;--fg:#ecebe6;--muted:#a7a49c;--line:#3a3833;--warn:#e0a03a;--bad:#ef7a70;--ok:#5cc28a}
+:root{--bg:#f7f6f2;--panel:#fff;--fg:#1f1e1b;--muted:#6b6862;--line:#e4e1d8;--warn:#b26b00;--bad:#b3261e;--ok:#1d7a46;--cj:#6a3fb5;--cjbg:#f4effb;--r:10px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1b1a18;--panel:#24231f;--fg:#ecebe6;--muted:#a7a49c;--line:#3a3833;--warn:#e0a03a;--bad:#ef7a70;--ok:#5cc28a;--cj:#b99af0;--cjbg:#2b2534}}
+:root[data-theme=dark]{--bg:#1b1a18;--panel:#24231f;--fg:#ecebe6;--muted:#a7a49c;--line:#3a3833;--warn:#e0a03a;--bad:#ef7a70;--ok:#5cc28a;--cj:#b99af0;--cjbg:#2b2534}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:15px;line-height:1.5;-webkit-text-size-adjust:100%}
 .wrap{max-width:720px;margin:0 auto;padding:16px 16px 56px;display:flex;flex-direction:column;gap:12px}
 h1{font-family:"Noto Serif KR",Georgia,serif;font-weight:500;font-size:24px;margin:0}.asof{font-size:12px;color:var(--muted)}
@@ -174,7 +178,7 @@ nav.jump{position:sticky;top:0;z-index:3;background:var(--bg);display:flex;gap:6
 nav.jump a{flex:none;font-size:12px;padding:4px 12px;border:1px solid var(--line);border-radius:999px;color:var(--fg);text-decoration:none}
 section{scroll-margin-top:52px}h2{font-size:16px;font-weight:600;margin:0}h2 .n{font-size:12px;color:var(--muted);font-weight:400;margin-left:6px}
 .note{font-size:12px;color:var(--muted);margin:4px 0 8px}
-.it{padding:10px 0 10px 10px;border-top:1px solid var(--line);border-left:3px solid transparent}.it:first-child{border-top:0}.it.rel{border-left-color:var(--warn)}.it.past{opacity:.55}.it.today{border-left-color:var(--fg)}
+.it{padding:10px 0 10px 10px;border-top:1px solid var(--line);border-left:3px solid transparent}.it:first-child{border-top:0}.it.rel{border-left-color:var(--warn)}.it.past{opacity:.55}.it.today{border-left-color:var(--fg)}.it.cj{border-left-color:var(--cj);background:var(--cjbg)}.tag.cj{border-color:var(--cj);color:var(--cj);font-weight:600}
 .meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-variant-numeric:tabular-nums}.meta b{color:var(--fg);font-weight:600}
 .tt{margin-top:2px}.tt a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}.sub{font-size:12.5px;color:var(--muted);margin-top:2px}
 .tag{display:inline-block;font-size:11.5px;padding:0 7px;border-radius:999px;border:1px solid var(--line);color:var(--fg)}.tag.rel{border-color:var(--warn);color:var(--warn)}.tag.risk{border-color:var(--bad);color:var(--bad)}.tag.opp{border-color:var(--ok);color:var(--ok)}

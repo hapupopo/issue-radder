@@ -198,5 +198,27 @@
   "rel": "식품정책",
   "why": "K-푸드 과제·EU 포장재 규제(PPWR) 대응·AI 스마트제조 세션",
   "url": "https://foodtoday.or.kr/news/article.html?no=209116"
+ },
+ {
+  "id": "m21",
+  "date": "2026-10-29",
+  "org": "기획예산처",
+  "time": "14:00",
+  "title": "장관, 문화분야 현장방문(CJ 4DPLEX)",
+  "rel": "CJ그룹",
+  "cj": "CJ 4DPLEX",
+  "why": "같은 날 'AI 영상콘텐츠 제작 현장방문 및 간담회' 보도자료(조간) 예정 — 문화·콘텐츠 예산 관련 정부 메시지 확인",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "m22",
+  "date": "2026-10-30",
+  "org": "산업부",
+  "time": "15:00",
+  "title": "통상교섭본부장, K-콘텐츠 기업 간담회(CJ E&M센터)",
+  "rel": "CJ그룹",
+  "cj": "CJ ENM",
+  "why": "K-콘텐츠 통상·해외진출 지원 논의. 같은 날 19:00 독일 총리 방한 계기 Korea Night",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
  }
 ]
