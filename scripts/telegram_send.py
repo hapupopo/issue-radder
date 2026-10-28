@@ -6,7 +6,10 @@ token = token[3:] if token.lower().startswith('bot') else token
 if not token or not chat:
     sys.exit('TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 시크릿이 없습니다.')
 import html
-raw = open('docs/latest-brief.txt', encoding='utf-8').read().strip()
+path = sys.argv[1] if len(sys.argv) > 1 else 'docs/latest-brief.txt'
+raw = open(path, encoding='utf-8').read().strip() if os.path.exists(path) else ''
+if not raw:
+    print(f'{path} 비어 있음 — 전송 생략'); sys.exit(0)
 lines = []
 for line in raw.split('\n'):
     if line.startswith('🔗 ') and line[2:].strip().startswith('http'):

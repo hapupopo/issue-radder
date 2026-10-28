@@ -28,5 +28,6 @@ pre{white-space:pre-wrap;word-break:break-all;font-family:inherit;font-size:12.5
 function done(b,m,o){b.textContent=m;setTimeout(function(){b.textContent=o},2000)}
 document.getElementById('copy').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(function(){done(b,'복사됨','복사')},function(){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done(b,'복사됨','복사')}catch(e){done(b,'길게 눌러 복사','복사')}})};
 document.getElementById('share').onclick=function(){var b=this;if(navigator.share){navigator.share({title:'전략지원 이슈레이더',text:txt}).catch(function(){});return}
-location.href='https://t.me/share/url?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(txt)};})();
+location.href='https://t.me/share/url?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(txt)};
+var s2=document.getElementById('st'),c2=document.getElementById('copy2');if(s2&&c2){c2.onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(s2.textContent):Promise.reject()).then(function(){done(b,'복사됨','복사')},function(){done(b,'길게 눌러 복사','복사')})}}})();
 </script></body></html>

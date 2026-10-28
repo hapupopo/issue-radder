@@ -70,6 +70,49 @@ def brief(D, day):
     return '\n'.join(L)
 
 
+def officials():
+    p = ROOT / 'config' / 'officials.json'
+    return json.load(open(p, encoding='utf-8')) if p.exists() else {}
+
+
+def schedule_text(day):
+    """텔레그램 공유용 '금일 정부, 국회 주요일정' 본문.
+    data/DAY/govsched.json: [{sec: 대통령|총리|국회|부처, org, who, time, title, place}]
+    대통령·총리·국회는 전부, 부처는 농식품부 장관 전부 + 다른 부처는 당사·그룹 관련만(수집 단계에서 선별)."""
+    p = DATA / day / 'govsched.json'
+    if not p.exists():
+        return ''
+    rows = json.load(open(p, encoding='utf-8'))
+    off = officials()
+    x = d(day)
+    L = [f"[금일({x.month}/{x.day}) 정부, 국회 주요일정]"]
+    tkey = lambda r: (r.get('time') or '99:99')
+    def paren(r):
+        inner = ' '.join(v for v in [r.get('time'), r.get('place')] if v)
+        return f"{r['title']}({inner})" if inner else r['title']
+    for sec in ['대통령', '총리']:
+        items = sorted([r for r in rows if r['sec'] == sec], key=tkey)
+        L += ['', f"▲ {off.get(sec, sec)}"] + ([paren(r) for r in items] or ['통상업무'])
+    asm = sorted([r for r in rows if r['sec'] == '국회'], key=tkey)
+    if asm:
+        head = '국회 국정감사' if all('국정감사' in r['title'] or '국감' in r['title'] for r in asm) else '국회'
+        L += ['', f"▲ {head}"] + [paren(r) for r in asm]
+    heads = []
+    for r in [r for r in rows if r['sec'] == '부처']:
+        k = (r['org'], r.get('who') or '장관')
+        if k not in heads:
+            heads.append(k)
+    heads.sort(key=lambda k: (k[0] != '농식품부', k[1] != '장관'))
+    if ('농식품부', '장관') not in heads:
+        heads.insert(0, ('농식품부', '장관'))
+    for org, who in heads:
+        items = sorted([r for r in rows if r['sec'] == '부처' and r['org'] == org and (r.get('who') or '장관') == who], key=tkey)
+        name = off.get(f'{org} {who}') or f'{org} {who}'
+        lines = [' '.join(v for v in [r.get('time'), r['title'] + (f"({r['place']})" if r.get('place') else '')] if v) for r in items]
+        L += ['', f"▲ {name}"] + (lines or ['공개 일정 없음'])
+    return '\n'.join(L)
+
+
 def item(meta, title, url='', sub='', rel='', cls=''):
     m = ''.join(f'<span>{x}</span>' for x in meta if x)
     if rel:
@@ -151,6 +194,7 @@ def render(day, D, days):
 <nav class="jump"><a href="#brief">공유</a><a href="#today">금일 일정</a><a href="#ministry">부처 일정</a><a href="#assembly">국회동향</a><a href="#news">주요기사</a><a href="#press">보도자료</a><a href="#support">지원사업·R&amp;D</a><a href="#focus">집중이슈</a><a href="#people">인사·부고</a><a href="../archive.html">지난 리포트</a></nav>
 <section class="card" id="brief"><h2>오늘의 브리핑 <span class="n">텔레그램 공유용</span></h2><pre id="bt">{e(br)}</pre>
 <div class="btns"><button class="btn primary" id="share">공유하기</button><button class="btn" id="copy">복사</button></div></section>
+{('<section class="card" id="sched"><h2>금일 정부·국회 주요일정 <span class="n">텔레그램 공유용</span></h2><pre id="st">' + e(schedule_text(day)) + '</pre><div class="btns"><button class="btn" id="copy2">복사</button></div></section>') if schedule_text(day) else ''}
 {section('today', '금일 정부·국회 주요일정', '대통령·총리는 전체, 부처는 당사·그룹 관련만. 노란 선은 당사 연결 이슈.', s_today)}
 {section('ministry', '정부 부처별 주요일정', '이투데이 경제·사회부처 주간 일정 중 당사 관련 항목 요약. 날짜순, 보라색은 CJ그룹 계열사 방문·간담회.', mins)}
 {section('assembly', '국회동향', '국감 · 예결위 · 정기국회 · 국회 주최 행사 · 관련 세미나.', s_asm)}
@@ -193,7 +237,8 @@ JS = '''<script>
 function done(b,m,o){b.textContent=m;setTimeout(function(){b.textContent=o},2000)}
 document.getElementById('copy').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(function(){done(b,'복사됨','복사')},function(){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done(b,'복사됨','복사')}catch(e){done(b,'길게 눌러 복사','복사')}})};
 document.getElementById('share').onclick=function(){var b=this;if(navigator.share){navigator.share({title:'전략지원 이슈레이더',text:txt}).catch(function(){});return}
-location.href='https://t.me/share/url?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(txt)};})();
+location.href='https://t.me/share/url?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(txt)};
+var s2=document.getElementById('st'),c2=document.getElementById('copy2');if(s2&&c2){c2.onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(s2.textContent):Promise.reject()).then(function(){done(b,'복사됨','복사')},function(){done(b,'길게 눌러 복사','복사')})}}})();
 </script>'''
 
 
@@ -216,6 +261,8 @@ def main():
     (OUT / 'robots.txt').write_text('User-agent: *\nDisallow: /\n', encoding='utf-8')
     (OUT / '.nojekyll').write_text('', encoding='utf-8')
     (OUT / 'latest-brief.txt').write_text(brief(load(latest), latest) + '\n', encoding='utf-8')
+    st = schedule_text(latest)
+    (OUT / 'latest-schedule.txt').write_text(st + '\n' if st else '', encoding='utf-8')
     print('built', len(days), 'reports; latest', latest)
 
 
