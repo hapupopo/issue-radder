@@ -1,0 +1,145 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "17:05",
+  "title": "메르츠 독일 총리 공식 방한 — 한독 정상회담",
+  "place": "청와대",
+  "rel": "",
+  "note": "29~30일 공식 방한",
+  "url": "https://www.news1.kr/politics/president/6335505"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "10:00",
+  "title": "국가정책조정회의",
+  "place": "종근당 천안공장",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14769062"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "운영위 국정감사 — 국가인권위원회(오전)·대통령비서실·국가안보실·경호처(오후)",
+  "place": "국회 본관 319호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261028001608"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "정보위 국정감사(국가정보원)",
+  "place": "국가정보원",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261028001508"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "성평등가족위 국정감사 현장시찰",
+  "place": "한국여성인권진흥원",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14769062"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "국회",
+  "time": "09:10",
+  "title": "기획예산처-국회미래연구원 공동세미나(국회의장·기획처 장관 참석)",
+  "place": "의원회관 제2소회의실",
+  "rel": "예산",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261028001608"
+ },
+ {
+  "id": "t07",
+  "cat": "부처",
+  "org": "기획예산처",
+  "time": "14:00",
+  "title": "장관, 문화분야 현장방문(CJ 4DPLEX)",
+  "place": "",
+  "rel": "CJ그룹",
+  "note": "AI 영상콘텐츠 제작 현장방문 및 간담회(조간 보도자료)",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 수산양식박람회",
+  "place": "서울광장",
+  "rel": "육상김",
+  "note": "공식 홈페이지 기준 10/30~11/1 개최",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "산업부",
+  "time": "10:00",
+  "title": "통상교섭본부장, 머크 대전 바이오프로세싱 생산센터 개소식",
+  "place": "대전",
+  "rel": "바이오",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "t10",
+  "cat": "부처",
+  "org": "기후부",
+  "time": "10:00",
+  "title": "장관, 산업계 열에너지 탈탄소 전환 혁신 포럼·글로벌 녹색성장 서밋 특별연설(12:15)",
+  "place": "서울",
+  "rel": "바이오가스화",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "복지부·중기부",
+  "time": "",
+  "title": "K-제약바이오 프론티어기업 육성방안 발표",
+  "place": "",
+  "rel": "바이오",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "t12",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "2027년 유기농업자재 지원 강화·녹비작물 종자 선택 확대 발표",
+  "place": "",
+  "rel": "",
+  "note": "차관 싱가포르 출장(~31일)",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ },
+ {
+  "id": "t13",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "11:30",
+  "title": "부총리, GGGI·글로벌녹색성장주간 서밋 축사",
+  "place": "웨스틴조선호텔",
+  "rel": "",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ }
+]

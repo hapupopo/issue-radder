@@ -1,0 +1,101 @@
+[
+ {
+  "id": "s01",
+  "type": "포상·지원",
+  "name": "2026 K-푸드플러스 수출탑 후보 모집",
+  "agency": "농식품부 · aT",
+  "open": "2026-10-13",
+  "close": "2026-10-30",
+  "rel": "가공식품 수출",
+  "note": "수출실적 기업 대상, 신인상 신설",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=208716"
+ },
+ {
+  "id": "s02",
+  "type": "예산",
+  "name": "2027년도 정부 R&D 예산안(39.5조) 국회 확정",
+  "agency": "국회 예결위",
+  "open": "2026-09-01",
+  "close": "2026-12-02",
+  "rel": "정부 R&D",
+  "note": "법정 처리기한 12/2",
+  "url": "https://nocutnews.co.kr/news/6571103"
+ },
+ {
+  "id": "s03",
+  "type": "R&D 공고",
+  "name": "2027 농식품 R&D 통합 신규과제 공고(예정)",
+  "agency": "농식품부 · 농기평(IPET)",
+  "open": "2027-01",
+  "close": "",
+  "rel": "정부 R&D",
+  "note": "전년 1/4 공고·2,348억 규모 — 내년 초 예상",
+  "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156738006"
+ },
+ {
+  "id": "s04",
+  "type": "R&D 공고",
+  "name": "환경기술개발사업 신규과제 공모(예정)",
+  "agency": "기후부 · 한국환경산업기술원",
+  "open": "2026-12",
+  "close": "",
+  "rel": "PHA·생분해",
+  "note": "전년 12월 공고 — 올해 12월 예상",
+  "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156735724"
+ },
+ {
+  "id": "s05",
+  "type": "수요조사",
+  "name": "2027 소재부품기술개발사업 기술수요조사",
+  "agency": "산업부 · KEIT",
+  "open": "",
+  "close": "",
+  "rel": "PHA·생분해",
+  "note": "NTIS 게시 — 접수기간 확인 필요",
+  "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1276397"
+ },
+ {
+  "id": "s06",
+  "type": "수요조사",
+  "name": "농림식품 4개 기관 통합 기술수요조사",
+  "agency": "농식품부·농진청·산림청·검역본부",
+  "open": "2026-08-18",
+  "close": "2026-09-30",
+  "rel": "정부 R&D",
+  "note": "마감 — 2027 신규과제 기획에 반영",
+  "url": "https://www.besttimes.co.kr/14202"
+ },
+ {
+  "id": "s07",
+  "type": "R&D 진행",
+  "name": "김 육상양식 기술개발사업(2025~2029, 350억)",
+  "agency": "해수부",
+  "open": "2025-05-23",
+  "close": "2029-12-31",
+  "rel": "육상김",
+  "note": "대상·풀무원 컨소시엄 수행",
+  "url": "https://www.kukinews.com/article/view/kuk202505230077"
+ },
+ {
+  "id": "s08",
+  "type": "R&D 진행",
+  "name": "바이오가스 발전기 국산화(2029년까지 366억)",
+  "agency": "기후부 · 한국환경산업기술원",
+  "open": "2026-06-16",
+  "close": "2029-12-31",
+  "rel": "바이오가스화",
+  "note": "실증 연계 가능성",
+  "url": "https://www.heraldk.com/article/2026061421244375441"
+ },
+ {
+  "id": "s09",
+  "type": "수요조사",
+  "name": "2027년도 수산생물방역 및 의약품 연구사업 위탁과제 수요조사",
+  "agency": "국립수산물품질관리원",
+  "open": "2026-10-21",
+  "close": "2026-10-30",
+  "rel": "수산",
+  "note": "10/30(금) 18:00 마감",
+  "url": "https://www.syu.ac.kr/rnd/%EC%88%98%EC%9A%94%EC%A1%B0%EC%82%AC-%EA%B5%AD%EB%A6%BD%EC%88%98%EC%82%B0%EB%AC%BC%ED%92%88%EC%A7%88%EA%B4%80%EB%A6%AC%EC%9B%90-2027%EB%85%84%EB%8F%84-%EC%88%98%EC%82%B0%EC%83%9D%EB%AC%BC%EB%B0%A9/"
+ }
+]
