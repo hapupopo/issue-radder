@@ -1,0 +1,123 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "11:00",
+  "title": "송영길 평화외교특보·김병주 국방정책특보 임명장 수여",
+  "place": "청와대",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/president/6337039"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "09:00",
+  "title": "제19차 독일 아태 비즈니스 컨퍼런스(APK 2026)",
+  "place": "그랜드 인터컨티넨탈",
+  "rel": "",
+  "note": "메르츠 독일 총리 방한 계기",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14769062"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "운영위 국정감사 — 국회사무처·국회도서관 등 국회 소속 6개 기관 (국감 마지막 날)",
+  "place": "국회",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6336720"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "정보위 국정감사(국방방첩본부·사이버작전사령부)",
+  "place": "국방방첩본부",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstnt.com/news/articleView.html?idxno=724844"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "국회",
+  "time": "",
+  "title": "예결위 2027년도 예산안 공청회 — 예산 심사 개시",
+  "place": "국회",
+  "rel": "정부 R&D",
+  "note": "11/4~5 종합정책질의로 이어짐",
+  "url": "https://www.fnnews.com/news/202610231442490706"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "국회",
+  "time": "15:00",
+  "title": "제1회 공학인의 날 기념행사(산업부 장관 참석)",
+  "place": "의원회관 제1소회의실",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14769062"
+ },
+ {
+  "id": "t07",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "09:30",
+  "title": "장관, 국정과제 및 현안 점검회의",
+  "place": "세종",
+  "rel": "식품정책",
+  "note": "차관 싱가포르 출장(~31일)",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14769062"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "산업부",
+  "time": "15:00",
+  "title": "통상교섭본부장, K-콘텐츠 기업 간담회",
+  "place": "CJ E&M센터",
+  "rel": "CJ그룹",
+  "note": "CJ ENM — 19:00 독일 총리 방한 계기 Korea Night",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14769062"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "14:30",
+  "title": "차관, 전남 수산식품수출단지 준공식",
+  "place": "목포 대양산단",
+  "rel": "김 수출",
+  "note": "국내 첫 수산식품수출단지(1,179억) — 마른김 거래소·R&D·수출지원센터",
+  "url": "https://www.etoday.co.kr/news/view/2641488"
+ },
+ {
+  "id": "t10",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 수산양식박람회 개막(10/30~11/1)",
+  "place": "서울광장",
+  "rel": "육상김",
+  "note": "'AI가 여는 바다' 주제, 47개 기관 92개 부스",
+  "url": "https://www.suhyupnews.co.kr/news/articleView.html?idxno=40795"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "",
+  "title": "9월 산업활동동향(석간)",
+  "place": "",
+  "rel": "식품물가",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2639700"
+ }
+]
