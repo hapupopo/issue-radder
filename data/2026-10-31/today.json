@@ -1,0 +1,46 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "통상업무(공개 일정 없음)",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6338375"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "16:10",
+  "title": "2026 코리아 그랜드 페스티벌 개막식",
+  "place": "경북 안동",
+  "rel": "식품물가",
+  "note": "동행축제·코리아세일페스타·숙박세일페스타·농축산물 할인행사 통합 소비축제(10/29~11/15). 경제부총리도 참석 예정",
+  "url": "https://www.news1.kr/politics/assembly/6338375"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "11:00",
+  "title": "2027 서울 세계청년대회 성공개최 지지 공동선언식(한정애 의원실 등)",
+  "place": "의원회관",
+  "rel": "",
+  "note": "위원회·본회의 일정 없음(토요일)",
+  "url": "https://www.news1.kr/politics/assembly/6338371"
+ },
+ {
+  "id": "t04",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 수산양식박람회(10/30~11/1) 계속",
+  "place": "서울광장",
+  "rel": "육상김",
+  "note": "47개 기관 92개 부스, '김믈리에' 경연 프로그램",
+  "url": "https://www.suhyupnews.co.kr/news/articleView.html?idxno=40795"
+ }
+]
