@@ -168,13 +168,13 @@ def render(day, D, days):
     body = f'''
 <header><h1>전략지원 이슈레이더</h1><div class="asof">{fmt(day)} 데일리 리포트 · 정부·국회·언론 공개자료</div></header>
 <div class="kpis">{kpis}</div>
-<nav class="jump"><a href="#today">금일 일정</a><a href="#focus">집중이슈</a><a href="#news">주요기사</a><a href="#assembly">국회동향</a><a href="#ministry">부처 일정</a><a href="#support">지원사업·R&amp;D</a><a href="#press">보도자료</a><a href="#people">인사·부고</a><a href="../archive.html">지난 리포트</a></nav>
+<nav class="jump"><a href="#today">금일 일정</a><a href="#ministry">부처 주간일정</a><a href="#focus">집중이슈</a><a href="#news">주요기사</a><a href="#assembly">국회동향</a><a href="#support">지원사업·R&amp;D</a><a href="#press">보도자료</a><a href="#people">인사·부고</a><a href="../archive.html">지난 리포트</a></nav>
 <p class="legend"><span class="tag risk">유의</span><span class="tag opp">기회</span><span class="tag">관찰</span><span class="tag cj">CJ그룹</span> 회색 '○건' 줄을 누르면 접힌 내용이 펼쳐집니다.</p>
 {section('today', '금일 정부·국회 주요일정', '대통령·총리는 전체, 부처는 당사·그룹 관련만. 노란 선은 당사 연결 이슈.', s_today, len(today_rows))}
+{section('ministry', '정부 부처별 주요일정(주간)', '이투데이 경제·사회부처 주간 일정 중 당사 관련. 보라색은 CJ그룹 계열사 방문·간담회.', mins, len(m_up))}
 {section('focus', '키워드 집중이슈', '최근 7일 유의·기회 상위 5건. 나머지는 키워드별로 접어둠.', s_focus, len(D['focus']))}
 {section('news', '주요기사 모니터링', '오늘 기사(전일 12시 이후 석간 포함)만 펼침. 최근 7일 기사는 이슈별로 접어둠.', s_news, len(news7))}
 {section('assembly', '국회동향', '2주 안 일정(필수 행사는 30일 전부터)만 펼침.', s_asm, len(near))}
-{section('ministry', '정부 부처별 주요일정', '이투데이 경제·사회부처 주간 일정 중 당사 관련. 보라색은 CJ그룹 계열사 방문·간담회.', mins, len(m_up))}
 {section('support', '지원사업 · R&amp;D 일정', "진행·예정 중 마감 가까운 순. '예정'은 전년 일정 기준 추정.", s_sup, len(live))}
 {section('press', '정부기관 보도자료', '대한민국 정책브리핑 등 당사 직접 관련 자료.', s_press, len(press), False)}
 {section('people', '주요 인사 · 부고', '관련 부처·상임위.', s_people, len(ppl), False)}
