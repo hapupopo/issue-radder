@@ -2,7 +2,7 @@ name: 텔레그램 브리핑 전송
 on:
   push:
     branches: [main]
-    paths: ['docs/latest-brief.txt', 'docs/latest-schedule.txt']
+    paths: ['telegram/latest-brief.txt', 'telegram/latest-schedule.txt']
   workflow_dispatch:
 jobs:
   send:
@@ -15,8 +15,8 @@ jobs:
         id: guard
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "send=yes" >> $GITHUB_OUTPUT; exit 0; fi
-          NEW=$(head -1 docs/latest-brief.txt)
-          OLD=$(git show HEAD~1:docs/latest-brief.txt 2>/dev/null | head -1 || true)
+          NEW=$(head -1 telegram/latest-brief.txt)
+          OLD=$( (git show HEAD~1:telegram/latest-brief.txt 2>/dev/null || git show HEAD~1:docs/latest-brief.txt 2>/dev/null) | head -1 || true)
           if [ "$NEW" != "$OLD" ]; then echo "send=yes" >> $GITHUB_OUTPUT; else echo "같은 날짜 리포트 수정 — 전송 생략"; echo "send=no" >> $GITHUB_OUTPUT; fi
       - name: Send to Telegram
         if: steps.guard.outputs.send == 'yes'
@@ -24,5 +24,5 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          python3 scripts/telegram_send.py docs/latest-schedule.txt
-          python3 scripts/telegram_send.py docs/latest-brief.txt
+          python3 scripts/telegram_send.py telegram/latest-schedule.txt
+          python3 scripts/telegram_send.py telegram/latest-brief.txt

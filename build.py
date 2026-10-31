@@ -3,6 +3,7 @@
 
 data/YYYY-MM-DD/{today,ministry,assembly,news,press,support,focus,people}.json
 → docs/index.html (최신), docs/reports/YYYY-MM-DD.html (날짜별), docs/archive.html
+텔레그램 공유 텍스트는 이 사이트에 넣지 않는다 → telegram_text.py 가 telegram/ 에 따로 만든다.
 """
 import json, os, html, datetime as dt
 from pathlib import Path
@@ -45,72 +46,6 @@ def load(day):
 def is_today_news(r, day):
     prev = (d(day) - dt.timedelta(days=1)).isoformat()
     return r['date'] == day or (r['date'] == prev and (r.get('time') or '') >= '12:00')
-
-
-def brief(D, day):
-    L = [f"📡 전략지원 이슈레이더 | {fmt(day)}", f'🔗 {SITE}/reports/{day}.html', '', '■ 정부 주요일정']
-    for r in [r for r in D['today'] if r.get('rel')][:8]:
-        L.append(f"• {(r['time'] + ' ') if r.get('time') else ''}{r['org']} {r['title']} [{r['rel']}]")
-    if L[-1] == '■ 정부 주요일정':
-        L.append('• 당사 관련 공개 일정 없음')
-    cjw = sorted([r for r in D['ministry'] if r.get('cj') and r['date'] >= day], key=lambda r: (r['date'], r.get('time') or '99'))
-    if cjw:
-        L += ['', '■ 이번 주 CJ그룹 관련 정부일정'] + [f"• {fmt(r['date'])} {(r['time'] + ' ') if r.get('time') else ''}{r['org']} {r['title']} [{r['cj']}]" for r in cjw]
-    asm = [r for r in D['assembly'] if (n := diff(day, r['date'])) is not None and n > 0 and (n <= 14 or (r.get('must') and n <= 30))]
-    if asm:
-        L += ['', '■ 국회 주요일정'] + [f"• {fmt(r['date'])} {r['title']} (D-{diff(day, r['date'])})" for r in sorted(asm, key=lambda r: r['date'])]
-    due = sorted([r for r in D['support'] if (n := diff(day, r.get('close'))) is not None and 0 <= n <= 45], key=lambda r: r['close'])
-    if due:
-        L += ['', '■ 마감·기한'] + [f"• {r['name']} ~{fmt(r['close'])} (D-{diff(day, r['close'])})" for r in due]
-    tn = sorted([r for r in D['news'] if is_today_news(r, day)], key=lambda r: r['date'] + (r.get('time') or ''), reverse=True)
-    if tn:
-        L += ['', '■ 주요 관련기사']
-        for r in tn:
-            L += [f"• {r['title']} ({r['outlet']})", f"  {r['url']}"]
-    return '\n'.join(L)
-
-
-def officials():
-    p = ROOT / 'config' / 'officials.json'
-    return json.load(open(p, encoding='utf-8')) if p.exists() else {}
-
-
-def schedule_text(day):
-    """텔레그램 공유용 '금일 정부, 국회 주요일정' 본문.
-    data/DAY/govsched.json: [{sec: 대통령|총리|국회|부처, org, who, time, title, place}]
-    대통령·총리·국회는 전부, 부처는 농식품부 장관 전부 + 다른 부처는 당사·그룹 관련만(수집 단계에서 선별)."""
-    p = DATA / day / 'govsched.json'
-    if not p.exists():
-        return ''
-    rows = json.load(open(p, encoding='utf-8'))
-    off = officials()
-    x = d(day)
-    L = [f"[금일({x.month}/{x.day}) 정부, 국회 주요일정]"]
-    tkey = lambda r: (r.get('time') or '99:99')
-    def paren(r):
-        inner = ' '.join(v for v in [r.get('time'), r.get('place')] if v)
-        return f"{r['title']}({inner})" if inner else r['title']
-    for sec in ['대통령', '총리']:
-        items = sorted([r for r in rows if r['sec'] == sec], key=tkey)
-        L += ['', f"▲ {off.get(sec, sec)}"] + ([paren(r) for r in items] or ['통상업무'])
-    asm = sorted([r for r in rows if r['sec'] == '국회'], key=tkey)
-    if asm:
-        head = '국회 국정감사' if all('국정감사' in r['title'] or '국감' in r['title'] for r in asm) else '국회'
-        L += ['', f"▲ {head}"] + [paren(r) for r in asm]
-    heads = []
-    for r in [r for r in rows if r['sec'] == '부처']:
-        k = (r['org'], r.get('who') or '장관')
-        if k not in heads:
-            heads.append(k)
-    heads.sort(key=lambda k: (k[0] != '농식품부', k[1] != '장관'))
-    if ('농식품부', '장관') not in heads:
-        heads.insert(0, ('농식품부', '장관'))
-    for org, who in heads:
-        items = sorted([r for r in rows if r['sec'] == '부처' and r['org'] == org and (r.get('who') or '장관') == who], key=tkey)
-        name = off.get(f'{org} {who}') or f'{org} {who}'
-        lines = [' '.join(v for v in [r.get('time'), r['title'] + (f"({r['place']})" if r.get('place') else '')] if v) for r in items]
-        L += ['', f"▲ {name}"] + (lines or ['공개 일정 없음'])
-    return '\n'.join(L)
 
 
 def item(meta, title, url='', sub='', rel='', cls=''):
@@ -176,7 +111,6 @@ def render(day, D, days):
                       for r in sorted(D['focus'], key=lambda r: (rank.get(r['signal'], 9), -(d(r['date']).toordinal() if r.get('date') else 0))))
     s_people = ''.join(item([tag(r['kind'], 'risk' if r['kind'] == '부고' else ''), b(r['org']), fmt(r['date'])], r['detail'], r.get('url')) for r in sorted(D['people'], key=lambda r: r['date'], reverse=True))
 
-    br = brief(D, day)
     i = days.index(day)
     newer = days[i - 1] if i > 0 else None
     older = days[i + 1] if i + 1 < len(days) else None
@@ -191,10 +125,7 @@ def render(day, D, days):
     body = f'''
 <header><h1>전략지원 이슈레이더</h1><div class="asof">{fmt(day)} 데일리 리포트 · 정부·국회·언론 공개자료</div></header>
 <div class="kpis">{kpis}</div>
-<nav class="jump"><a href="#brief">공유</a><a href="#today">금일 일정</a><a href="#ministry">부처 일정</a><a href="#assembly">국회동향</a><a href="#news">주요기사</a><a href="#press">보도자료</a><a href="#support">지원사업·R&amp;D</a><a href="#focus">집중이슈</a><a href="#people">인사·부고</a><a href="../archive.html">지난 리포트</a></nav>
-<section class="card" id="brief"><h2>오늘의 브리핑 <span class="n">텔레그램 공유용</span></h2><pre id="bt">{e(br)}</pre>
-<div class="btns"><button class="btn primary" id="share">공유하기</button><button class="btn" id="copy">복사</button></div></section>
-{('<section class="card" id="sched"><h2>금일 정부·국회 주요일정 <span class="n">텔레그램 공유용</span></h2><pre id="st">' + e(schedule_text(day)) + '</pre><div class="btns"><button class="btn" id="copy2">복사</button></div></section>') if schedule_text(day) else ''}
+<nav class="jump"><a href="#today">금일 일정</a><a href="#ministry">부처 일정</a><a href="#assembly">국회동향</a><a href="#news">주요기사</a><a href="#press">보도자료</a><a href="#support">지원사업·R&amp;D</a><a href="#focus">집중이슈</a><a href="#people">인사·부고</a><a href="../archive.html">지난 리포트</a></nav>
 {section('today', '금일 정부·국회 주요일정', '대통령·총리는 전체, 부처는 당사·그룹 관련만. 노란 선은 당사 연결 이슈.', s_today)}
 {section('ministry', '정부 부처별 주요일정', '이투데이 경제·사회부처 주간 일정 중 당사 관련 항목 요약. 날짜순, 보라색은 CJ그룹 계열사 방문·간담회.', mins)}
 {section('assembly', '국회동향', '국감 · 예결위 · 정기국회 · 국회 주최 행사 · 관련 세미나.', s_asm)}
@@ -227,25 +158,16 @@ section{scroll-margin-top:52px}h2{font-size:16px;font-weight:600;margin:0}h2 .n{
 .tt{margin-top:2px}.tt a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}.sub{font-size:12.5px;color:var(--muted);margin-top:2px}
 .tag{display:inline-block;font-size:11.5px;padding:0 7px;border-radius:999px;border:1px solid var(--line);color:var(--fg)}.tag.rel{border-color:var(--warn);color:var(--warn)}.tag.risk{border-color:var(--bad);color:var(--bad)}.tag.opp{border-color:var(--ok);color:var(--ok)}
 .dd{font-weight:600}.dd.hot{color:var(--bad)}.day{font-size:12px;font-weight:600;padding:10px 0 2px;border-top:1px solid var(--line)}.day:first-child{border-top:0;padding-top:0}
-pre{white-space:pre-wrap;word-break:break-all;font-family:inherit;font-size:12.5px;line-height:1.6;margin:8px 0 0;max-height:300px;overflow:auto;padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r)}
-.btns{display:flex;gap:8px;margin-top:8px}.btn{flex:1;font:inherit;font-size:13px;padding:10px;border-radius:var(--r);border:1px solid var(--line);background:var(--bg);color:var(--fg)}.btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .pager{display:flex;justify-content:space-between;font-size:13px}.pager a{color:var(--fg)}.foot{font-size:12px;color:var(--muted)}.empty{font-size:13px;color:var(--muted);padding:8px 0}
 .arch a{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);color:var(--fg);text-decoration:none}.arch a:first-child{border-top:0}
 '''
-JS = '''<script>
-(function(){var t=document.getElementById('bt');if(!t)return;var txt=t.textContent;
-function done(b,m,o){b.textContent=m;setTimeout(function(){b.textContent=o},2000)}
-document.getElementById('copy').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(function(){done(b,'복사됨','복사')},function(){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done(b,'복사됨','복사')}catch(e){done(b,'길게 눌러 복사','복사')}})};
-document.getElementById('share').onclick=function(){var b=this;if(navigator.share){navigator.share({title:'전략지원 이슈레이더',text:txt}).catch(function(){});return}
-location.href='https://t.me/share/url?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(txt)};
-var s2=document.getElementById('st'),c2=document.getElementById('copy2');if(s2&&c2){c2.onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(s2.textContent):Promise.reject()).then(function(){done(b,'복사됨','복사')},function(){done(b,'길게 눌러 복사','복사')})}}})();
-</script>'''
+
 
 
 def page(title, body, depth=0):
     return f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#1f1e1b"><title>{e(title)}</title><style>{CSS}</style></head>
-<body><div class="wrap">{body}</div>{JS}</body></html>'''
+<body><div class="wrap">{body}</div></body></html>'''
 
 
 def main():
@@ -260,9 +182,8 @@ def main():
     (OUT / 'archive.html').write_text(page('이슈레이더 지난 리포트', f'<header><h1>지난 리포트</h1><div class="asof">총 {len(days)}건 · <a href="index.html">최신 리포트</a></div></header><div class="card arch">{rows}</div>'), encoding='utf-8')
     (OUT / 'robots.txt').write_text('User-agent: *\nDisallow: /\n', encoding='utf-8')
     (OUT / '.nojekyll').write_text('', encoding='utf-8')
-    (OUT / 'latest-brief.txt').write_text(brief(load(latest), latest) + '\n', encoding='utf-8')
-    st = schedule_text(latest)
-    (OUT / 'latest-schedule.txt').write_text(st + '\n' if st else '', encoding='utf-8')
+    import telegram_text
+    telegram_text.main(latest)  # 텔레그램 텍스트는 사이트와 분리, telegram/ 폴더에만 저장
     print('built', len(days), 'reports; latest', latest)
 
 
