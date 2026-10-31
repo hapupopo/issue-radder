@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""docs/latest-brief.txt 를 텔레그램으로 전송 (4,000자 단위로 나눠 보냄)."""
+"""telegram/latest-brief.txt 를 텔레그램으로 전송 (4,000자 단위로 나눠 보냄)."""
 import json, os, sys, urllib.request
 token, chat = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip(), (os.environ.get('TELEGRAM_CHAT_ID') or '').strip()
 token = token[3:] if token.lower().startswith('bot') else token
 if not token or not chat:
     sys.exit('TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 시크릿이 없습니다.')
 import html
-path = sys.argv[1] if len(sys.argv) > 1 else 'docs/latest-brief.txt'
+path = sys.argv[1] if len(sys.argv) > 1 else 'telegram/latest-brief.txt'
 raw = open(path, encoding='utf-8').read().strip() if os.path.exists(path) else ''
 if not raw:
     print(f'{path} 비어 있음 — 전송 생략'); sys.exit(0)
