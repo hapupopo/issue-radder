@@ -27,6 +27,9 @@
 - 전일 폴더를 복사해 시작하고, 지난 항목은 유지(assembly·support는 날짜가 지나도 남김), news는 7일 넘은 것 제거.
 - **공개 사이트용이므로 내부 대관 메모(질의자료 제공, 참여·미참여 판단, 내부 대응 계획)는 쓰지 않는다.**
 
+## 텔레그램 텍스트는 사이트와 분리
+- 텔레그램 공유 텍스트 2종(금일 주요일정, 오늘의 브리핑)은 **공개 사이트·대시보드 화면에 넣지 않는다.** 서식 수정도 `telegram_text.py`에서만 하고, 결과물은 `telegram/` 폴더에만 둔다.
+
 ## 3. 빌드·배포
 ```
 python3 build.py      # docs/ 재생성
@@ -42,7 +45,7 @@ claude.ai 대시보드 '전략지원 이슈레이더'(https://claude.ai/artifact
 완성된 '오늘의 브리핑' 텍스트를 SendUserMessage로 사용자에게 보낸다(텔레그램 붙여넣기용).
 
 ## 6. 텔레그램 자동 전송
-`build.py`가 `docs/latest-brief.txt`(브리핑 + 리포트 링크)를 만들고, main에 push되면 GitHub Actions(`.github/workflows/telegram.yml`)가 텔레그램으로 보낸다.
+`build.py`가 `telegram_text.py`를 불러 `telegram/latest-schedule.txt`·`telegram/latest-brief.txt`(브리핑 + 리포트 링크)를 만들고, main에 push되면 GitHub Actions(`.github/workflows/telegram.yml`)가 텔레그램으로 보낸다.
 필요한 저장소 시크릿: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 수동 재전송은 Actions 탭에서 'Run workflow'.
 
 ## 7. 키워드 기사 알림 (현재 중지됨 — 수동 실행만 가능)
