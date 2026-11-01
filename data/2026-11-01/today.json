@@ -1,0 +1,46 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "통상업무(공개 일정 없음)",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6338669"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "",
+  "title": "통상업무(공개 일정 없음)",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6338669"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "",
+  "title": "위원회·본회의 일정 없음(일요일)",
+  "place": "",
+  "rel": "",
+  "note": "내일(11/2) 10:00 본회의 2027년도 예산안 제안설명 — 이번 주 예결위 종합정책질의(11/4~5)",
+  "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01092246645641456"
+ },
+ {
+  "id": "t04",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 수산양식박람회 마지막 날(10/30~11/1)",
+  "place": "서울광장",
+  "rel": "육상김",
+  "note": "스마트양식·육상양식 전시",
+  "url": "https://www.dailian.co.kr/news/view/1707773/"
+ }
+]

@@ -1,0 +1,90 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "10:00",
+  "title": "2027년도 예산안 시정연설",
+  "place": "국회 본회의장",
+  "rel": "정부 R&D",
+  "note": "820.9조 원 규모 예산안 — 09:40 의장 주재 사전환담",
+  "url": "https://www.newspim.com/news/view/20261101000124"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "15:00",
+  "title": "가습기살균제배상심의위원회 위촉식",
+  "place": "정부서울청사",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/president/6339123"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "본회의 — 2027년도 예산안 및 기금운용계획안 정부 시정연설",
+  "place": "본회의장",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261101000124"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "재경위",
+  "time": "11:00",
+  "title": "재정경제기획위원회 조세소위원회",
+  "place": "본관 431호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261101000124"
+ },
+ {
+  "id": "t06",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "15:30",
+  "title": "장관, 벼 수확·매입 현장 방문",
+  "place": "서산",
+  "rel": "식품정책",
+  "note": "쌀값·즉석밥 원료 수급 관련",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t07",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "김장철 배추김치·양념류 원산지 표시 집중단속 운영",
+  "place": "",
+  "rel": "식품정책",
+  "note": "11/3 김장재료 수급 안정 대책 발표 예정",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "국산 콩 생산·가공업계 상생협의회",
+  "place": "",
+  "rel": "식품정책",
+  "note": "국산 원료 조달 관련",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "제20회 세계해양포럼 개최(11/2~3)",
+  "place": "부산",
+  "rel": "수산",
+  "note": "장관 11/3 16:30 참석",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ }
+]
