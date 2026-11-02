@@ -1,0 +1,29 @@
+name: 텔레그램 파일 전송(수동)
+on:
+  workflow_dispatch:
+    inputs:
+      path:
+        description: '보낼 파일 경로(예: telegram/a4/2026-11-02.png). 쉼표로 여러 개'
+        required: true
+      caption:
+        description: '첫 파일에 붙일 설명'
+        required: false
+        default: ''
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send files to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PATHS: ${{ inputs.path }}
+          CAPTION: ${{ inputs.caption }}
+        run: |
+          first=1
+          IFS=',' read -ra FILES <<< "$PATHS"
+          for f in "${FILES[@]}"; do
+            f=$(echo "$f" | xargs)
+            if [ $first = 1 ]; then python3 scripts/telegram_send_file.py "$f" "$CAPTION"; first=0; else python3 scripts/telegram_send_file.py "$f"; fi
+          done
