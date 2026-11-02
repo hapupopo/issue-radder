@@ -2,7 +2,9 @@
 """텔레그램 공유 텍스트 2종 생성(사이트와 별도 관리).
 
 ① telegram/latest-schedule.txt : '[금일(M/D) 정부, 국회 주요일정]'
-② telegram/latest-brief.txt    : 오늘의 브리핑(🔗 전체보기 링크 포함)
+② telegram/latest-brief.txt    : 오늘의 브리핑(현재 전송 안 함, 같은 날 재전송 방지 비교용 + 이미지 실패 시 대체 전송)
+③ telegram/latest-link.txt     : 리포트 링크 한 줄
+텔레그램 전송 순서(2026-11-03~): ① 금일 일정 → ② A4 이미지(telegram/a4.py) → ③ 링크
 
 이 텍스트는 공개 사이트(docs/)에 넣지 않는다. 서식을 고칠 때는 이 파일만 고친다.
 단독 실행: python3 telegram_text.py [YYYY-MM-DD]  (build.py 가 자동 호출)
@@ -85,6 +87,7 @@ def main(day=None):
         day = sorted(p.name for p in DATA.iterdir() if p.is_dir() and all((p / f'{f}.json').exists() for f in FILES))[-1]
     TG.mkdir(exist_ok=True)
     (TG / 'latest-brief.txt').write_text(brief(load(day), day) + '\n', encoding='utf-8')
+    (TG / 'latest-link.txt').write_text(f"📡 전략지원 이슈레이더 | {fmt(day)}\n🔗 {SITE}/reports/{day}.html\n", encoding='utf-8')
     st = schedule_text(day)
     (TG / 'latest-schedule.txt').write_text(st + '\n' if st else '', encoding='utf-8')
     print('telegram texts for', day)

@@ -1,2 +1,5 @@
 .state/
 __pycache__/
+telegram/a4/latest.html
+telegram/a4/latest.png
+node_modules/

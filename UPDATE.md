@@ -22,6 +22,8 @@
   - sec=부처: **농식품부 장관 일정 전부**(없으면 생략 → '공개 일정 없음'). 산업부·기후부·해수부·재경부·기획처 등 다른 부처는 **당사·CJ그룹과 관련 있는 경우에만**(예: 기획처 장관 CJ 4DPLEX 방문). who=장관/차관/통상교섭본부장 등.
   - 출처: 뉴스핌·뉴스1 '오늘의 정치일정/국회일정/국감', 뉴스통 주간캘린더, 이투데이 주간일정, 총리실 일정. 이름은 `config/officials.json`(바뀌면 갱신).
 
+- **a4** (텔레그램 A4 이미지 맨 위 '오늘의 핵심'): `data/YYYY-MM-DD/a4.json` = `{"key": [{"head": "굵은 제목", "body": "한 줄 설명"}]}` 3건. 그날 가장 중요한 정부·국회 동향/당사 관련 이슈를 서로 다른 주제로 고른다(같은 이슈 3건 금지). head 30자, body 50자 안팎. 수집한 데이터에 있는 사실만 쓴다. 없으면 집중이슈에서 자동으로 고른다.
+
 ## 2. 저장
 `data/YYYY-MM-DD/` 에 8개 JSON(today, ministry, assembly, news, press, support, focus, people) + `govsched.json`. 필드는 직전 날짜 폴더와 동일.
 - 전일 폴더를 복사해 시작하고, 지난 항목은 유지(assembly·support는 날짜가 지나도 남김), news는 7일 넘은 것 제거.
@@ -45,6 +47,9 @@ claude.ai 대시보드 '전략지원 이슈레이더'(https://claude.ai/artifact
 완성된 '오늘의 브리핑' 텍스트를 SendUserMessage로 사용자에게 보낸다(텔레그램 붙여넣기용).
 
 ## 6. 텔레그램 자동 전송
+**전송 순서(2026-11-03부터): ① 금일 정부·국회 주요일정(텍스트) → ② 전략지원 이슈레이더 A4 이미지 → ③ 이슈레이더 링크.** 텍스트 브리핑은 보내지 않는다(이미지 생성 실패 시에만 대체 전송).
+A4 이미지는 GitHub Actions 안에서 `telegram/a4.py`(HTML) + `scripts/render_a4.js`(PNG)로 만든다. 전송 없이 이미지만 확인하려면 Actions → '텔레그램 브리핑 전송' → Run workflow → send=no, 결과물(issue-radar-a4)에서 내려받는다.
+
 `build.py`가 `telegram_text.py`를 불러 `telegram/latest-schedule.txt`·`telegram/latest-brief.txt`(브리핑 + 리포트 링크)를 만들고, main에 push되면 GitHub Actions(`.github/workflows/telegram.yml`)가 텔레그램으로 보낸다.
 필요한 저장소 시크릿: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 수동 재전송은 Actions 탭에서 'Run workflow'.
 
