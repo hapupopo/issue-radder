@@ -12,7 +12,10 @@ if not raw:
     print(f'{path} 비어 있음 — 전송 생략'); sys.exit(0)
 lines = []
 for line in raw.split('\n'):
-    if line.startswith('🔗 ') and line[2:].strip().startswith('http'):
+    if line.startswith('🔗 ') and ' | http' in line:  # '🔗 표시문구 | URL' → 표시문구에 링크
+        label, url = line[2:].rsplit(' | ', 1)
+        lines.append(f'🔗 <a href="{html.escape(url.strip(), quote=True)}">{html.escape(label.strip(), quote=False)}</a>')
+    elif line.startswith('🔗 ') and line[2:].strip().startswith('http'):
         lines.append(f'🔗 <a href="{html.escape(line[2:].strip(), quote=True)}">전체보기</a>')
     else:
         lines.append(html.escape(line, quote=False))

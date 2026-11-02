@@ -87,7 +87,7 @@ def main(day=None):
         day = sorted(p.name for p in DATA.iterdir() if p.is_dir() and all((p / f'{f}.json').exists() for f in FILES))[-1]
     TG.mkdir(exist_ok=True)
     (TG / 'latest-brief.txt').write_text(brief(load(day), day) + '\n', encoding='utf-8')
-    (TG / 'latest-link.txt').write_text(f"📡 전략지원 이슈레이더 | {fmt(day)}\n🔗 {SITE}/reports/{day}.html\n", encoding='utf-8')
+    (TG / 'latest-link.txt').write_text(f"🔗 전략지원 이슈레이더 전체보기 | {SITE}/reports/{day}.html\n", encoding='utf-8')
     st = schedule_text(day)
     (TG / 'latest-schedule.txt').write_text(st + '\n' if st else '', encoding='utf-8')
     print('telegram texts for', day)
