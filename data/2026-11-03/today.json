@@ -1,0 +1,145 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "10:00",
+  "title": "제47회 국무회의",
+  "place": "청와대",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6340514"
+ },
+ {
+  "id": "t02",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "15:30",
+  "title": "한-튀르키예 정상회담",
+  "place": "청와대",
+  "rel": "",
+  "note": "에르도안 대통령 국빈 방한",
+  "url": "https://www.news1.kr/politics/assembly/6340514"
+ },
+ {
+  "id": "t03",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "18:30",
+  "title": "튀르키예 정상 방한 계기 국빈만찬",
+  "place": "영빈관",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6340514"
+ },
+ {
+  "id": "t04",
+  "cat": "총리",
+  "org": "총리",
+  "time": "10:00",
+  "title": "국무회의 참석",
+  "place": "청와대",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14789166"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "농해수위",
+  "time": "10:00",
+  "title": "농림축산식품법안심사소위원회",
+  "place": "본관 501호",
+  "rel": "식품정책",
+  "note": "농식품부 차관 참석",
+  "url": "https://www.newspim.com/news/view/20261102001598"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "재경위",
+  "time": "10:00",
+  "title": "전체회의",
+  "place": "본관 430호",
+  "rel": "정부 R&D",
+  "note": "기획처 차관 10:00, 장관 16:00 출석(이투데이 주간일정)",
+  "url": "https://www.newspim.com/news/view/20261102001598"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "운영위",
+  "time": "13:30",
+  "title": "국회운영위원회 전체회의",
+  "place": "본관 319호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261102001598"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "08:00",
+  "title": "10월 소비자물가동향 발표·물가관계차관회의",
+  "place": "",
+  "rel": "식품물가",
+  "note": "가공식품·외식 수치는 이번 수집 시점에 확인되지 않음",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "2026년 김장재료 수급 안정 대책 발표",
+  "place": "",
+  "rel": "식품물가",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t10",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "2026년 국가식품클러스터 국제콘퍼런스",
+  "place": "",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "20:00",
+  "title": "장관, 김장배추 수급 현장 점검",
+  "place": "서울",
+  "rel": "식품물가",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14789167"
+ },
+ {
+  "id": "t12",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "16:30",
+  "title": "장관, 제20회 세계해양포럼",
+  "place": "부산",
+  "rel": "수산",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t13",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026년 해양수산과학기술주간 개최",
+  "place": "",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ }
+]
