@@ -3,7 +3,9 @@
 사용: python3 scripts/telegram_send_file.py <파일경로> [캡션]
 TELEGRAM_CHAT_ID 가 쉼표로 여러 개면 모두에게 보냄."""
 import json, os, sys, uuid, urllib.request
-token, chat = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip(), (os.environ.get('TELEGRAM_CHAT_ID') or '').strip()
+token = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip()
+# 기본 채널(TELEGRAM_CHAT_ID)에 추가 수신처(TELEGRAM_CHAT_ID_EXTRA, 쉼표로 여러 개)를 더해 모두에게 보낸다
+chat = ','.join(x for x in [(os.environ.get('TELEGRAM_CHAT_ID') or '').strip(), (os.environ.get('TELEGRAM_CHAT_ID_EXTRA') or '').strip()] if x)
 token = token[3:] if token.lower().startswith('bot') else token
 if not token or not chat:
     sys.exit('TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 시크릿이 없습니다.')
@@ -14,7 +16,7 @@ if not os.path.exists(path):
 photo = path.lower().endswith(('.png', '.jpg', '.jpeg'))
 method, field = ('sendPhoto', 'photo') if photo else ('sendDocument', 'document')
 data = open(path, 'rb').read()
-for target in [x.strip() for x in chat.split(',') if x.strip()]:
+for target in list(dict.fromkeys(x.strip() for x in chat.split(',') if x.strip())):
     b = uuid.uuid4().hex
     parts = []
     for k, v in [('chat_id', target), ('caption', caption)]:

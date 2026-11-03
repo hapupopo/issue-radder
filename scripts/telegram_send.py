@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """telegram/latest-brief.txt 를 텔레그램으로 전송 (4,000자 단위로 나눠 보냄)."""
 import json, os, sys, urllib.request
-token, chat = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip(), (os.environ.get('TELEGRAM_CHAT_ID') or '').strip()
+token = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip()
+# 기본 채널(TELEGRAM_CHAT_ID)에 추가 수신처(TELEGRAM_CHAT_ID_EXTRA, 쉼표로 여러 개)를 더해 모두에게 보낸다
+chat = ','.join(x for x in [(os.environ.get('TELEGRAM_CHAT_ID') or '').strip(), (os.environ.get('TELEGRAM_CHAT_ID_EXTRA') or '').strip()] if x)
 token = token[3:] if token.lower().startswith('bot') else token
 if not token or not chat:
     sys.exit('TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 시크릿이 없습니다.')
@@ -26,7 +28,7 @@ for line in text.split('\n'):
         chunks.append(cur); cur = ''
     cur += line + '\n'
 chunks.append(cur)
-targets = [x.strip() for x in chat.split(',') if x.strip()]
+targets = list(dict.fromkeys(x.strip() for x in chat.split(',') if x.strip()))
 for target in targets:
   for c in chunks:
       req = urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage',

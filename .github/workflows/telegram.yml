@@ -49,6 +49,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_ID_EXTRA: ${{ secrets.TELEGRAM_CHAT_ID_EXTRA }}
         run: |
           python3 scripts/telegram_send.py telegram/latest-schedule.txt
           if [ "${{ steps.a4.outcome }}" = "success" ]; then
