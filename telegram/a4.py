@@ -59,9 +59,13 @@ def make(day):
     # 이번 주 부처 일정(내일~6일 뒤)
     end = (x + dt.timedelta(days=6)).isoformat()
     mins = sorted([r for r in D['ministry'] if day < r['date'] <= end], key=lambda r: (r['date'], r.get('time') or '99'))
-    mins = sorted(mins, key=lambda r: (0 if r.get('cj') else 1, r['date'], r.get('time') or '99'))[:7]
+    # 우선순위: CJ그룹 관련·필수(must) → 농식품부(최대 5건) → 그 외 부처, 최대 8건
+    cj = [r for r in mins if r.get('cj') or r.get('must')]
+    mafra = [r for r in mins if not r.get('cj') and r['org'] == '농식품부']
+    other = [r for r in mins if not r.get('cj') and r['org'] != '농식품부']
+    mins = (cj + mafra[:5] + other + mafra[5:])[:8]
     mins = sorted(mins, key=lambda r: (r['date'], r.get('time') or '99'))
-    s_min = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b></td><td>{"<span class=cj>CJ</span>" if r.get("cj") else ""}<span class="who">{e(r["org"])}</span> {e(cut(r["title"], 46))}</td></tr>' for r in mins)
+    s_min = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b></td><td>{"<span class=cj>CJ</span>" if r.get("cj") else ""}<span class="who">{e(r["org"])}</span> {e(cut(r["title"], 46))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in mins)
 
     # 국회: 2주 이내 + 필수 30일
     asm = [r for r in D['assembly'] if (n := diff(day, r['date'])) is not None and n > 0 and (n <= 14 or (r.get('must') and n <= 30))]
@@ -79,12 +83,14 @@ def make(day):
     # 지원사업·R&D: 마감 남은 것 + 예정
     def nxt(r):
         c, o = r.get('close'), r.get('open')
-        if c and len(c) == 10 and c >= day:
+        if c and len(c) == 10 and day <= c <= (x + dt.timedelta(days=90)).isoformat():  # 다년 사업 종료일 등 먼 기한은 제외
             return c, fmt(c)
         if o and o > day[:len(o)]:
             return (o + '-99')[:10], (fmt(o) + (' 예상' if len(o) == 7 else '')).replace('월 중 예상', '월 예상')
         return None
-    sup = sorted([(k, r) for r in D['support'] if (k := nxt(r))], key=lambda kr: kr[0][0])[:3]
+    # '예상'(추정 일정)은 이미지에서 뺀다 (KIM 요청 2026-11-03)
+    est = lambda r: any(len(r.get(f) or '') == 7 for f in ('open', 'close')) or '예상' in (r.get('note') or '') or '예정' in r['name']
+    sup = sorted([(k, r) for r in D['support'] if not est(r) and (k := nxt(r))], key=lambda kr: kr[0][0])[:3]
     s_sup = ''.join(f'<tr><td class="t"><b>{e(k[1])}</b></td><td>{e(cut(r["name"], 44))}</td></tr>' for k, r in sup) or '<tr><td>다가오는 일정 없음</td></tr>'
 
     date_txt = f'{x.year}. {x.month}. {x.day}.({WD[x.weekday()]})'
