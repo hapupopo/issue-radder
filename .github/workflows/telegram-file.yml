@@ -9,6 +9,10 @@ on:
         description: '첫 파일에 붙일 설명'
         required: false
         default: ''
+      only_extra:
+        description: 'yes = 추가 수신처(TELEGRAM_CHAT_ID_EXTRA)에만 보냄(시험용)'
+        required: false
+        default: 'no'
 jobs:
   send:
     runs-on: ubuntu-latest
@@ -21,6 +25,7 @@ jobs:
           TELEGRAM_CHAT_ID_EXTRA: ${{ secrets.TELEGRAM_CHAT_ID_EXTRA }}
           PATHS: ${{ inputs.path }}
           CAPTION: ${{ inputs.caption }}
+          TELEGRAM_ONLY_EXTRA: ${{ inputs.only_extra }}
         run: |
           first=1
           IFS=',' read -ra FILES <<< "$PATHS"
