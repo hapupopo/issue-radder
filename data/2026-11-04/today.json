@@ -1,0 +1,145 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "대한민국헌정회 회장단 초청 오찬",
+  "place": "청와대",
+  "rel": "",
+  "note": "시각 미공개",
+  "url": "https://www.ajunews.com/view/20261102182537464"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "10:00",
+  "title": "예결위 종합정책질의",
+  "place": "국회",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14791985"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "예결위",
+  "time": "10:00",
+  "title": "전체회의 — 2027년도 예산안 종합정책질의(11/4~5)",
+  "place": "제2회의장",
+  "rel": "정부 R&D",
+  "note": "농식품·해수·기후부 장관, 부총리·기획처 장관 출석",
+  "url": "https://www.newspim.com/news/view/20261103001398"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "재경위",
+  "time": "10:00",
+  "title": "경제소위원회",
+  "place": "본관 431호",
+  "rel": "정부 R&D",
+  "note": "재경부 2차관·기획처 차관 참석(이투데이 주간일정)",
+  "url": "https://www.newspim.com/news/view/20261103001398"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "법사위",
+  "time": "10:00",
+  "title": "전체회의",
+  "place": "본관 406호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261103001398"
+ },
+ {
+  "id": "t06",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "10:00",
+  "title": "장관, 예결위 종합정책질의",
+  "place": "국회",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t07",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "10:30",
+  "title": "차관, 2026 푸드위크 코리아 개막식(11/4~7)",
+  "place": "코엑스",
+  "rel": "가공식품 수출",
+  "note": "47개국 963개사. CJ 참가 여부는 보도상 확인되지 않음",
+  "url": "https://zdnet.co.kr/view/?no=20261102170705"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "제16회 국가식품클러스터 국제콘퍼런스·고령친화식품 심포지엄(오후)",
+  "place": "코엑스",
+  "rel": "식품정책",
+  "note": "식품산업 AI·디지털 트윈·협동로봇",
+  "url": "https://nocutnews.co.kr/news/6601061"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "2027 식품외식산업전망(11/4~5)",
+  "place": "코엑스 401호",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://foodtoday.or.kr/news/article.html?no=209116"
+ },
+ {
+  "id": "t10",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "13:00",
+  "title": "장관, 2026 해양수산과학기술주간 개막식(11/4~6)",
+  "place": "대한상공회의소",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.fnnews.com/news/202611030922051128"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "13:30",
+  "title": "차관, 부산국제수산EXPO 개막식",
+  "place": "벡스코",
+  "rel": "김 수출",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14791985"
+ },
+ {
+  "id": "t12",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "10:00",
+  "title": "부총리, 예결위 종합정책질의 / 2차관, 재경위 경제재정소위",
+  "place": "국회",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t13",
+  "cat": "부처",
+  "org": "기후부",
+  "time": "10:00",
+  "title": "장관, 예결위 종합정책질의",
+  "place": "국회",
+  "rel": "PHA·생분해",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ }
+]
