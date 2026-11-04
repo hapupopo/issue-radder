@@ -1,0 +1,167 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "12:00",
+  "title": "제48회 상하이 국제기능올림픽 선수단 격려 오찬",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6343465"
+ },
+ {
+  "id": "t02",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "14:00",
+  "title": "수석보좌관회의 주재",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6343465"
+ },
+ {
+  "id": "t03",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "21:00",
+  "title": "유튜브 '대통령의 Y' 첫 공개",
+  "place": "KTV·대통령 유튜브",
+  "rel": "",
+  "note": "사전 녹화. 2~3주 간격 방영",
+  "url": "https://www.hankookilbo.com/news/article/A2026110416070004661"
+ },
+ {
+  "id": "t04",
+  "cat": "총리",
+  "org": "총리",
+  "time": "10:00",
+  "title": "예결위 종합정책질의(이틀차)",
+  "place": "국회",
+  "rel": "",
+  "note": "",
+  "url": "https://supple.kr/news/cmw2ntx81e0gh14212k243vfr"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "예결위",
+  "time": "10:00",
+  "title": "전체회의 — 2027년도 예산안 종합정책질의(이틀차)",
+  "place": "제2회의장",
+  "rel": "정부 R&D",
+  "note": "총리·부총리 답변. 미래대응기금 쟁점",
+  "url": "https://www.newspim.com/news/view/20261104001392"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "농해수위",
+  "time": "10:00",
+  "title": "전체회의 — 농협법 개정안 상정 예정",
+  "place": "본관 501호",
+  "rel": "식품정책",
+  "note": "머니투데이 11/3 보도 기준. 예산안 상정 여부는 보도상 확인되지 않음",
+  "url": "https://www.newspim.com/news/view/20261104001392"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "국회",
+  "time": "11:00",
+  "title": "2026 국회 입법박람회 개회(11/5~6)",
+  "place": "국회 중앙잔디광장",
+  "rel": "대관 네트워킹",
+  "note": "88개 기관·기업·단체. CJ 참여 여부는 보도상 확인되지 않음",
+  "url": "https://news.jkn.co.kr/post/1065752"
+ },
+ {
+  "id": "t08",
+  "cat": "국회",
+  "org": "문체위",
+  "time": "10:00",
+  "title": "전체회의",
+  "place": "본관 506호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261104001392"
+ },
+ {
+  "id": "t09",
+  "cat": "국회",
+  "org": "정무위",
+  "time": "14:00",
+  "title": "전체회의",
+  "place": "본관 604호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261104001392"
+ },
+ {
+  "id": "t10",
+  "cat": "국회",
+  "org": "본회의",
+  "time": "14:00",
+  "title": "본회의(특검법 등 상정 협의 중)",
+  "place": "본회의장",
+  "rel": "",
+  "note": "시각은 정당 대표 일정 기준. 개최·안건은 여야 협상에 따라 유동",
+  "url": "https://www.newspim.com/news/view/20261105000004"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "10:00",
+  "title": "장관, 상임위 전체회의·예결위 종합정책질의",
+  "place": "국회",
+  "rel": "식품정책",
+  "note": "주간일정 기준",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t12",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "10:00",
+  "title": "장관, 상임위 전체회의",
+  "place": "국회",
+  "rel": "김 수출",
+  "note": "주간일정 기준",
+  "url": "https://www.etoday.co.kr/news/view/2642583"
+ },
+ {
+  "id": "t13",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "10:00",
+  "title": "부총리, 예결위 종합정책질의",
+  "place": "국회",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://supple.kr/news/cmw2ntx81e0gh14212k243vfr"
+ },
+ {
+  "id": "t14",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "2026 푸드위크 코리아(11/4~7)·2027 식품외식산업전망(11/4~5)",
+  "place": "코엑스",
+  "rel": "가공식품 수출",
+  "note": "",
+  "url": "https://foodtoday.or.kr/news/article.html?no=209116"
+ },
+ {
+  "id": "t15",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "해양수산과학기술주간(11/4~6)",
+  "place": "대한상공회의소",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.fnnews.com/news/202611030922051128"
+ }
+]
