@@ -1,0 +1,156 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "15:00",
+  "title": "나르바예바 우즈베키스탄 상원의장 접견",
+  "place": "청와대 본관",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261108000169"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "",
+  "title": "통상업무(공개 일정 미확인)",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14802018"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "예결위 전체회의 — 경제부처 부별심사(11/9~10)",
+  "place": "제2회의장",
+  "rel": "정부 R&D",
+  "note": "재경부·기획처·농식품부·해수부·기후부·산업부·과기정통부 등 출석. 국민의힘 27조 이상 감액 예고",
+  "url": "https://www.news1.kr/politics/assembly/6346816"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "산자위 전체회의(산업부 장관 출석)",
+  "place": "본관 534호",
+  "rel": "통상",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261108000161"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "국회",
+  "time": "14:00",
+  "title": "기후환노위 전체회의(기후부 장관·2차관 출석)",
+  "place": "본관 622호",
+  "rel": "PHA·생분해",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261108000161"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "국회",
+  "time": "14:00",
+  "title": "교육위 전체회의(교육부 장관·차관 출석)",
+  "place": "본관 522호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261108000161"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "법사위 예결소위(406호)·문체위 예결소위(10:30 506호)·정무위(14:00 604호)·국방위(14:00 419호)",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261108000161"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "10:00",
+  "title": "장관, 예결위 경제부처 부별심사",
+  "place": "",
+  "rel": "식품정책",
+  "note": "농식품 예산 질의 확인",
+  "url": "https://www.etoday.co.kr/news/view/2645352"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "10:00",
+  "title": "장관, 예결위 부별심사(09:00 IHO 협정 서명식)",
+  "place": "",
+  "rel": "김 수출",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2645352"
+ },
+ {
+  "id": "t10",
+  "cat": "부처",
+  "org": "기후부",
+  "time": "10:00",
+  "title": "장관, 예결위 부별심사·14:00 기후환노위 전체회의",
+  "place": "국회",
+  "rel": "PHA·생분해",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14802018"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "10:00",
+  "title": "부총리, 예결위 경제 분야 부별심사",
+  "place": "국회",
+  "rel": "식품물가",
+  "note": "KDI 경제동향 발표",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14802018"
+ },
+ {
+  "id": "t12",
+  "cat": "부처",
+  "org": "과기정통부",
+  "time": "10:00",
+  "title": "1차관·혁신본부장, 예결위 부별심사",
+  "place": "국회",
+  "rel": "정부 R&D",
+  "note": "R&D 예산 39.5조 심사",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14802018"
+ },
+ {
+  "id": "t13",
+  "cat": "부처",
+  "org": "식약처",
+  "time": "10:00",
+  "title": "처장, 예결위 전체회의",
+  "place": "",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14802018"
+ },
+ {
+  "id": "t14",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28)",
+  "place": "17개국 144개 매장",
+  "rel": "김 수출",
+  "note": "김·어묵 등 할인 판매",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209456"
+ }
+]
