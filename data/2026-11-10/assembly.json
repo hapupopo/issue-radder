@@ -1,0 +1,532 @@
+[
+ {
+  "id": "a01",
+  "date": "2026-10-07",
+  "type": "국감",
+  "title": "농해수위 농식품부 국감 — CJ제일제당·삼양사 대표 출석",
+  "detail": "설탕·밀가루 등 담합 공식 사과, 협회 탈퇴·내부통제 강화 약속",
+  "rel": "CJ 리스크",
+  "url": "https://www.biztribune.co.kr/news/articleView.html?idxno=360240",
+  "must": false
+ },
+ {
+  "id": "a02",
+  "date": "2026-10-21",
+  "type": "국감",
+  "title": "기후환노위 김위상 의원, 종이·생분해 빨대 환경영향 질의",
+  "detail": "기후부 용역: 생분해 플라스틱 인체발암 영향 일반 플라스틱의 3.34배(종이 6.33배)",
+  "rel": "PHA·생분해",
+  "url": "https://www.newspim.com/news/view/20261021000281",
+  "must": false
+ },
+ {
+  "id": "a03",
+  "date": "2026-10-22",
+  "type": "국감",
+  "title": "농해수위 농식품부 종합감사",
+  "detail": "농지 전수조사·계란 수급 등이 쟁점. 식품기업 직접 쟁점은 확인되지 않음",
+  "rel": "식품정책",
+  "url": "https://www.mt.co.kr/society/2026/10/22/2026102219322527938",
+  "must": false
+ },
+ {
+  "id": "a04",
+  "date": "2026-10-23",
+  "type": "국감",
+  "title": "농해수위 해수부 종합감사 · 교육위 교육부 종합감사",
+  "detail": "해수부 종감: 제주신항·평택항 지연, 여객선 안전, 해양수산 R&D 사업화 저조 지적. 김·식품 직접 질의는 보도상 확인되지 않음",
+  "rel": "육상김·김 수출",
+  "url": "https://www.mediapen.com/news/view/1132184",
+  "must": false
+ },
+ {
+  "id": "a05",
+  "date": "2026-10-26",
+  "type": "국감",
+  "title": "기후환노위 기후에너지환경부 종합감사",
+  "detail": "기후부·기상청·고준위방폐물관리위 10:00 국회 — 생분해·포장규제·바이오가스 질의 여부 확인",
+  "rel": "바이오가스화",
+  "url": "https://www.newspim.com/news/view/20261025000141",
+  "must": false
+ },
+ {
+  "id": "a06",
+  "date": "2026-10-27",
+  "type": "국감",
+  "title": "복지위 종합감사(식약처 포함) · 외통위 · 기후환노위 고용노동부",
+  "detail": "10:00 — 복지부·질병청·식약처 등 전체 피감기관 대상, 식품안전 관련 질의 확인",
+  "rel": "식품정책",
+  "url": "https://www.newspim.com/news/view/20261026001186",
+  "must": false
+ },
+ {
+  "id": "a07",
+  "date": "2026-10-30",
+  "type": "국감",
+  "title": "국정감사 종료 (정보위·운영위 마지막 일정)",
+  "detail": "30일 운영위 국회사무처 등 6개 기관(10:00)·정보위 국방방첩본부·사이버작전사령부 — 25일간 국감 종료, 예산 심사 단계로 전환",
+  "rel": "",
+  "url": "https://www.news1.kr/politics/assembly/6336720",
+  "must": false
+ },
+ {
+  "id": "a09",
+  "date": "2026-11",
+  "type": "예산",
+  "title": "예결위 2027년도 예산안 심사(11월)",
+  "detail": "공청회 10/30 → 시정연설 11/2 → 종합정책질의 11/4~5 → 경제부처 부별심사 11/9~10 → 비경제부처 11/11~12 → 예산안조정소위 11/16~ → 예결위 의결 11/30 계획(경향 11/1). 39.5조 R&D 예산 포함",
+  "rel": "정부 R&D",
+  "url": "https://www.etoday.co.kr/news/view/2639732",
+  "must": false
+ },
+ {
+  "id": "a12",
+  "date": "2026-11-05",
+  "type": "행사",
+  "title": "2026 국회 입법박람회",
+  "detail": "11/5~6 국회 중앙잔디광장, 5일 11:00 개회·6일 17:15 폐회 — 88개 기관·기업·단체 참여. 경제존·입법존·미래존 등. CJ 참여 여부는 보도상 확인되지 않음",
+  "rel": "대관 네트워킹",
+  "url": "https://news.jkn.co.kr/post/1065752",
+  "must": true
+ },
+ {
+  "id": "a10",
+  "date": "2026-12-02",
+  "type": "예산",
+  "title": "2027년도 예산안 법정 처리기한",
+  "detail": "R&D·김 수출·바이오가스 관련 예산 증감 확인",
+  "rel": "정부 R&D",
+  "url": "",
+  "must": true
+ },
+ {
+  "id": "a11",
+  "date": "2026-12-09",
+  "type": "본회의",
+  "title": "정기국회 종료 (100일)",
+  "detail": "쟁점 법안 처리 시한",
+  "rel": "",
+  "url": "",
+  "must": false
+ },
+ {
+  "id": "a13",
+  "date": "2026-11-30",
+  "type": "예산",
+  "title": "상임위 2027년도 예산안 예비심사 기한",
+  "detail": "상임위 예비심사 후 예결위 심사, 12/2 의결 기한",
+  "rel": "정부 R&D",
+  "url": "https://www.lawmake.kr/issues/audit-2026",
+  "must": false
+ },
+ {
+  "id": "a14",
+  "date": "2026-10-27",
+  "type": "상임위",
+  "title": "농해수위 법안심사소위(농식품부 차관 참석)",
+  "detail": "10:00 — 식품·농업 법안 심사",
+  "rel": "식품정책",
+  "url": "https://www.etoday.co.kr/news/view/2639700",
+  "must": false
+ },
+ {
+  "id": "a15",
+  "date": "2026-10-27",
+  "type": "세미나",
+  "title": "푸드스마트유통 산업 육성 및 혁신전략 정책포럼",
+  "detail": "14:00 의원회관 제2소회의실, 박상웅 의원실 주최",
+  "rel": "식품정책",
+  "url": "https://www.newspim.com/news/view/20261026001250",
+  "must": false
+ },
+ {
+  "id": "a16",
+  "date": "2026-10-30",
+  "type": "예산",
+  "title": "예결위 2027년도 예산안 공청회",
+  "detail": "예산안 심사 개시(10/30 제2차 공청회 개최)",
+  "rel": "정부 R&D",
+  "url": "https://www.fnnews.com/news/202610231442490706",
+  "must": false
+ },
+ {
+  "id": "a17",
+  "date": "2026-11-04",
+  "type": "예산",
+  "title": "예결위 종합정책질의(11/4~5)",
+  "detail": "10:00 제2회의장 — 총리·부총리·관계 장관 출석. 국민의힘 27조 삭감·민주당 4대 분야 증액(뉴스1 11/4), 미래대응기금이 쟁점. 11/5 이틀차",
+  "rel": "정부 R&D",
+  "url": "https://www.etoday.co.kr/news/view/2643578",
+  "must": true
+ },
+ {
+  "id": "a18",
+  "date": "2026-11-09",
+  "type": "예산",
+  "title": "예결위 경제부처 부별심사(11/9~10)",
+  "detail": "농식품부·해수부·산업부·기후부 등 경제부처 예산 심사",
+  "rel": "정부 R&D",
+  "url": "https://www.etoday.co.kr/news/view/2639732",
+  "must": true
+ },
+ {
+  "id": "a19",
+  "date": "2026-11-16",
+  "type": "예산",
+  "title": "예결위 예산안조정소위 가동",
+  "detail": "증·감액 심사 — R&D·김 수출·바이오가스 사업 예산 확인",
+  "rel": "정부 R&D",
+  "url": "https://www.etoday.co.kr/news/view/2639732",
+  "must": true
+ },
+ {
+  "id": "a20",
+  "date": "2026-10-28",
+  "type": "국감",
+  "title": "정보위·성평등가족위 국정감사",
+  "detail": "겸임 상임위 국감은 30일까지",
+  "rel": "",
+  "url": "https://www.newspim.com/news/view/20261027001341",
+  "must": false
+ },
+ {
+  "id": "a21",
+  "date": "2026-10-28",
+  "type": "세미나",
+  "title": "어린이집 급간식비 격차해소 정책토론회",
+  "detail": "10:00 국회도서관 대강당, 고민정 의원실 주최",
+  "rel": "식품정책",
+  "url": "https://www.newspim.com/news/view/20261027001463",
+  "must": false
+ },
+ {
+  "id": "a22",
+  "date": "2026-10-29",
+  "type": "국감",
+  "title": "운영위(인권위·대통령비서실)·정보위 국정감사, 성평등가족위 현장시찰",
+  "detail": "운영위 10:00 본관 319호 — 오후 대통령비서실·국가안보실·경호처. 겸임 상임위 국감 30일 종료",
+  "rel": "",
+  "url": "https://www.newspim.com/news/view/20261028001508",
+  "must": false
+ },
+ {
+  "id": "a23",
+  "date": "2026-10-29",
+  "type": "세미나",
+  "title": "기획예산처-국회미래연구원 공동세미나",
+  "detail": "09:10 의원회관 제2소회의실 — 국회의장·기획예산처 장관 참석",
+  "rel": "예산",
+  "url": "https://www.newspim.com/news/view/20261028001608",
+  "must": false
+ },
+ {
+  "id": "a24",
+  "date": "2026-11-02",
+  "type": "본회의",
+  "title": "본회의 — 이재명 대통령 2027년도 예산안 시정연설",
+  "detail": "10:00 본회의장 — 820.9조 원 예산안. 예결위 종합정책질의 11/4~5, 부별심사 11/9~12, 조정소위 11/16~",
+  "rel": "정부 R&D",
+  "url": "https://www.newspim.com/news/view/20261101000124",
+  "must": true
+ },
+ {
+  "id": "a25",
+  "date": "2026-11-05",
+  "type": "본회의",
+  "title": "본회의 — 조작기소 특검법 상정, 필리버스터 돌입",
+  "detail": "16:00경 필리버스터 시작, 민주당 종결동의 제출. 김태규 의원 제명 촉구·초광역권 특위 구성 결의안 가결",
+  "rel": "",
+  "url": "https://www.etoday.co.kr/news/view/2644749",
+  "must": false
+ },
+ {
+  "id": "a26",
+  "date": "2026-11-02",
+  "type": "상임위",
+  "title": "재경위 조세소위원회",
+  "detail": "11:00 본관 431호",
+  "rel": "",
+  "url": "https://www.newspim.com/news/view/20261101000124",
+  "must": false
+ },
+ {
+  "id": "a27",
+  "date": "2026-11-02",
+  "type": "세미나",
+  "title": "2027년 예산안 토론회(국회의장 격려사)",
+  "detail": "14:00 의원회관 제1소회의실",
+  "rel": "정부 R&D",
+  "url": "https://www.newspim.com/news/view/20261101000124",
+  "must": false
+ },
+ {
+  "id": "a28",
+  "date": "2026-11-02",
+  "type": "세미나",
+  "title": "농지관리 거버넌스와 농협·사회적경제 역할 토론회",
+  "detail": "13:30 의원회관 제11간담회의실, 송옥주 의원실",
+  "rel": "식품정책",
+  "url": "https://www.newspim.com/news/view/20261101000124",
+  "must": false
+ },
+ {
+  "id": "a29",
+  "date": "2026-11-03",
+  "type": "상임위",
+  "title": "재경위 전체회의(기획처 차관·장관 출석)",
+  "detail": "10:00 본관 430호 — 기획처 장관 16:00 출석(이투데이 주간일정)",
+  "rel": "정부 R&D",
+  "url": "https://www.newspim.com/news/view/20261102001598",
+  "must": false
+ },
+ {
+  "id": "a30",
+  "date": "2026-11-05",
+  "type": "상임위",
+  "title": "농해수위 전체회의 — 2027년도 예산안 상정",
+  "detail": "10:00 본관 501호 — 국민의힘 개의 10분 내 퇴장, 민주당·조국혁신당만으로 진행. 농협법 개정안은 미상정(민주당은 11/11 처리 방침). 예결소위 일정은 보도상 확인되지 않음",
+  "rel": "식품정책",
+  "url": "https://www.agrinet.co.kr/news/articleView.html?idxno=408624",
+  "must": true
+ },
+ {
+  "id": "a31",
+  "date": "2026-11-30",
+  "type": "예산",
+  "title": "예결위 전체회의 예산안 의결(계획)",
+  "detail": "경향 11/1 보도 기준",
+  "rel": "정부 R&D",
+  "url": "https://www.khan.co.kr/article/202611012121005/",
+  "must": false
+ },
+ {
+  "id": "a32",
+  "date": "2026-11-03",
+  "type": "상임위",
+  "title": "농해수위 농림축산식품법안심사소위원회",
+  "detail": "10:00 본관 501호 — 농협법 개정안(중앙회장 조합원 직선제·별도 감사기구) 여당 주도 의결, 국민의힘 퇴장. 전체회의 일정은 확인되지 않음",
+  "rel": "식품정책",
+  "url": "https://www.etoday.co.kr/news/view/2643476",
+  "must": true
+ },
+ {
+  "id": "a33",
+  "date": "2026-11-03",
+  "type": "상임위",
+  "title": "운영위 전체회의",
+  "detail": "13:30 본관 319호",
+  "rel": "",
+  "url": "https://www.newspim.com/news/view/20261102001598",
+  "must": false
+ },
+ {
+  "id": "a34",
+  "date": "2026-11-03",
+  "type": "세미나",
+  "title": "농가 경영안정·맞춤형 에너지 전환 정책토론회",
+  "detail": "10:00 의원회관 제11간담회의실, 송옥주·윤준병 의원·한농연 공동 주최",
+  "rel": "식품정책",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209341",
+  "must": false
+ },
+ {
+  "id": "a35",
+  "date": "2026-11-04",
+  "type": "상임위",
+  "title": "재경위 경제소위원회",
+  "detail": "10:00 본관 431호 — 재경부 2차관·기획처 차관 참석(이투데이 주간일정)",
+  "rel": "정부 R&D",
+  "url": "https://www.newspim.com/news/view/20261103001398",
+  "must": false
+ },
+ {
+  "id": "a36",
+  "date": "2026-11-06",
+  "type": "상임위",
+  "title": "재경위 예산결산기금심사소위",
+  "detail": "10:00 본관 431호 — 재경부 2차관·기획처 차관 참석",
+  "rel": "정부 R&D",
+  "url": "https://www.newspim.com/news/view/20261105001479",
+  "must": false
+ },
+ {
+  "id": "a37",
+  "date": "2026-11-04",
+  "type": "상임위",
+  "title": "법사위 전체회의",
+  "detail": "10:00 본관 406호",
+  "rel": "",
+  "url": "https://www.newspim.com/news/view/20261103001398",
+  "must": false
+ },
+ {
+  "id": "a38",
+  "date": "2026-11-05",
+  "type": "상임위",
+  "title": "문체위 전체회의",
+  "detail": "10:00 본관 506호",
+  "rel": "",
+  "url": "https://www.newspim.com/news/view/20261104001392",
+  "must": false
+ },
+ {
+  "id": "a39",
+  "date": "2026-11-05",
+  "type": "상임위",
+  "title": "정무위 전체회의",
+  "detail": "14:00 본관 604호",
+  "rel": "",
+  "url": "https://www.newspim.com/news/view/20261104001392",
+  "must": false
+ },
+ {
+  "id": "a40",
+  "date": "2026-11-05",
+  "type": "세미나",
+  "title": "한미 통상협상 긴급 점검",
+  "detail": "10:00 의원회관 제11간담회의실, 박수영 의원실 등",
+  "rel": "통상",
+  "url": "https://www.newspim.com/news/view/20261104001392",
+  "must": false
+ },
+ {
+  "id": "a41",
+  "date": "2026-11-05",
+  "type": "세미나",
+  "title": "중견기업 성장 촉진 방안",
+  "detail": "10:00 의원회관 제1소회의실, 김성원 의원실",
+  "rel": "",
+  "url": "https://www.newspim.com/news/view/20261104001392",
+  "must": false
+ },
+ {
+  "id": "a42",
+  "date": "2026-11-06",
+  "type": "상임위",
+  "title": "과방위 전체회의",
+  "detail": "10:00 본관 627호 — 과기정통부 부총리·차관 출석. 안건은 보도상 확인되지 않음",
+  "rel": "정부 R&D",
+  "url": "https://www.newspim.com/news/view/20261105001479",
+  "must": false
+ },
+ {
+  "id": "a43",
+  "date": "2026-11-06",
+  "type": "본회의",
+  "title": "본회의 — 조작기소 특검법 필리버스터 종결 표결",
+  "detail": "16:00 전후 표결 예상(머니투데이·민주당 원내대변인). 국민의힘 15:00 본관 앞 규탄대회",
+  "rel": "",
+  "url": "https://supple.kr/news/cmw3xk0mkd3blal9pwtqbt39x",
+  "must": false
+ },
+ {
+  "id": "a44",
+  "date": "2026-11-06",
+  "type": "세미나",
+  "title": "2027년 예산안 평가",
+  "detail": "14:00 의원회관 제3간담회의실, 박수영 의원실 등",
+  "rel": "정부 R&D",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14797767",
+  "must": false
+ },
+ {
+  "id": "a45",
+  "date": "2026-11-11",
+  "type": "상임위",
+  "title": "농해수위 전체회의(농협법 개정안 처리 방침)",
+  "detail": "15:00(이투데이 주간일정, 농식품부·해수부 장·차관 출석). 민주당 농협법 개정안 상정·처리 방침(경기신문). 국민의힘 반발 예상",
+  "rel": "식품정책",
+  "url": "https://www.etoday.co.kr/news/view/2645352",
+  "must": true
+ },
+ {
+  "id": "a46",
+  "date": "2026-11-16",
+  "type": "세미나",
+  "title": "「푸드테크산업법 제정 1년 성과 및 발전 방향」 정책포럼",
+  "detail": "14:00 의원회관 1소회의실(전시 13:30 2층 로비). 윤준병·문대림·김선교·강승규 의원 공동주최",
+  "rel": "식품정책",
+  "url": "https://www.asiatoday.co.kr/kn/view.php?key=20261105010002030",
+  "must": false
+ },
+ {
+  "id": "a47",
+  "date": "2026-11-09",
+  "type": "상임위",
+  "title": "산자위 전체회의(산업부·중기부 장관 출석)",
+  "detail": "10:00 본관 534호",
+  "rel": "통상",
+  "url": "https://www.newspim.com/news/view/20261108000161",
+  "must": false
+ },
+ {
+  "id": "a48",
+  "date": "2026-11-09",
+  "type": "상임위",
+  "title": "기후환노위 전체회의(기후부 장관·2차관 출석)",
+  "detail": "14:00 본관 622호",
+  "rel": "PHA·생분해",
+  "url": "https://www.newspim.com/news/view/20261108000161",
+  "must": false
+ },
+ {
+  "id": "a49",
+  "date": "2026-11-09",
+  "type": "상임위",
+  "title": "교육위 전체회의",
+  "detail": "14:00 본관 522호 — 교육부 장관·차관 출석",
+  "rel": "",
+  "url": "https://www.newspim.com/news/view/20261108000161",
+  "must": false
+ },
+ {
+  "id": "a50",
+  "date": "2026-11-10",
+  "type": "상임위",
+  "title": "농해수위 예산결산기금심사소위(농식품부·해수부 차관 출석)",
+  "detail": "10:00 — 2027 예산안 예비심사(이투데이 주간일정)",
+  "rel": "정부 R&D",
+  "url": "https://www.etoday.co.kr/news/view/2645352",
+  "must": true
+ },
+ {
+  "id": "a51",
+  "date": "2026-11-11",
+  "type": "상임위",
+  "title": "기후환노위 예산소위(기후부 1·2차관 출석)",
+  "detail": "10:00 — 생분해·포장·바이오가스 사업 예산 확인",
+  "rel": "PHA·생분해",
+  "url": "https://www.etoday.co.kr/news/view/2645352",
+  "must": false
+ },
+ {
+  "id": "a52",
+  "date": "2026-11-13",
+  "type": "상임위",
+  "title": "산자위 전체회의(산업부 장관·차관 출석)",
+  "detail": "09:30",
+  "rel": "통상",
+  "url": "https://www.etoday.co.kr/news/view/2645352",
+  "must": false
+ },
+ {
+  "id": "a53",
+  "date": "2026-11-10",
+  "type": "상임위",
+  "title": "과방위 예산결산심사소위(과기정통부 1·2차관 출석)",
+  "detail": "본관 628호 10:00 — R&D 예산 심사",
+  "rel": "정부 R&D",
+  "url": "https://www.newspim.com/news/view/20261109001304",
+  "must": false
+ },
+ {
+  "id": "a54",
+  "date": "2026-11-10",
+  "type": "세미나",
+  "title": "「필수농자재 지원법 효율적 운영」 토론회(송옥주 의원실 등)",
+  "detail": "14:00 의원회관 제11간담회의실",
+  "rel": "식품정책",
+  "url": "https://www.newspim.com/news/view/20261109001304",
+  "must": false
+ }
+]
