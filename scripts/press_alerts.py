@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 """정책브리핑(korea.kr) 보도자료 중 당사 관련 건만 텔레그램 '전략지원 알리미' 채널로 알림.
-- 보도자료 RSS(https://www.korea.kr/rss/pressrelease.xml)를 읽어 alerts/press-keywords.txt 키워드로 판별
+- 정책브리핑 RSS는 2026.7.1 중단 → 보도자료 목록 화면(https://www.korea.kr/briefing/pressReleaseList.do)의
+  제목·요약·부처를 읽어 alerts/press-keywords.txt 키워드로 판별(페이지당 20건, 이미 본 건이 나오면 멈춤)
 - .state/press-seen.json 으로 이미 본 보도자료 중복 방지(Actions 캐시 보관, 30일)
 - 첫 실행은 기존 보도자료를 '본 것'으로만 기록하고 보내지 않음(폭탄 방지)
-- 환경변수 DRY_RUN=yes 이면 전송 없이 결과만 출력(최근 48시간 매칭 건 미리보기)"""
+- 환경변수 DRY_RUN=yes 이면 전송 없이 결과만 출력(최근 목록 5쪽 매칭 건 미리보기)"""
 import json, os, sys, html, re, time, urllib.request
 import xml.etree.ElementTree as ET
 from email.utils import parsedate_to_datetime
 from datetime import datetime, timezone, timedelta
 
-FEEDS = ['https://www.korea.kr/rss/pressrelease.xml']
+LIST_URL = 'https://www.korea.kr/briefing/pressReleaseList.do?pageIndex={}'
+MAX_PAGES = 5
 KW_FILE = 'alerts/press-keywords.txt'
 STATE = '.state/press-seen.json'
-MAX_PER_RUN, MAX_AGE_H = 10, 48
+MAX_PER_RUN, MAX_AGE_H = 10, 48   # MAX_AGE_H: 게시일 기준(목록엔 날짜만 있음)
 KST = timezone(timedelta(hours=9))
 token = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip()
 token = token[3:] if token.lower().startswith('bot') else token
@@ -54,26 +56,22 @@ def strip_tags(s):
     s = re.sub(r'<[^>]+>', ' ', html.unescape(s or ''))
     return re.sub(r'\s+', ' ', s).strip()
 
-def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (issue-radder press alerts)'})
+ITEM_RE = re.compile(r'<a href="(/briefing/pressReleaseView\.do\?newsId=(\d+)[^"]*)">\s*<span class="text">\s*'
+                     r'<strong>(.*?)</strong>\s*<span class="lead">(.*?)</span>\s*<span class="source">\s*'
+                     r'<span>([\d.]+)</span>\s*<span>(.*?)</span>', re.S)
+
+def fetch(page):
+    req = urllib.request.Request(LIST_URL.format(page), headers={'User-Agent': 'Mozilla/5.0 (issue-radder press alerts)'})
     with urllib.request.urlopen(req, timeout=30) as r:
-        root = ET.fromstring(r.read())
-    for it in root.iter('item'):
-        g = lambda tag: (it.findtext(tag) or '').strip()
-        dept = ''
-        for ch in it:
-            tag = ch.tag.split('}')[-1]
-            if tag in ('creator', 'author', 'category') and (ch.text or '').strip():
-                dept = ch.text.strip(); break
+        body = r.read().decode('utf-8', 'replace')
+    for href, nid, title, lead, date, dept in ITEM_RE.findall(body):
         try:
-            ts = parsedate_to_datetime(g('pubDate'))
-            if ts.tzinfo is None:
-                ts = ts.replace(tzinfo=KST)
-        except Exception:
-            ts = datetime.now(timezone.utc)
-        link = g('link')
-        yield {'title': strip_tags(g('title')), 'desc': strip_tags(g('description'))[:3000],
-               'link': link, 'id': g('guid') or link or g('title'), 'dept': dept, 'ts': ts}
+            ts = datetime.strptime(date, '%Y.%m.%d').replace(tzinfo=KST)
+        except ValueError:
+            ts = datetime.now(KST)
+        yield {'title': strip_tags(title), 'desc': strip_tags(lead)[:3000], 'id': nid,
+               'link': f'https://www.korea.kr/briefing/pressReleaseView.do?newsId={nid}',
+               'dept': strip_tags(dept), 'ts': ts}
 
 def send(text):
     for target in [x.strip() for x in chat.split(',') if x.strip()]:
@@ -85,7 +83,7 @@ def send(text):
                 raise RuntimeError('telegram send failed')
 
 def fmt(a, hits):
-    t = a['ts'].astimezone(KST).strftime('%m/%d %H:%M')
+    t = a['ts'].strftime('%m/%d')
     issues = ' · '.join(n for n, _ in hits)
     kws = ', '.join(dict.fromkeys(k for _, ks in hits for k in ks))
     head = f"📢 <b>[정책브리핑 보도자료]</b> {html.escape(issues)}"
@@ -95,18 +93,22 @@ def fmt(a, hits):
 
 def main():
     rules, excl = load_rules()
-    items = []
-    for u in FEEDS:
-        try:
-            got = list(fetch(u)); items += got
-            print(f'{u}: {len(got)}건 수신 (가장 오래된 것 {min(a["ts"] for a in got).astimezone(KST):%m/%d %H:%M})' if got else f'{u}: 0건')
-        except Exception as e:
-            print(f'{u} 수집 실패: {e}')
-    if not items:
-        sys.exit('보도자료를 하나도 받지 못했습니다.')
-    now = datetime.now(timezone.utc)
     first = not os.path.exists(STATE)
     seen = {} if (first or DRY) else json.load(open(STATE, encoding='utf-8'))
+    items, ids = [], set()
+    for page in range(1, MAX_PAGES + 1):
+        try:
+            got = [a for a in fetch(page) if a['id'] not in ids]
+        except Exception as e:
+            print(f'{page}쪽 수집 실패: {e}'); break
+        ids.update(a['id'] for a in got); items += got
+        print(f'{page}쪽: {len(got)}건 ({got[-1]["ts"]:%m/%d} {got[-1]["title"][:30]})' if got else f'{page}쪽: 0건')
+        if not got or (seen and all(a['id'] in seen for a in got)):
+            break
+        time.sleep(1)
+    if not items:
+        sys.exit('보도자료 목록을 읽지 못했습니다(화면 구조 변경 여부 확인 필요).')
+    now = datetime.now(timezone.utc)
     new = []
     for a in items:
         if a['id'] in seen:
@@ -121,8 +123,8 @@ def main():
             new.append((a, hits))
     if DRY:
         print(f'[미리보기] 수신 {len(items)}건 중 관련 {len(new)}건 (전송 안 함)')
-        for a, hits in sorted(new, key=lambda x: x[0]['ts']):
-            print('-', a['ts'].astimezone(KST).strftime('%m/%d %H:%M'), a['dept'], '|', a['title'], '|', hits)
+        for a, hits in sorted(new, key=lambda x: int(x[0]['id'])):
+            print('-', a['ts'].strftime('%m/%d'), a['dept'], '|', a['title'], '|', hits)
         return
     cutoff = (now - timedelta(days=30)).isoformat()
     seen = {k: v for k, v in seen.items() if v >= cutoff}
@@ -134,7 +136,7 @@ def main():
         print('새 관련 보도자료 없음'); return
     if not token or not chat:
         sys.exit('TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 시크릿이 없습니다.')
-    new.sort(key=lambda x: x[0]['ts'])
+    new.sort(key=lambda x: int(x[0]['id']))
     for a, hits in new[:MAX_PER_RUN]:
         send(fmt(a, hits)); time.sleep(1.2)
     if len(new) > MAX_PER_RUN:

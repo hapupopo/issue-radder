@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'yes = 전송 없이 최근 48시간 관련 보도자료만 로그로 확인, no = 실제 실행'
+        description: 'yes = 전송 없이 최근 5쪽(약 100건) 중 관련 보도자료만 로그로 확인, no = 실제 실행'
         required: false
         default: 'yes'
 concurrency: press-alerts
