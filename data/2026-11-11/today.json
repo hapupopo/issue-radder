@@ -1,0 +1,200 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "공개 일정 없음(통상업무)",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261111000018"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "11:00",
+  "title": "제31회 농업인의 날 기념식",
+  "place": "농협중앙회 중앙본부",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14807463"
+ },
+ {
+  "id": "t03",
+  "cat": "총리",
+  "org": "총리",
+  "time": "18:30",
+  "title": "학교용지 복합개발 관련 수도권 교육감 만찬간담회",
+  "place": "서울공관",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14807463"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "예결위 전체회의 — 비경제부처 부별심사 1일차(11~12일)",
+  "place": "제2회의장",
+  "rel": "정부 R&D",
+  "note": "820.9조 예산안, 미래대응기금·특활비 공방",
+  "url": "https://www.news1.kr/politics/assembly/6349416"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "농해수위 예산결산심사소위",
+  "place": "본관 501호",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261110001525"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "국회",
+  "time": "15:00",
+  "title": "농해수위 전체회의 — 농협법 개정안·FTA특별법 개정안 처리 예정",
+  "place": "본관 501호",
+  "rel": "식품정책",
+  "note": "FTA특별법: 농어촌상생협력기금 민간기업 출연 노력 규정·일몰 10년 연장",
+  "url": "https://supple.kr/news/cmwajgtekim8cal9p28bxb6zd"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "기후환노위 예산결산심사소위(기후부 1·2차관 출석)",
+  "place": "본관 621호",
+  "rel": "PHA·생분해",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261110001525"
+ },
+ {
+  "id": "t08",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "산자위 예산결산심사소위",
+  "place": "본관 534호",
+  "rel": "통상",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261110001525"
+ },
+ {
+  "id": "t09",
+  "cat": "국회",
+  "org": "국회",
+  "time": "13:20",
+  "title": "재경위 전체회의(13:20 430호)·조세소위(14:00 431호)",
+  "place": "",
+  "rel": "식품물가",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261110001525"
+ },
+ {
+  "id": "t10",
+  "cat": "국회",
+  "org": "국회",
+  "time": "09:30",
+  "title": "문체위 예결소위(09:30)·전체회의(10:00 506호)·정무위 예결소위(604호)·국방위 예결소위(419호)·행안위 전체회의(445호)·법사위 법안1소위(406호)·국토위 교통/국토법안소위",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261110001525"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "09:00",
+  "title": "장관, 비상경제장관회의 → 11:00 제31회 농업인의 날 기념행사 → 15:00 농해수위 전체회의",
+  "place": "",
+  "rel": "식품정책",
+  "note": "차관 10:00 농해수위 예산소위",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14807463"
+ },
+ {
+  "id": "t12",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "15:00",
+  "title": "장관·차관, 농해수위 전체회의",
+  "place": "국회",
+  "rel": "김 수출",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2645352"
+ },
+ {
+  "id": "t13",
+  "cat": "부처",
+  "org": "기후부",
+  "time": "10:00",
+  "title": "1·2차관, 기후환노위 예산소위(장관 09:30 호남 반도체 현장 방문)",
+  "place": "국회",
+  "rel": "PHA·생분해",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14807463"
+ },
+ {
+  "id": "t14",
+  "cat": "부처",
+  "org": "산업부",
+  "time": "09:00",
+  "title": "장관, 비상경제장관회의 / 10:00 산자위 예산소위 / 통상교섭본부장 헝가리·벨기에 출장(9~13일)",
+  "place": "",
+  "rel": "통상",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14807463"
+ },
+ {
+  "id": "t15",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "09:00",
+  "title": "부총리, 비상경제장관회의 → 13:20 재경위 전체회의·14:00 조세소위",
+  "place": "",
+  "rel": "식품물가",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14807463"
+ },
+ {
+  "id": "t16",
+  "cat": "부처",
+  "org": "기획처",
+  "time": "10:00",
+  "title": "장관, 예결위 부별심사(비경제)",
+  "place": "국회",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14807463"
+ },
+ {
+  "id": "t17",
+  "cat": "부처",
+  "org": "교육부",
+  "time": "10:00",
+  "title": "장관, 예결위 부별심사(비경제)",
+  "place": "국회",
+  "rel": "인조잔디·미세플라스틱",
+  "note": "학교시설 예산 포함",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14807463"
+ },
+ {
+  "id": "t18",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28)",
+  "place": "17개국 144개 매장",
+  "rel": "김 수출",
+  "note": "김·어묵 등 할인 판매",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209456"
+ }
+]

@@ -1,0 +1,782 @@
+[
+ {
+  "id": "n209",
+  "date": "2026-11-11",
+  "time": "05:00",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "뉴스1",
+  "title": "예결위, 오늘부터 이틀간 비경제부처 예산안 심사 돌입",
+  "url": "https://www.news1.kr/politics/assembly/6349416"
+ },
+ {
+  "id": "n210",
+  "date": "2026-11-10",
+  "time": "18:21",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "파이낸셜뉴스",
+  "title": "[단독] 식량안보법, 농지 조사·CPTPP 가입 협상 기준점 된다",
+  "url": "https://www.fnnews.com/news/202611101821154932"
+ },
+ {
+  "id": "n211",
+  "date": "2026-11-10",
+  "time": "18:00",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "서플(연합뉴스)",
+  "title": "농해수위 '농어촌상생기금 기업출연 강화' 추진…국감땐 논란되기도",
+  "url": "https://supple.kr/news/cmwajgtekim8cal9p28bxb6zd"
+ },
+ {
+  "id": "n212",
+  "date": "2026-11-10",
+  "time": "13:45",
+  "scope": "CJ제일제당",
+  "issue": "실적",
+  "outlet": "아시아투데이",
+  "title": "매출 늘어도 수익성 제자리…CJ제일제당, 기술소재 적자·재무 부담 이중고",
+  "url": "https://www.asiatoday.co.kr/kn/view.php?key=20261110010003615"
+ },
+ {
+  "id": "n213",
+  "date": "2026-11-10",
+  "time": "13:33",
+  "scope": "CJ제일제당",
+  "issue": "PHA·생분해",
+  "outlet": "더빅데이터",
+  "title": "CJ제일제당, 3분기 영업익 2030억원...푸드·아미노산 견인(4분기 PHA·TNR 판매 확대)",
+  "url": "https://www.thebigdata.co.kr/view.php?ud=202611101327148500a47484cf8_23"
+ },
+ {
+  "id": "n214",
+  "date": "2026-11-10",
+  "time": "10:21",
+  "scope": "업계",
+  "issue": "PHA·생분해",
+  "outlet": "뉴스1",
+  "title": "플라스틱 분해 미생물·효소 후보 발굴…분해 기술 개발 앞당겨",
+  "url": "https://www.news1.kr/local/daejeon-chungnam/6348740"
+ },
+ {
+  "id": "n215",
+  "date": "2026-11-10",
+  "time": "10:16",
+  "scope": "CJ제일제당",
+  "issue": "실적",
+  "outlet": "아시아경제",
+  "title": "만두·햇반 해외성과, 환율·원자재 부담 상쇄…CJ제일제당 3분기 영업익 6.9%↑",
+  "url": "https://view.asiae.co.kr/article/2026111010073919562"
+ },
+ {
+  "id": "n216",
+  "date": "2026-11-10",
+  "time": "08:19",
+  "scope": "업계",
+  "issue": "PHA·생분해",
+  "outlet": "뉴스핌",
+  "title": "KAIST, 생분해 플라스틱 매립 실험…PHB·PLA·PBAT 분해율 격차 확인",
+  "url": "https://www.newspim.com/news/view/20261110000072"
+ },
+ {
+  "id": "n188",
+  "date": "2026-11-10",
+  "time": "06:00",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "뉴스1",
+  "title": "예결위, 이틀째 경제부처 심사…162조 미래대응기금 놓고 재격돌",
+  "url": "https://www.news1.kr/politics/assembly/6348080"
+ },
+ {
+  "id": "n189",
+  "date": "2026-11-09",
+  "time": "23:41",
+  "scope": "업계",
+  "issue": "공정거래",
+  "outlet": "서울신문",
+  "title": "입점 업체에 '최혜대우' 갑질… 배민 3311억·쿠팡 3008억 과징금",
+  "url": "https://seoul.co.kr/news/economy/2026/11/10/20261110032001"
+ },
+ {
+  "id": "n190",
+  "date": "2026-11-09",
+  "time": "21:56",
+  "scope": "업계",
+  "issue": "식품물가",
+  "outlet": "이데일리",
+  "title": "'밀·설탕값 꺾였는데'… 파리바게뜨, 빵 이어 음료까지 기습 인상",
+  "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=05254566645644080"
+ },
+ {
+  "id": "n191",
+  "date": "2026-11-09",
+  "time": "21:44",
+  "scope": "그룹",
+  "issue": "그룹",
+  "outlet": "웹이코노미",
+  "title": "CJ, 육상 유망주 육성·야구 국가대표 지원…CJ제일제당 '뉴트리솔루션' 공개",
+  "url": "https://webeconomy.co.kr/news/articleView.html?idxno=2366945"
+ },
+ {
+  "id": "n192",
+  "date": "2026-11-09",
+  "time": "20:59",
+  "scope": "업계",
+  "issue": "식품물가",
+  "outlet": "한국경제",
+  "title": "빵값 이어 음료값도 오른다…파리바게뜨, 16일부터 가격 인상",
+  "url": "https://www.hankyung.com/article/2026110960317"
+ },
+ {
+  "id": "n193",
+  "date": "2026-11-09",
+  "time": "18:59",
+  "scope": "업계",
+  "issue": "식품물가",
+  "outlet": "경향신문",
+  "title": "[사설]음식값도 끌어올린 배달앱의 시장지배력 남용, 반드시 근절해야",
+  "url": "https://www.khan.co.kr/article/202611091859001/"
+ },
+ {
+  "id": "n194",
+  "date": "2026-11-09",
+  "time": "17:08",
+  "scope": "CJ제일제당",
+  "issue": "실적",
+  "outlet": "스페셜타임스",
+  "title": "[공시] CJ제일제당 현금ㆍ현물배당결정",
+  "url": "https://www.specialtimes.co.kr/news/articleView.html?idxno=483507"
+ },
+ {
+  "id": "n195",
+  "date": "2026-11-09",
+  "time": "17:02",
+  "scope": "CJ제일제당",
+  "issue": "브랜드",
+  "outlet": "세계일보",
+  "title": "밥 219번 먹던 한국인 200번으로 줄였다…반찬 덜고 한 끼 따지는 '감식사회'",
+  "url": "https://segye.com/newsView/20261109516070"
+ },
+ {
+  "id": "n196",
+  "date": "2026-11-09",
+  "time": "16:46",
+  "scope": "CJ제일제당",
+  "issue": "공정거래",
+  "outlet": "디지털데일리",
+  "title": "식품업계 담합 제재 후폭풍…1.3조원 과징금 놓고 소송전",
+  "url": "https://www.ddaily.co.kr/page/view/2026110916405548606"
+ },
+ {
+  "id": "n197",
+  "date": "2026-11-09",
+  "time": "16:23",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "머니투데이",
+  "title": "\"국회 예산통제권 빼앗나\"…상임위서도 미래대응기금 여야 갑론을박",
+  "url": "https://www.mt.co.kr/index.php/economy/2026/11/09/2026110916035785989"
+ },
+ {
+  "id": "n198",
+  "date": "2026-11-09",
+  "time": "16:20",
+  "scope": "업계",
+  "issue": "김 수출",
+  "outlet": "더파워뉴스",
+  "title": "완도군, 부산국제수산엑스포서 252만달러 수출상담…70만달러 협약",
+  "url": "https://www.thepowernews.co.kr/view.php?ud=202611091435556195caa2b7671d_7"
+ },
+ {
+  "id": "n199",
+  "date": "2026-11-09",
+  "time": "14:59",
+  "scope": "업계",
+  "issue": "PHA·생분해",
+  "outlet": "머니투데이(서플)",
+  "title": "기후장관 \"3대 메가프로젝트 뒷받침…전력·용수 인프라 적기 구축\"",
+  "url": "https://supple.kr/news/cmw8v3ghzs2lsal9pq9nwe1su"
+ },
+ {
+  "id": "n200",
+  "date": "2026-11-09",
+  "time": "14:22",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "푸드투데이",
+  "title": "K-푸드, 인도네시아서 325만 달러 수출계약…할랄시장 공략",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209521"
+ },
+ {
+  "id": "n201",
+  "date": "2026-11-09",
+  "time": "13:45",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "투데이안",
+  "title": "aT, 자카르타 식품박람회서 K푸드 4,872만 달러 수출상담",
+  "url": "https://www.todayan.com/news/articleView.html?idxno=636516"
+ },
+ {
+  "id": "n202",
+  "date": "2026-11-09",
+  "time": "12:49",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "글로벌이코노믹",
+  "title": "진주국제농식품박람회, 34만 명 찾고 1280만 달러 수출 성과",
+  "url": "https://www.g-enews.com/article/General-News/2026/11/202611091118063071765fb7589a_1"
+ },
+ {
+  "id": "n203",
+  "date": "2026-11-09",
+  "time": "11:42",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "뉴스핌",
+  "title": "예결위서 질의 답변하는 송미령 농림축산식품부 장관",
+  "url": "https://www.newspim.com/news/view/20261109000624"
+ },
+ {
+  "id": "n204",
+  "date": "2026-11-09",
+  "time": "10:57",
+  "scope": "그룹",
+  "issue": "그룹",
+  "outlet": "이투데이",
+  "title": "CJ그룹, 육상 꿈나무 21명에 국가대표의 하루 선물",
+  "url": "https://etoday.co.kr/news/view/2645719"
+ },
+ {
+  "id": "n205",
+  "date": "2026-11-09",
+  "time": "05:00",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "파이낸셜뉴스",
+  "title": "예결위 부처별 심사 착수…與 \"820조 예산 사수\" vs 국힘 \"靑 특활비 등 27조 삭감\"",
+  "url": "https://www.fnnews.com/news/202611090500558809"
+ },
+ {
+  "id": "n206",
+  "date": "2026-11-08",
+  "time": "18:20",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "파이낸셜뉴스",
+  "title": "농업인구 줄고 고령화 심화… \"농지 키우고 전문경영체로 농촌 소멸 막아야\"",
+  "url": "https://fnnews.com/news/202611081820179005"
+ },
+ {
+  "id": "n207",
+  "date": "2026-11-08",
+  "time": "18:07",
+  "scope": "업계",
+  "issue": "김 수출",
+  "outlet": "헤럴드경제",
+  "title": "\"김을 왜 굳이 구워 파느냐고요?\"…곱창김으로 매출 20억 일군 식품공학 석사",
+  "url": "https://biz.heraldcorp.com/article/10929760"
+ },
+ {
+  "id": "n208",
+  "date": "2026-11-08",
+  "time": "11:00",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "이투데이",
+  "title": "송미령 농식품부 장관 \"과거 성공 방식으론 농업의 미래 보장 못 해\"",
+  "url": "https://www.etoday.co.kr/news/view/2645387"
+ },
+ {
+  "id": "n175",
+  "date": "2026-11-09",
+  "time": "06:27",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "이투데이",
+  "title": "새만금에 2조4200억 K-푸드 수출허브…전북도, 식품산업 거점 육성",
+  "url": "https://www.etoday.co.kr/news/view/2645492"
+ },
+ {
+  "id": "n176",
+  "date": "2026-11-09",
+  "time": "06:00",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "뉴스1",
+  "title": "예결위, 오늘 부처별 심사 돌입…'821조' 예산 여야 힘겨루기 본격화",
+  "url": "https://www.news1.kr/politics/assembly/6346816"
+ },
+ {
+  "id": "n177",
+  "date": "2026-11-09",
+  "time": "05:11",
+  "scope": "업계",
+  "issue": "바이오가스화",
+  "outlet": "메가충청뉴스",
+  "title": "아산시-비이에프㈜, 바이오가스 생산 목표 달성 위해 맞손",
+  "url": "https://www.megaccnews.com/news/articleView.html?idxno=13818"
+ },
+ {
+  "id": "n178",
+  "date": "2026-11-08",
+  "time": "17:28",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "아시아투데이",
+  "title": "동남아 넘어 中 식탁 오르는 K-단감… 17년 만에 검역협상 결실",
+  "url": "https://www.asiatoday.co.kr/kn/view.php?key=20261109010002993"
+ },
+ {
+  "id": "n179",
+  "date": "2026-11-08",
+  "time": "13:51",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "SBS",
+  "title": "농식품부, '농업·농촌문제 해결 연구 개발 사업' 추진",
+  "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008835904"
+ },
+ {
+  "id": "n180",
+  "date": "2026-11-08",
+  "time": "12:24",
+  "scope": "업계",
+  "issue": "바이오가스화",
+  "outlet": "대전일보",
+  "title": "서산시 바이오가스 초과 생산… 3억4000만원 세외수입 확보",
+  "url": "https://www.daejonilbo.com/news/articleView.html?idxno=2312088"
+ },
+ {
+  "id": "n181",
+  "date": "2026-11-08",
+  "time": "11:00",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "아주경제",
+  "title": "농업을 국가 전략산업으로…농식품부, 연말 '농업·농촌 2045 전략' 발표",
+  "url": "https://www.ajunews.com/view/20261108095252155"
+ },
+ {
+  "id": "n182",
+  "date": "2026-11-08",
+  "time": "11:00",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "뉴스1",
+  "title": "농업 현장 골칫거리, 기술로 푼다…지역주도 R&D에 최대 20억",
+  "url": "https://www.news1.kr/economy/trend/6346118"
+ },
+ {
+  "id": "n183",
+  "date": "2026-11-08",
+  "time": "11:00",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "이투데이",
+  "title": "건강식도 맛있어야 산다…저당 아이스크림 소비 53.7% 증가",
+  "url": "https://etoday.co.kr/news/view/2645340"
+ },
+ {
+  "id": "n184",
+  "date": "2026-11-08",
+  "time": "07:00",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "파이낸셜뉴스",
+  "title": "베트남 매료시킨 '겉바속촉' K치킨…막걸리, 과일 등 프리미엄 제품도 뜬다",
+  "url": "https://www.fnnews.com/news/202611080109556704"
+ },
+ {
+  "id": "n185",
+  "date": "2026-11-08",
+  "time": "05:00",
+  "scope": "업계",
+  "issue": "포장재 규제",
+  "outlet": "세계일보",
+  "title": "컵라면에 95도 물 붓자 미세플라스틱 318개?…35분 실험의 반전",
+  "url": "https://www.segye.com/newsView/20261108500832"
+ },
+ {
+  "id": "n186",
+  "date": "2026-11-07",
+  "time": "11:37",
+  "scope": "업계",
+  "issue": "인조잔디·미세플라스틱",
+  "outlet": "더쎈뉴스",
+  "title": "경남도의회 교육위, 도서지역 학생 안전·노후 교육시설 관리 지적",
+  "url": "https://www.mhns.co.kr/news/articleView.html?idxno=768069"
+ },
+ {
+  "id": "n187",
+  "date": "2026-11-07",
+  "time": "10:46",
+  "scope": "업계",
+  "issue": "PHA·생분해",
+  "outlet": "매일신문",
+  "title": "고기 포장지에 자외선 비추자 빛이 났다…상했다는 신호였다",
+  "url": "https://www.imaeil.com/page/view/2026110710444561044"
+ },
+ {
+  "id": "n170",
+  "date": "2026-11-08",
+  "time": "07:17",
+  "scope": "CJ제일제당",
+  "issue": "김 수출",
+  "outlet": "아시아경제",
+  "title": "수출 효자 넘어 글로벌 간식으로…세계 시장 파고드는 '검은 반도체'[K홀릭]",
+  "url": "https://view.asiae.co.kr/article/2026110615443835487"
+ },
+ {
+  "id": "n171",
+  "date": "2026-11-08",
+  "time": "06:33",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "뉴스1",
+  "title": "내년도 예산안 본격 심사…'조작기소 특검법' 여야 대치에 험로 예고",
+  "url": "https://www.news1.kr/politics/assembly/6346419"
+ },
+ {
+  "id": "n172",
+  "date": "2026-11-08",
+  "time": "06:00",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "뉴스1",
+  "title": "오늘 고위당정협의회…소방예산 확대 등 민생현안 논의",
+  "url": "https://www.news1.kr/politics/assembly/6346408"
+ },
+ {
+  "id": "n173",
+  "date": "2026-11-07",
+  "time": "07:33",
+  "scope": "업계",
+  "issue": "식품물가",
+  "outlet": "데일리환경",
+  "title": "'금배추'서 '갈아엎는 배추'로…640억 할인대책, 농가엔 '반쪽 처방'?",
+  "url": "https://www.dailyt.co.kr/newsView/dlt202611070002"
+ },
+ {
+  "id": "n174",
+  "date": "2026-11-06",
+  "time": "20:08",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "한국농어민신문",
+  "title": "\"농지 매입·농지연금 예산 대폭 확충...무기질비료 가격보조 복원을\"",
+  "url": "https://www.agrinet.co.kr/news/articleView.html?idxno=408662"
+ },
+ {
+  "id": "n161",
+  "date": "2026-11-06",
+  "time": "20:08",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "한국농어민신문",
+  "title": "여야, 농협법 갈등...농해수위, 내년 예산안 '반쪽 심사'",
+  "url": "https://www.agrinet.co.kr/news/articleView.html?idxno=408663"
+ },
+ {
+  "id": "n162",
+  "date": "2026-11-06",
+  "time": "20:03",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "한국농어민신문",
+  "title": "재해 대응 삭감·R&D 회복 더뎌…농림해양수산기관 예산 증가율 '저조'",
+  "url": "https://www.agrinet.co.kr/news/articleView.html?idxno=408660"
+ },
+ {
+  "id": "n163",
+  "date": "2026-11-06",
+  "time": "18:07",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "연합뉴스",
+  "title": "농식품부, 규제합리화 과제 선정…농지조사 후속 특별법 추진",
+  "url": "https://supple.kr/news/cmw4rx3f1qu2pal9pj7k0wjvk"
+ },
+ {
+  "id": "n164",
+  "date": "2026-11-06",
+  "time": "17:25",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "한국농어민신문",
+  "title": "“K-푸드, 세계인의 식탁으로”...'푸드위크 코리아 2026'",
+  "url": "https://www.agrinet.co.kr/news/articleView.html?idxno=408658"
+ },
+ {
+  "id": "n165",
+  "date": "2026-11-06",
+  "time": "15:05",
+  "scope": "CJ제일제당",
+  "issue": "브랜드",
+  "outlet": "비즈트리뷴",
+  "title": "CJ제일제당, U-23 야구대표팀 급식 후원… 바이오부문에선 독일 행보",
+  "url": "https://biztribune.co.kr/news/articleView.html?idxno=362070"
+ },
+ {
+  "id": "n166",
+  "date": "2026-11-06",
+  "time": "09:14",
+  "scope": "그룹",
+  "issue": "그룹",
+  "outlet": "데일리안",
+  "title": "CJ ENM, 4분기 글로벌 콘텐츠·통합 광고 승부수…커머스도 외형 확대",
+  "url": "https://www.dailian.co.kr/news/view/1711588/"
+ },
+ {
+  "id": "n167",
+  "date": "2026-11-06",
+  "time": "08:04",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "아시아경제",
+  "title": "성남시, 3D 식품프린팅 연구지원센터 유치 나섰다",
+  "url": "https://view.asiae.co.kr/article/2026110608043444059"
+ },
+ {
+  "id": "n168",
+  "date": "2026-11-05",
+  "time": "17:36",
+  "scope": "업계",
+  "issue": "공정거래",
+  "outlet": "지디넷코리아",
+  "title": "라면값 내리고 과자값 올리고…식품사 가격 결정 '진퇴양난'",
+  "url": "https://zdnet.co.kr/view/?no=20261105165249"
+ },
+ {
+  "id": "n152",
+  "date": "2026-11-05",
+  "time": "17:33",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "국제뉴스",
+  "title": "농해수위, 내년도 예산안 상정…본격 심사 돌입",
+  "url": "https://www.gukjenews.com/news/articleView.html?idxno=3743503"
+ },
+ {
+  "id": "n153",
+  "date": "2026-11-05",
+  "time": "17:25",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "중도일보",
+  "title": "해수부, CPTPP 대응 수산업계 현장의견 수렴",
+  "url": "https://www.joongdo.co.kr/web/view.php?key=20261105010002001"
+ },
+ {
+  "id": "n154",
+  "date": "2026-11-05",
+  "time": "16:40",
+  "scope": "업계",
+  "issue": "김 수출",
+  "outlet": "푸드투데이",
+  "title": "해수부, 17개국 144개 유통매장서 K-씨푸드 판촉 행사 진행",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209456"
+ },
+ {
+  "id": "n155",
+  "date": "2026-11-05",
+  "time": "16:15",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "한국농어민신문",
+  "title": "'농협법 개정안' 갈등, 예산 심사로 번져...농해수위 '반쪽 심사'",
+  "url": "https://www.agrinet.co.kr/news/articleView.html?idxno=408624"
+ },
+ {
+  "id": "n169",
+  "date": "2026-11-05",
+  "time": "15:55",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "푸드투데이",
+  "title": "서삼석 농해수위원장 \"농식품부 예산 10.4% 늘었지만 국가 비중 하락\"",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209450"
+ },
+ {
+  "id": "n156",
+  "date": "2026-11-05",
+  "time": "14:43",
+  "scope": "그룹",
+  "issue": "실적",
+  "outlet": "아주경제",
+  "title": "CJ프레시웨이, 3Q 매출 9614억 6.7%↑…온라인 성장에도 영업익은 29% 감소",
+  "url": "https://www.ajunews.com/view/20261105143918081"
+ },
+ {
+  "id": "n157",
+  "date": "2026-11-05",
+  "time": "14:20",
+  "scope": "그룹",
+  "issue": "그룹",
+  "outlet": "한국금융신문",
+  "title": "CJ ENM, 3분기 영업익 221억원…전년 比 25.5% 증가",
+  "url": "https://www.fntimes.com/html/view.php?ud=202611051408009278923defd0cc_18"
+ },
+ {
+  "id": "n158",
+  "date": "2026-11-05",
+  "time": "12:10",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "푸드투데이",
+  "title": "aT, K-푸드 수출 전략 공유…유럽 환경규제·중동 할랄시장 대응",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209441"
+ },
+ {
+  "id": "n159",
+  "date": "2026-11-05",
+  "time": "09:46",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "세계일보",
+  "title": "조리 로봇부터 맞춤 영양식까지…푸드위크서 본 달라지는 식탁",
+  "url": "https://www.segye.com/newsView/20261105505174"
+ },
+ {
+  "id": "n160",
+  "date": "2026-11-05",
+  "time": "09:24",
+  "scope": "CJ제일제당",
+  "issue": "브랜드",
+  "outlet": "이투데이",
+  "title": "CJ제일제당, U-23 야구대표팀에 '밥심' 지원…비비고·햇반 전달",
+  "url": "https://www.etoday.co.kr/news/view/2644409"
+ },
+ {
+  "id": "n138",
+  "date": "2026-11-05",
+  "time": "05:00",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "연합뉴스",
+  "title": "예결위, 오늘 예산안 종합질의 이틀차…미래기금 등 공방 계속",
+  "url": "https://supple.kr/news/cmw2ntx81e0gh14212k243vfr"
+ },
+ {
+  "id": "n140",
+  "date": "2026-11-04",
+  "time": "23:25",
+  "scope": "CJ제일제당",
+  "issue": "실적",
+  "outlet": "비건뉴스",
+  "title": "CJ제일제당, 기관투자자와 11~12일 3분기 IR",
+  "url": "https://www.vegannews.co.kr/news/article.html?no=400611"
+ },
+ {
+  "id": "n141",
+  "date": "2026-11-04",
+  "time": "23:01",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "더팩트",
+  "title": "美 의회 뒤집은 민주당… K-푸드·뷰티, 관세 인하 기대 속 관망",
+  "url": "https://news.tf.co.kr/read/economy/2385002.htm"
+ },
+ {
+  "id": "n142",
+  "date": "2026-11-04",
+  "time": "17:55",
+  "scope": "CJ제일제당",
+  "issue": "브랜드",
+  "outlet": "뉴스웍스",
+  "title": "CJ제일제당, 사료배합 분석플랫폼 '뉴트리솔루션' 선봬…독일 유로티어서 공개",
+  "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=901960"
+ },
+ {
+  "id": "n161",
+  "date": "2026-11-04",
+  "time": "17:27",
+  "scope": "업계",
+  "issue": "식품정책",
+  "outlet": "한국경제",
+  "title": "[취재수첩] CPTPP 개방 파고, 농업도 정면 돌파해야",
+  "url": "https://www.hankyung.com/article/2026110462971"
+ },
+ {
+  "id": "n143",
+  "date": "2026-11-04",
+  "time": "15:22",
+  "scope": "업계",
+  "issue": "식품물가",
+  "outlet": "한강타임즈",
+  "title": "가공식품 26개 중 24개 가격↑…수입 식재료비 부담도 영향",
+  "url": "https://www.hg-times.com/news/articleView.html?idxno=306733"
+ },
+ {
+  "id": "n144",
+  "date": "2026-11-04",
+  "time": "15:16",
+  "scope": "업계",
+  "issue": "가공식품 수출",
+  "outlet": "푸드투데이",
+  "title": "90% 익힌 국산 딸기, 동남아 간다…3개국 30톤 시범수출",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209412"
+ },
+ {
+  "id": "n145",
+  "date": "2026-11-04",
+  "time": "13:16",
+  "scope": "업계",
+  "issue": "식품물가",
+  "outlet": "데일리환경",
+  "title": "장바구니는 가벼워졌다는데, 왜 식탁 물가는 그대로일까",
+  "url": "https://www.dailyt.co.kr/newsView/dlt202611040017"
+ },
+ {
+  "id": "n146",
+  "date": "2026-11-04",
+  "time": "06:08",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "파이낸셜뉴스",
+  "title": "'821조 예산' 종합정책질의 시작…與 \"4대 분야 증액\" 野 \"27조 삭감\"",
+  "url": "https://www.fnnews.com/news/202611040608451257"
+ },
+ {
+  "id": "n162",
+  "date": "2026-11-04",
+  "time": "06:00",
+  "scope": "업계",
+  "issue": "식품물가",
+  "outlet": "서울경제",
+  "title": "물가 상승률 2.8%로 낮아졌지만…장바구니 가격은 '고공행진' [Pick코노미]",
+  "url": "https://www.sedaily.com/article/20109886"
+ },
+ {
+  "id": "n121",
+  "date": "2026-11-04",
+  "time": "05:39",
+  "scope": "업계",
+  "issue": "정부 R&D",
+  "outlet": "위키리크스한국",
+  "title": "\"821조 깐깐하게 따진다\"… 국회 예결위, 오늘부터 이틀간 종합정책질의",
+  "url": "https://www.wikileaks-kr.org/news/articleView.html?idxno=194166"
+ },
+ {
+  "id": "n122",
+  "date": "2026-11-04",
+  "time": "05:00",
+  "scope": "업계",
+  "issue": "식품물가",
+  "outlet": "이투데이",
+  "title": "배추값 하락에 농가 시름…송미령 \"김장 붐 조성해 소비 확대\"",
+  "url": "https://www.etoday.co.kr/news/view/2643719"
+ },
+ {
+  "id": "n163",
+  "date": "2026-11-04",
+  "time": "00:05",
+  "scope": "업계",
+  "issue": "육상김",
+  "outlet": "서울신문",
+  "title": "각종 김 장점 모아 '슈퍼 K김' 만든다",
+  "url": "https://go.seoul.co.kr/news/newsView.php?id=20261104019001"
+ }
+]
