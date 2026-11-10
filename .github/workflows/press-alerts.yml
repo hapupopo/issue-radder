@@ -1,0 +1,36 @@
+name: 정책브리핑 보도자료 알림
+# 대한민국 정책브리핑(korea.kr) 보도자료 중 당사 관련 건만 '전략지원 알리미' 채널로 보냄(EXTRA 그룹 제외)
+# 키워드: alerts/press-keywords.txt · 스크립트: scripts/press_alerts.py
+on:
+  schedule:
+    - cron: '*/30 21-23,0-13 * * *'   # 한국시간 06:00~22:30, 30분마다(매일)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'yes = 전송 없이 최근 48시간 관련 보도자료만 로그로 확인, no = 실제 실행'
+        required: false
+        default: 'yes'
+concurrency: press-alerts
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore seen-state
+        uses: actions/cache/restore@v4
+        with:
+          path: .state
+          key: press-seen-${{ github.run_id }}
+          restore-keys: press-seen-
+      - name: Check press releases and send
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'no' }}
+        run: python3 scripts/press_alerts.py
+      - name: Save seen-state
+        if: always() && !(github.event_name == 'workflow_dispatch' && inputs.dry_run == 'yes')
+        uses: actions/cache/save@v4
+        with:
+          path: .state
+          key: press-seen-${{ github.run_id }}
