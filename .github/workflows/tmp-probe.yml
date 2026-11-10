@@ -1,0 +1,9 @@
+name: tmp probe korea.kr rss
+on: workflow_dispatch
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for u in https://www.korea.kr/etc/rss.do https://www.korea.kr/etc/rssService.do https://korea.kr/etc/rss.do; do echo "== $u"; curl -sSL -m 20 -A "Mozilla/5.0" "$u" | grep -oiE '[^"'"'"' ]*rss[^"'"'"' ]*\.(xml|do)[^"'"'"' <]*' | sort -u | head -80; done
+          for u in https://www.korea.kr/rss/pressrelease.xml https://www.korea.kr/rss/briefing.xml https://www.korea.kr/rss/policy.xml https://www.korea.kr/rss/dept_mafra.xml; do echo "== $u"; curl -sSL -m 20 -A "Mozilla/5.0" -o o.xml -w "%{http_code} %{size_download}\n" "$u"; head -c 1200 o.xml; echo; done
