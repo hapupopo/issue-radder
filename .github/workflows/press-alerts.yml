@@ -3,7 +3,7 @@ name: 정책브리핑 보도자료 알림
 # 키워드: alerts/press-keywords.txt · 스크립트: scripts/press_alerts.py
 on:
   schedule:
-    - cron: '*/30 21-23,0-13 * * *'   # 한국시간 06:00~22:30, 30분마다(매일)
+    - cron: '*/30 21-23,0-13 * * *'   # 한국시간 06:00~22:30, 30분마다(매일) — 11/10 사용자 확정
   workflow_dispatch:
     inputs:
       dry_run:
