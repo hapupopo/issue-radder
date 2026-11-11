@@ -1,0 +1,156 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "15:00",
+  "title": "수석보좌관회의 주재",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261112000001"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "15:00",
+  "title": "지역상의 방문 및 기업인 규제합리화 간담회",
+  "place": "대전 서구",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6351090"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "예결위 전체회의 — 비경제부처 부별심사 2일차",
+  "place": "제2회의장",
+  "rel": "정부 R&D",
+  "note": "16일부터 예산안조정소위 사업별 증감액 심사",
+  "url": "https://www.fnnews.com/news/202611110501297293"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "농해수위 농림축산식품법안심사소위",
+  "place": "본관 501호",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261111001550"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "산자위 예산결산심사소위",
+  "place": "본관 534호",
+  "rel": "통상",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261111001550"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "국회",
+  "time": "09:00",
+  "title": "과방위 예산결산심사소위",
+  "place": "본관 628호",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261111001550"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "복지위 예산결산심사소위",
+  "place": "본관 601호",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261111001550"
+ },
+ {
+  "id": "t08",
+  "cat": "국회",
+  "org": "국회",
+  "time": "09:30",
+  "title": "국방위 예결소위(419호)·성평등가족위 전체회의(550호)·재경위 예산결산기금심사소위(10:00 431호)·외통위 전체회의(401호)·행안위 예결소위(445호)·국토위 전체회의(529호)·정무위 예결소위(11:00)·전체회의(14:00 604호)",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261111001550"
+ },
+ {
+  "id": "t09",
+  "cat": "국회",
+  "org": "국회",
+  "time": "14:00",
+  "title": "「인천 해양수산 신산업 육성」 전문가 국회 토론회(박선원 의원실 등)",
+  "place": "의원회관 제3간담회의실",
+  "rel": "김 수출",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261111001550"
+ },
+ {
+  "id": "t10",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "10:00",
+  "title": "장관, 김장문화 홍보 현장 방문(양평 보릿고개마을)",
+  "place": "양평",
+  "rel": "식품물가",
+  "note": "김장 문화 확산·국산 농산물 소비 촉진",
+  "url": "https://www.etoday.co.kr/news/view/2645352"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "15:00",
+  "title": "장관, 포르투갈 농업해양부 장관 면담",
+  "place": "서울",
+  "rel": "김 수출",
+  "note": "차관 15:30 품종별·업종별 어업인 간담회(서울)",
+  "url": "https://www.etoday.co.kr/news/view/2645352"
+ },
+ {
+  "id": "t12",
+  "cat": "부처",
+  "org": "기획처",
+  "time": "10:00",
+  "title": "차관, 예결위 부별심사 / 11월 재정동향 발표(석간)",
+  "place": "국회",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2645352"
+ },
+ {
+  "id": "t13",
+  "cat": "부처",
+  "org": "기후부",
+  "time": "14:00",
+  "title": "장관, 금융기관과 「대한민국 기후행동」 협력 업무협약",
+  "place": "서울",
+  "rel": "",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2645352"
+ },
+ {
+  "id": "t14",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28)",
+  "place": "17개국 144개 매장",
+  "rel": "김 수출",
+  "note": "김·어묵 등 할인 판매",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209456"
+ }
+]
