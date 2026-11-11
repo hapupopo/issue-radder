@@ -32,7 +32,10 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'no' }}
-        run: python3 scripts/press_alerts.py
+        run: |
+          now=$(TZ=Asia/Seoul date +%H%M)
+          if [ "$DRY_RUN" != "yes" ] && { [ "$now" -lt 0600 ] || [ "$now" -gt 2240 ]; }; then echo "운영시간(06~22시) 외 — 확인 생략(밤사이 자료는 아침 첫 실행에서 보냄)"; exit 0; fi
+          python3 scripts/press_alerts.py
       - name: Save seen-state
         if: always() && !(github.event_name == 'workflow_dispatch' && inputs.dry_run == 'yes')
         uses: actions/cache/save@v4
@@ -40,15 +43,13 @@ jobs:
           path: .state
           key: press-seen-${{ github.run_id }}
       # GitHub 예약(schedule)은 혼잡 시 대부분 건너뛰어(11/10~11 실측: 기대 30여 회 중 3회) 30분 뒤 다음 실행을 스스로 건다.
-      # 위 schedule 은 아침 시작·체인 끊김 복구용 예비로 남겨 둔다. 이미 대기 중인 실행이 있으면 새로 걸지 않아 중복 체인을 막는다.
+      # 위 schedule 은 연쇄가 끊겼을 때 복구용 예비로 남겨 둔다. 이미 대기 중인 실행이 있으면 새로 걸지 않아 중복 체인을 막는다.
       - name: 30분 뒤 다음 실행 걸기
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run == 'yes') }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          now=$(TZ=Asia/Seoul date +%H%M)
-          if [ "$now" -ge 2200 ] || [ "$now" -lt 0530 ]; then echo "운영시간(06~22시) 외 — 오늘 실행 종료"; exit 0; fi
-          sleep 1740
+          sleep 1740   # 밤에도 연쇄는 이어 가되(아침 06시 정시 시작 보장) 위 단계에서 확인·전송은 생략
           W=repos/$GITHUB_REPOSITORY/actions/workflows/press-alerts.yml
           waiting=0
           for st in queued pending waiting requested; do
