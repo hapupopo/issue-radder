@@ -7,10 +7,15 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'yes = 전송 없이 최근 5쪽(약 100건) 중 관련 보도자료만 로그로 확인, no = 실제 실행'
+        description: 'yes = 전송 없이 최근 10쪽(약 200건) 중 관련 보도자료만 로그로 확인, no = 실제 실행'
         required: false
         default: 'yes'
-concurrency: press-alerts
+permissions:
+  actions: write     # 30분 뒤 다음 실행을 스스로 예약하기 위해 필요
+  contents: read
+concurrency:
+  group: press-alerts
+  cancel-in-progress: false
 jobs:
   alert:
     runs-on: ubuntu-latest
@@ -34,3 +39,21 @@ jobs:
         with:
           path: .state
           key: press-seen-${{ github.run_id }}
+      # GitHub 예약(schedule)은 혼잡 시 대부분 건너뛰어(11/10~11 실측: 기대 30여 회 중 3회) 30분 뒤 다음 실행을 스스로 건다.
+      # 위 schedule 은 아침 시작·체인 끊김 복구용 예비로 남겨 둔다. 이미 대기 중인 실행이 있으면 새로 걸지 않아 중복 체인을 막는다.
+      - name: 30분 뒤 다음 실행 걸기
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run == 'yes') }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          now=$(TZ=Asia/Seoul date +%H%M)
+          if [ "$now" -ge 2200 ] || [ "$now" -lt 0530 ]; then echo "운영시간(06~22시) 외 — 오늘 실행 종료"; exit 0; fi
+          sleep 1740
+          W=repos/$GITHUB_REPOSITORY/actions/workflows/press-alerts.yml
+          waiting=0
+          for st in queued pending waiting requested; do
+            n=$(gh api "$W/runs?status=$st&per_page=1" -q '.total_count'); waiting=$((waiting + n))
+          done
+          if [ "$waiting" -gt 0 ]; then echo "이미 대기 중인 실행이 있어 새로 걸지 않음"; exit 0; fi
+          gh api -X POST "$W/dispatches" -f ref=main -f 'inputs[dry_run]=no'
+          echo "다음 실행 요청 완료"

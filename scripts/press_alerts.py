@@ -11,7 +11,7 @@ from email.utils import parsedate_to_datetime
 from datetime import datetime, timezone, timedelta
 
 LIST_URL = 'https://www.korea.kr/briefing/pressReleaseList.do?pageIndex={}'
-MAX_PAGES = 5
+MAX_PAGES = 10
 KW_FILE = 'alerts/press-keywords.txt'
 STATE = '.state/press-seen.json'
 MAX_PER_RUN, MAX_AGE_H = 10, 48   # MAX_AGE_H: 게시일 기준(목록엔 날짜만 있음)
