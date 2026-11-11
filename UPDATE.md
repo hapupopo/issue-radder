@@ -54,10 +54,10 @@ A4 이미지는 GitHub Actions 안에서 `telegram/a4.py`(HTML) + `scripts/rende
 필요한 저장소 시크릿: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 수동 재전송은 Actions 탭에서 'Run workflow'.
 
 ## 7. 키워드 기사 알림 (현재 중지됨 — 수동 실행만 가능)
-`.github/workflows/keyword-alerts.yml` 이 한국시간 08:00~22:30 사이 30분마다 `alerts/keywords.txt` 키워드로 Google 뉴스를 검색해 새 기사만 채널에 보낸다. 키워드는 그 파일만 고치면 된다.
+`.github/workflows/keyword-alerts.yml` 이 한국시간 08:00~18:00 사이 30분마다(18시~다음날 8시 자료는 8시 첫 실행에 모아 발송) `alerts/keywords.txt` 키워드로 Google 뉴스를 검색해 새 기사만 채널에 보낸다. 키워드는 그 파일만 고치면 된다.
 
 ## 8. 정책브리핑 보도자료 알림 (2026-11-10 신설)
-`.github/workflows/press-alerts.yml` 이 한국시간 08:00~22:30 사이 30분마다(GitHub 예약 누락 대비로 실행이 끝나면 30분 뒤 다음 실행을 스스로 건다) 대한민국 정책브리핑(korea.kr) 보도자료 목록 화면을 읽어(RSS는 2026.7.1 중단됨), `alerts/press-keywords.txt` 키워드에 걸리는 당사 관련 보도자료만 '전략지원 알리미' 채널(TELEGRAM_CHAT_ID)로 보낸다. 'EXTRA' 그룹에는 보내지 않는다.
+`.github/workflows/press-alerts.yml` 이 한국시간 08:00~18:00 사이 30분마다(18시~다음날 8시 자료는 8시 첫 실행에 모아 발송)(GitHub 예약 누락 대비로 실행이 끝나면 30분 뒤 다음 실행을 스스로 건다) 대한민국 정책브리핑(korea.kr) 보도자료 목록 화면을 읽어(RSS는 2026.7.1 중단됨), `alerts/press-keywords.txt` 키워드에 걸리는 당사 관련 보도자료만 '전략지원 알리미' 채널(TELEGRAM_CHAT_ID)로 보낸다. 'EXTRA' 그룹에는 보내지 않는다.
 - 키워드 수정: `alerts/press-keywords.txt` 한 파일만 고치면 됨(이슈명: 키워드, 키워드…). 띄어쓰기 무시, 'A+B'는 둘 다 포함, '제외:' 줄로 제외어 지정.
 - 중복 방지: 이미 본 보도자료는 Actions 캐시(.state/press-seen.json)에 30일 보관. 첫 실행은 기록만 하고 보내지 않음.
 - 미리보기: Actions → '정책브리핑 보도자료 알림' → Run workflow (dry_run=yes) → 로그에서 최근 48시간 관련 건 확인(전송 안 함).

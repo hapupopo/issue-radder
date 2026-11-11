@@ -3,7 +3,7 @@ name: 정책브리핑 보도자료 알림
 # 키워드: alerts/press-keywords.txt · 스크립트: scripts/press_alerts.py
 on:
   schedule:
-    - cron: '7,37 23,0-13 * * *'   # 한국시간 08:07~22:37, 30분마다(매일). 정각·30분은 GitHub 혼잡으로 자주 누락돼 7분·37분으로 둠 — 11/10 확정, 11/11 시작 08시로 변경
+    - cron: '7,37 23,0-8 * * *'   # 한국시간 08:07~17:37, 30분마다(매일). 정각·30분은 GitHub 혼잡으로 자주 누락돼 7분·37분으로 둠 — 11/10 확정, 11/11 08~18시로 변경
   workflow_dispatch:
     inputs:
       dry_run:
@@ -34,7 +34,7 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'no' }}
         run: |
           now=$(TZ=Asia/Seoul date +%H%M)
-          if [ "$DRY_RUN" != "yes" ] && { [ "$now" -lt 0800 ] || [ "$now" -gt 2240 ]; }; then echo "운영시간(08~22시) 외 — 확인 생략(밤사이 자료는 아침 첫 실행에서 보냄)"; exit 0; fi
+          if [ "$DRY_RUN" != "yes" ] && { [ "$now" -lt 0800 ] || [ "$now" -gt 1815 ]; }; then echo "운영시간(08~18시) 외 — 확인 생략(밤사이 자료는 아침 첫 실행에서 보냄)"; exit 0; fi
           python3 scripts/press_alerts.py
       - name: Save seen-state
         if: always() && !(github.event_name == 'workflow_dispatch' && inputs.dry_run == 'yes')
