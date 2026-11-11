@@ -14,7 +14,7 @@ LIST_URL = 'https://www.korea.kr/briefing/pressReleaseList.do?pageIndex={}'
 MAX_PAGES = 10
 KW_FILE = 'alerts/press-keywords.txt'
 STATE = '.state/press-seen.json'
-MAX_PER_RUN, MAX_AGE_H = 20, 72   # MAX_AGE_H: 게시일 기준(목록엔 날짜만 있음)
+MAX_PER_RUN, MAX_AGE_H = 20, 96   # 96시간: 금요일 자료를 월요일 아침에 보낼 수 있게   # MAX_AGE_H: 게시일 기준(목록엔 날짜만 있음)
 KST = timezone(timedelta(hours=9))
 token = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip()
 token = token[3:] if token.lower().startswith('bot') else token

@@ -47,6 +47,7 @@ claude.ai 대시보드 '전략지원 이슈레이더'(https://claude.ai/artifact
 완성된 '오늘의 브리핑' 텍스트를 SendUserMessage로 사용자에게 보낸다(텔레그램 붙여넣기용).
 
 ## 6. 텔레그램 자동 전송
+- 주말(토·일, KST)에는 자동 전송하지 않는다(2026-11-11 요청). 사이트 업데이트는 계속됨. 필요하면 Actions에서 수동 실행.
 **전송 순서(2026-11-03부터): ① 금일 정부·국회 주요일정(텍스트) → ② 전략지원 이슈레이더 A4 이미지 → ③ 이슈레이더 링크.** 텍스트 브리핑은 보내지 않는다(이미지 생성 실패 시에만 대체 전송).
 A4 이미지는 GitHub Actions 안에서 `telegram/a4.py`(HTML) + `scripts/render_a4.js`(PNG)로 만든다. 전송 없이 이미지만 확인하려면 Actions → '텔레그램 브리핑 전송' → Run workflow → send=no, 결과물(issue-radar-a4)에서 내려받는다.
 
@@ -54,10 +55,10 @@ A4 이미지는 GitHub Actions 안에서 `telegram/a4.py`(HTML) + `scripts/rende
 필요한 저장소 시크릿: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 수동 재전송은 Actions 탭에서 'Run workflow'.
 
 ## 7. 키워드 기사 알림 (현재 중지됨 — 수동 실행만 가능)
-`.github/workflows/keyword-alerts.yml` 이 한국시간 08:00~18:00 사이 30분마다(18시~다음날 8시 자료는 8시 첫 실행에 모아 발송) `alerts/keywords.txt` 키워드로 Google 뉴스를 검색해 새 기사만 채널에 보낸다. 키워드는 그 파일만 고치면 된다.
+`.github/workflows/keyword-alerts.yml` 이 한국시간 08:00~18:00 사이 30분마다(평일만. 18시~다음날 8시, 주말 자료는 다음 평일 8시 첫 실행에 모아 발송) `alerts/keywords.txt` 키워드로 Google 뉴스를 검색해 새 기사만 채널에 보낸다. 키워드는 그 파일만 고치면 된다.
 
 ## 8. 정책브리핑 보도자료 알림 (2026-11-10 신설)
-`.github/workflows/press-alerts.yml` 이 한국시간 08:00~18:00 사이 30분마다(18시~다음날 8시 자료는 8시 첫 실행에 모아 발송)(GitHub 예약 누락 대비로 실행이 끝나면 30분 뒤 다음 실행을 스스로 건다) 대한민국 정책브리핑(korea.kr) 보도자료 목록 화면을 읽어(RSS는 2026.7.1 중단됨), `alerts/press-keywords.txt` 키워드에 걸리는 당사 관련 보도자료만 '전략지원 알리미' 채널(TELEGRAM_CHAT_ID)로 보낸다. 'EXTRA' 그룹에는 보내지 않는다.
+`.github/workflows/press-alerts.yml` 이 한국시간 08:00~18:00 사이 30분마다(평일만. 18시~다음날 8시, 주말 자료는 다음 평일 8시 첫 실행에 모아 발송)(GitHub 예약 누락 대비로 실행이 끝나면 30분 뒤 다음 실행을 스스로 건다) 대한민국 정책브리핑(korea.kr) 보도자료 목록 화면을 읽어(RSS는 2026.7.1 중단됨), `alerts/press-keywords.txt` 키워드에 걸리는 당사 관련 보도자료만 '전략지원 알리미' 채널(TELEGRAM_CHAT_ID)로 보낸다. 'EXTRA' 그룹에는 보내지 않는다.
 - 키워드 수정: `alerts/press-keywords.txt` 한 파일만 고치면 됨(이슈명: 키워드, 키워드…). 띄어쓰기 무시, 'A+B'는 둘 다 포함, '제외:' 줄로 제외어 지정.
 - 중복 방지: 이미 본 보도자료는 Actions 캐시(.state/press-seen.json)에 30일 보관. 첫 실행은 기록만 하고 보내지 않음.
 - 미리보기: Actions → '정책브리핑 보도자료 알림' → Run workflow (dry_run=yes) → 로그에서 최근 48시간 관련 건 확인(전송 안 함).
