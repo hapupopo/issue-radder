@@ -1,0 +1,112 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "통상업무(공개 일정 없음)",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261112001487"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "10:00",
+  "title": "국가정책조정회의",
+  "place": "정부서울청사",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14813141"
+ },
+ {
+  "id": "t03",
+  "cat": "총리",
+  "org": "총리",
+  "time": "14:00",
+  "title": "2026 참좋은 지방자치 정책대회",
+  "place": "국회 사랑재",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14813141"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "국회",
+  "time": "09:30",
+  "title": "산자위 전체회의(산업부 장관·차관 출석)",
+  "place": "본관 534호",
+  "rel": "통상",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261112001473"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "교육위 예산결산기금심사소위(교육부 차관 출석)",
+  "place": "본관 522호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261112001473"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:00",
+  "title": "복지위 전체회의",
+  "place": "본관 601호",
+  "rel": "식품정책",
+  "note": "식약처장 10:00 상임위 전체회의 일정(뉴스통)",
+  "url": "https://www.newspim.com/news/view/20261112001473"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "국회",
+  "time": "14:00",
+  "title": "과방위 전체회의(과기정통부 부총리·차관·혁신본부장 출석)",
+  "place": "본관 627호",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261112001473"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "15:00",
+  "title": "장관, 우리술 대축제",
+  "place": "서울",
+  "rel": "식품정책",
+  "note": "09:30 국정과제·현안 점검회의, 11:00 특별성과 포상 수여식",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14813142"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "",
+  "title": "11월 최근 경제동향(그린북) 발표·2026년 쌀 생산량 조사 결과 발표(오전)",
+  "place": "",
+  "rel": "식품물가",
+  "note": "이투데이 주간일정 기준",
+  "url": "https://www.etoday.co.kr/news/view/2645352"
+ },
+ {
+  "id": "t10",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28)",
+  "place": "17개국 144개 매장",
+  "rel": "김 수출",
+  "note": "김·어묵 등 할인 판매",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209456"
+ }
+]
