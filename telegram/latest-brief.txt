@@ -1,42 +1,45 @@
-📡 전략지원 이슈레이더 | 11/14(토)
-🔗 https://hapupopo.github.io/issue-radder/reports/2026-11-14.html
+📡 전략지원 이슈레이더 | 11/15(일)
+🔗 https://hapupopo.github.io/issue-radder/reports/2026-11-15.html
 
 ■ 정부 주요일정
-• 국회 주말 — 위원회·본회의 일정 없음(16일 예결위 예산안조정소위 개시) [정부 R&D]
+• 국회 주말 — 위원회·본회의 일정 없음(16일 예결위 예산안조정소위 개시, 16~27일) [정부 R&D]
 • 해수부 2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28) [김 수출]
 
 ■ 국회 주요일정
-• 11/16(월) 예결위 예산안조정소위 가동 (D-2)
-• 11/16(월) 「푸드테크산업법 제정 1년 성과 및 발전 방향」 정책포럼 (D-2)
-• 12/2(수) 2027년도 예산안 법정 처리기한 (D-18)
+• 11/16(월) 예결위 예산안조정소위 가동 (D-1)
+• 11/16(월) 「푸드테크산업법 제정 1년 성과 및 발전 방향」 정책포럼 (D-1)
+• 11/19(목) 본회의(민주당 개최 추진) (D-4)
+• 12/2(수) 2027년도 예산안 법정 처리기한 (D-17)
 
 ■ 마감·기한
-• 2027 NEXT K-푸드 매칭 콘퍼런스 참가기업 모집(외식·유통·콘텐츠·푸드테크 융합형 컨소시엄) ~11/18(수) (D-4)
-• 2027 농업농촌현장애로단기해결기술개발(지방정부 주관) ~11/20(금) (D-6)
-• 2027년도 정부 R&D 예산안(39.5조) 국회 확정 ~12/2(수) (D-18)
+• 2027 NEXT K-푸드 매칭 콘퍼런스 참가기업 모집(외식·유통·콘텐츠·푸드테크 융합형 컨소시엄) ~11/18(수) (D-3)
+• 2027 농업농촌현장애로단기해결기술개발(지방정부 주관) ~11/20(금) (D-5)
+• 2027년도 정부 R&D 예산안(39.5조) 국회 확정 ~12/2(수) (D-17)
 
 ■ 주요 관련기사
-• CJ프레시웨이, 왓더버거 500억 계약…승부는 매출 아닌 물류 수익성 (시선경제)
-  https://sateconomy.co.kr/news/view/1065624335986343
-• 과방위, 2027년 예산안 가결…과기정통부 정부안보다 1조3364억 증액(출연연 인건비·4극3특·AI 실증) (미디어오늘)
-  https://www.mediatoday.co.kr/news/articleView.html?idxno=338444
-• 이재현 CJ 회장, 콘텐츠·푸드·뷰티로 글로벌 K라이프스타일 비전(2028 북미 매출 12조 목표) (CBC뉴스)
-  https://www.cbci.co.kr/news/articleView.html?idxno=626707
-• aT, 2027 NEXT K-푸드 매칭 콘퍼런스 참가기업 모집(~11/18)…수출 협업 융합형 컨소시엄으로 확대 (S저널)
-  https://www.s-journal.co.kr/news/articleView.html?idxno=45330
-• "우리는 밤새 튀기는데"…이름만 바꾼 대기업 치킨에 사장님들 뿔났다(소바바 미투 논란) (서울경제)
-  https://m.sedaily.com/article/20114151
-• 농식품부, 배추·무 수급 안정 추진…비축 배추 김치업체 공급·김치 수출 확대 (노컷뉴스)
-  https://www.nocutnews.co.kr/news/6606774
-• 설탕 단서로 '7년 담합' 잡아낸 공정위 조사팀(전분·전분당 담합 과징금 7476억) (공무원뉴스)
-  https://www.korea-news.com/news/articleView.html?idxno=105390
-• 김치·배추 연말 수출 늘린다…민·관 협력 총력전 돌입(수출바우처·비축 배추 할인 공급) (아주경제)
-  https://www.ajunews.com/view/20261113105504514
-• 野, 전 상임위 미래대응기금 증액 요구 철회령…16일 예산소위서 전액 감액 추진 (서울경제)
-  https://www.sedaily.com/article/20114102
-• 공정위, 기업·사업자단체 대상 담합 예방 설명회…위반 사례·최신 판례 소개 (뉴스1)
-  https://www.news1.kr/economy/trend/6352792
-• 농심, 해외 성장에도 원가 부담…3분기 영업익 8.6%↓(해외매출 비중 39.4%) (지디넷코리아)
-  https://zdnet.co.kr/view/?no=20261113140523
-• 밥쌀 초과 생산 7만t서 6만t으로 감소…정부, 쌀값 흐름 주시(2026년산 350만8000t) (이투데이)
-  https://www.etoday.co.kr/news/view/2647820
+• 예산 정국 덮친 여야 대치…'특검법·한덕수·청문회' 줄줄이 뇌관 (뉴스1)
+  https://www.news1.kr/politics/assembly/6354106
+• 예산안 처리시한 2주여 앞으로…여야, 예결소위서 본격대결 돌입(16일 가동) (연합뉴스(뉴스통))
+  https://www.newstong.co.kr/view3.aspx?seq=14816027
+• 예결위 감액·증액 심사 본격화…여야 '162조 기금' 충돌 (디지털타임스)
+  https://www.dt.co.kr/article/12095116
+• 농식품부, 배추·무·김치 수출 확대…민관 긴급 간담회 개최 (한국사회복지저널)
+  https://www.ksw-news.com/news/articleView.html?idxno=3061714
+• 황종우 해수부 장관, CPTPP 가입 관련 돔류 업계 현장 간담회(부산) (한국사회복지저널)
+  https://www.ksw-news.com/news/articleView.html?idxno=3061711
+• 농협, 우리 농식품 국내외 쌍끌이 나선다 (한국영농신문)
+  https://www.youngnong.co.kr/news/articleView.html?idxno=71860
+• "농어촌기본소득 전면 실시해야"…농식품부, 2027년 국비 비율 50%로 상향 (한국영농신문)
+  https://www.youngnong.co.kr/news/articleView.html?idxno=71882
+• 2027년 국가예산, 대한민국은 어디에 돈을 쓰나(R&D 39.5조, 11.2%↑) (시사매거진)
+  https://www.sisamagazine.co.kr/article/1000000000819
+• 美 상춧값 한 달 새 7.9% 뛰었는데…식품 물가 '다음 파도' 닥친다 (뉴시스)
+  https://www.newsis.com/view/NISX20261114_0003868146
+• [CEO 위클리] 재계 11인 동향(이미경 CJ 부회장, 美 아시안 명예의 전당 평생공로상) (서울타임즈뉴스)
+  https://www.seoultimes.news/news/article.html?no=2000102186
+• '쌈짓돈 우려' 미래대응기금, 이름 걸맞지 않은 예산 걸러내야 (더스쿠프)
+  https://www.thescoop.co.kr/news/articleView.html?idxno=312275
+• 치킨업계와 CJ제일제당의 표절 공방전(소바바 치킨) (비즈워치)
+  https://news.bizwatch.co.kr/article/consumer/2026/11/13/0041
+• 미래대응기금 공방…예결위 예산소위 16~27일 증·감액 심사 (파이낸셜뉴스)
+  https://www.fnnews.com/news/202611141212344689
