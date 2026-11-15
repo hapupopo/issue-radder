@@ -48,6 +48,30 @@ def same_event(a, b):
     return bool(bx and by) and len(bx & by) / len(bx | by) >= 0.7
 
 
+PREVIEW = ('예정', '예고', '앞두', '앞둔', '개최', '열린다', '돌입')
+
+
+def is_past(r, day):
+    """집중이슈 중 이미 지나간 일정 예고 기사인지 (KIM 요청 2026-11-15).
+    ① 제목에 적힌 날짜(11/9, 11/9~10, 16일 등)가 모두 오늘 이전이면 지나간 일정, 하나라도 오늘 이후면 남김
+    ② 날짜가 없고 제목이 '예정·예고·개최' 같은 예고 기사인데 기사 날짜가 오늘 이전이면 이미 열린 일정"""
+    y = int(day[:4])
+    ds = []
+    for m, a, b in re.findall(r'(?<!\d)(1[0-2]|[1-9])/(3[01]|[12]\d|[1-9])(?:\s*~\s*(?:(?:1[0-2]|[1-9])/)?(3[01]|[12]\d|[1-9]))?(?!\d)', r.get('title') or ''):
+        try:
+            ds.append(dt.date(y, int(m), int(b or a)).isoformat())
+        except ValueError:
+            pass
+    # 'N일'(같은 달) 표기도 날짜로 본다. 오늘 이후 날짜가 하나라도 있으면 앞으로의 일정이라 남긴다.
+    md = (r.get('date') or day)[:8]
+    ds += [f'{md}{int(n):02d}' for n in re.findall(r'(?<![\d/~])(3[01]|[12]\d|[1-9])일(?!차|간)', r.get('title') or '')]
+    if ds and max(ds) >= day:
+        return False
+    if ds:
+        return True
+    return (r.get('date') or day) < day and any(w in (r.get('title') or '') for w in PREVIEW)
+
+
 def latest_day():
     return sorted(p.name for p in DATA.iterdir() if p.is_dir() and all((p / f'{f}.json').exists() for f in FILES))[-1]
 
@@ -62,7 +86,7 @@ def make(day):
     # 오늘의 핵심: a4.json 이 있으면 그것, 없으면 최근 집중이슈(유의·기회 우선) 3건
     kp = DATA / day / 'a4.json'
     key = json.load(open(kp, encoding='utf-8')).get('key', []) if kp.exists() else []
-    focus = [r for r in D['focus'] if r.get('date') and week_ago <= r['date'] <= day]
+    focus = [r for r in D['focus'] if r.get('date') and week_ago <= r['date'] <= day and not is_past(r, day)]
     if not key:
         pick = diverse(sorted(focus, key=lambda r: (rank.get(r['signal'], 9), -d(r['date']).toordinal())), 1)[:3]
         key = [{'head': r['title'], 'body': cut(r.get('summary'), 60)} for r in pick]
