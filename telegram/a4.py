@@ -75,11 +75,10 @@ def make(day):
     s_today = ''.join(f'<tr><td class="t">{("<b>" + e(r["time"]) + "</b>") if r.get("time") else "종일"}</td><td><span class="who">{e(r["org"])}</span> {e(cut(r["title"], 48))}{(" (" + e(r["place"]) + ")") if r.get("place") else ""}</td></tr>' for r in today)
 
     # 이번 주 주요 일정(내일~6일 뒤): 부처·국회 구분 없이 한 목록, 날짜순 (KIM 요청 2026-11-15)
-    # 국회 필수(must) 일정은 30일 전부터 넣는다. 금일 일정에 나온 행사, 부처·국회에 겹쳐 실린 같은 행사는 한 번만.
+    # 이미지에는 이번 주(내일~6일 뒤) 일정만. 금일 일정에 나온 행사, 부처·국회에 겹쳐 실린 같은 행사는 한 번만.
     end = (x + dt.timedelta(days=6)).isoformat()
     wk = [dict(r, who=r['org'], src='m') for r in D['ministry'] if day < r['date'] <= end]
-    wk += [dict(r, who='국회', src='a') for r in D['assembly']
-           if (n := diff(day, r['date'])) is not None and n > 0 and (r['date'] <= end or (r.get('must') and n <= 30))]
+    wk += [dict(r, who='국회', src='a') for r in D['assembly'] if day < r['date'] <= end]
     wk = [r for r in wk if not any(same_event(r['title'], t['title']) for t in D['today'])]
     # 우선순위: CJ그룹 관련·필수 → 국회 → 농식품부 → 그 외 부처 (같은 행사가 겹치면 앞 순위 것만 남김), 최대 10건
     prio = lambda r: (0 if (r.get('cj') or r.get('must')) else 1 if r['src'] == 'a' else 2 if r['who'] == '농식품부' else 3)
@@ -88,10 +87,7 @@ def make(day):
         if not any(p['date'] == r['date'] and same_event(p['title'], r['title']) for p in pick):
             pick.append(r)
     wk = sorted(pick[:10], key=lambda r: (r['date'], r.get('time') or '99'))
-    def dd(r):
-        n = diff(day, r['date'])
-        return f'<span class="dd">D-{n}</span>' if r['date'] > end else ''
-    s_wk = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b>{dd(r)}</td><td>{"<span class=cj>CJ</span>" if r.get("cj") else ""}<span class="who">{e(r["who"])}</span> {e(cut(r["title"], 46))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in wk)
+    s_wk = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b></td><td>{"<span class=cj>CJ</span>" if r.get("cj") else ""}<span class="who">{e(r["who"])}</span> {e(cut(r["title"], 46))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in wk)
 
     # 집중이슈: 최근 7일, 유의·기회 우선
     fx = diverse(sorted(focus, key=lambda r: (rank.get(r['signal'], 9), -d(r['date']).toordinal())), 2)[:6]
@@ -125,7 +121,6 @@ def make(day):
 </div><div class="col">
 {box('집중이슈', '유의 · 기회 · 관찰', s_focus, False)}
 {box('오늘의 주요 기사', '전일 12시 이후', '<ul class="news">' + s_news + '</ul>', False)}
-{box('지원사업 · R&amp;D', '다가오는 일정', s_sup)}
 </div></div>
 <footer><span>CJ제일제당 전략지원부문 정책협력팀 · 공개자료를 요약한 내부 참고용 자료입니다.</span><span>전체 리포트 {SITE.replace("https://", "")}</span></footer>
 <script>/* A4 한 장에 맞을 때까지 글자 크기를 줄인다 */
