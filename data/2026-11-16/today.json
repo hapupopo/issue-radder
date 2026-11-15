@@ -1,0 +1,90 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "아세안·APEC 정상회의 순방 출국(16~19일, 필리핀 → 중국 선전)",
+  "place": "",
+  "rel": "",
+  "note": "한-아세안 FTA 개선에 '미래지향적 통상규범' 반영 목표",
+  "url": "https://www.fnnews.com/news/202611160654329827"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "08:30",
+  "title": "스마트기기 활용 시험 부정행위 방지 관련 관계부처 회의",
+  "place": "정부서울청사",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6354522"
+ },
+ {
+  "id": "t03",
+  "cat": "총리",
+  "org": "총리",
+  "time": "11:00",
+  "title": "국외 안장 독립유공자 유해봉환식",
+  "place": "서울 서대문구 3·1독립선언기념탑",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6354522"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "예결위",
+  "time": "10:00",
+  "title": "예산안등조정소위 가동 — 2027년도 예산안 증·감액 심사 개시(16~27일)",
+  "place": "본관 638호",
+  "rel": "정부 R&D",
+  "note": "농식품부·해수부 차관 출석",
+  "url": "https://www.newspim.com/news/view/20261115000134"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "기후노동위",
+  "time": "10:00",
+  "title": "예산결산기금심사소위(기후부 예산)",
+  "place": "본관 622호",
+  "rel": "PHA·생분해",
+  "note": "기후부 1·2차관 출석",
+  "url": "https://www.newspim.com/news/view/20261115000134"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "의원실",
+  "time": "14:00",
+  "title": "「푸드테크산업법 제정 1년 성과 및 발전 방향」 정책포럼",
+  "place": "의원회관 제1소회의실",
+  "rel": "식품정책",
+  "note": "김선교 의원실 등 공동주최",
+  "url": "https://www.newspim.com/news/view/20261115000134"
+ },
+ {
+  "id": "t07",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "15:30",
+  "title": "장관, 포도 수출 1억 달러 기념행사",
+  "place": "경북 상주",
+  "rel": "가공식품 수출",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2648220"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28)",
+  "place": "17개국 144개 매장",
+  "rel": "김 수출",
+  "note": "김·어묵 등 할인 판매",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209456"
+ }
+]
