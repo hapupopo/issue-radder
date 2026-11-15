@@ -85,8 +85,11 @@ def make(day):
 
     # 오늘의 핵심: a4.json 이 있으면 그것, 없으면 최근 집중이슈(유의·기회 우선) 3건
     kp = DATA / day / 'a4.json'
-    key = json.load(open(kp, encoding='utf-8')).get('key', []) if kp.exists() else []
-    focus = [r for r in D['focus'] if r.get('date') and week_ago <= r['date'] <= day and not is_past(r, day)]
+    a4cfg = json.load(open(kp, encoding='utf-8')) if kp.exists() else {}
+    key = a4cfg.get('key', [])
+    # a4.json "exclude": 이미지 집중이슈·주요기사에서 뺄 focus/news id 목록(반복 노출·확인 필요 건, 사이트에는 그대로)
+    skip = set(a4cfg.get('exclude', []))
+    focus = [r for r in D['focus'] if r.get('date') and week_ago <= r['date'] <= day and not is_past(r, day) and r.get('id') not in skip]
     if not key:
         pick = diverse(sorted(focus, key=lambda r: (rank.get(r['signal'], 9), -d(r['date']).toordinal())), 1)[:3]
         key = [{'head': r['title'], 'body': cut(r.get('summary'), 60)} for r in pick]
@@ -118,7 +121,7 @@ def make(day):
     s_focus = ''.join(f'<div class="iss"><span class="tag {sig_cls.get(r["signal"], "o")}">{e(r["signal"])}</span><b>{e(cut(r["title"], 42))}</b><p>{e(cut(r.get("summary"), 80))}</p></div>' for r in fx)
 
     # 오늘 기사
-    news = sorted([r for r in D['news'] if is_today_news(r, day)], key=lambda r: r['date'] + (r.get('time') or ''), reverse=True)[:5]
+    news = sorted([r for r in D['news'] if is_today_news(r, day) and r.get('id') not in skip], key=lambda r: r['date'] + (r.get('time') or ''), reverse=True)[:5]
     s_news = ''.join(f'<li>{e(cut(r["title"], 52))} <em>{e(r["outlet"])}</em></li>' for r in news) or '<li>오늘 기사 없음</li>'
 
     # 지원사업·R&D: 마감 남은 것 + 예정
