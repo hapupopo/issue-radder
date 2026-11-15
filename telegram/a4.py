@@ -5,7 +5,7 @@
 출력: telegram/a4/latest.html
 사용: python3 telegram/a4.py [YYYY-MM-DD]
 """
-import json, sys, html, datetime as dt
+import json, re, sys, html, datetime as dt
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -31,6 +31,23 @@ def diverse(rows, per):
     return first + rest
 
 
+def _norm(t):
+    """괄호 속 부가설명·기호·공백을 뺀 행사 이름."""
+    t = re.sub(r'[(\[（【][^)\]）】]*[)\]）】]', '', t or '')
+    return re.sub(r'[^0-9A-Za-z가-힣]', '', t).lower()
+
+
+def same_event(a, b):
+    """두 일정 제목이 같은 행사인지(한쪽 이름이 다른 쪽에 통째로 들어 있거나 글자쌍이 70% 이상 겹침)."""
+    x, y = _norm(a), _norm(b)
+    if not x or not y:
+        return False
+    if min(len(x), len(y)) >= 5 and (x in y or y in x):
+        return True
+    bx, by = {x[i:i + 2] for i in range(len(x) - 1)}, {y[i:i + 2] for i in range(len(y) - 1)}
+    return bool(bx and by) and len(bx & by) / len(bx | by) >= 0.7
+
+
 def latest_day():
     return sorted(p.name for p in DATA.iterdir() if p.is_dir() and all((p / f'{f}.json').exists() for f in FILES))[-1]
 
@@ -51,26 +68,30 @@ def make(day):
         key = [{'head': r['title'], 'body': cut(r.get('summary'), 60)} for r in pick]
     s_key = ''.join(f'<li><span class="n">{i + 1}</span><span><b>{e(k["head"])}</b>{(" — " + e(k["body"])) if k.get("body") else ""}</span></li>' for i, k in enumerate(key[:3]))
 
-    # 금일 일정
-    tkey = lambda r: (r.get('time') or '99:99')
-    today = sorted(D['today'], key=tkey)[:8]
+    # 금일 일정: 대통령 → 총리 → 국회 → 부처 순, 같은 구분 안에서는 시간순 (KIM 요청 2026-11-15)
+    cat_rank = {'대통령': 0, '총리': 1, '국회': 2, '부처': 3}
+    tkey = lambda r: (cat_rank.get(r.get('cat'), 4), r.get('time') or '99:99')
+    today = sorted(D['today'], key=tkey)[:12]
     s_today = ''.join(f'<tr><td class="t">{("<b>" + e(r["time"]) + "</b>") if r.get("time") else "종일"}</td><td><span class="who">{e(r["org"])}</span> {e(cut(r["title"], 48))}{(" (" + e(r["place"]) + ")") if r.get("place") else ""}</td></tr>' for r in today)
 
-    # 이번 주 부처 일정(내일~6일 뒤)
+    # 이번 주 주요 일정(내일~6일 뒤): 부처·국회 구분 없이 한 목록, 날짜순 (KIM 요청 2026-11-15)
+    # 국회 필수(must) 일정은 30일 전부터 넣는다. 금일 일정에 나온 행사, 부처·국회에 겹쳐 실린 같은 행사는 한 번만.
     end = (x + dt.timedelta(days=6)).isoformat()
-    mins = sorted([r for r in D['ministry'] if day < r['date'] <= end], key=lambda r: (r['date'], r.get('time') or '99'))
-    # 우선순위: CJ그룹 관련·필수(must) → 농식품부(최대 5건) → 그 외 부처, 최대 8건
-    cj = [r for r in mins if r.get('cj') or r.get('must')]
-    mafra = [r for r in mins if not r.get('cj') and r['org'] == '농식품부']
-    other = [r for r in mins if not r.get('cj') and r['org'] != '농식품부']
-    mins = (cj + mafra[:5] + other + mafra[5:])[:8]
-    mins = sorted(mins, key=lambda r: (r['date'], r.get('time') or '99'))
-    s_min = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b></td><td>{"<span class=cj>CJ</span>" if r.get("cj") else ""}<span class="who">{e(r["org"])}</span> {e(cut(r["title"], 46))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in mins)
-
-    # 국회: 2주 이내 + 필수 30일
-    asm = [r for r in D['assembly'] if (n := diff(day, r['date'])) is not None and n > 0 and (n <= 14 or (r.get('must') and n <= 30))]
-    asm = sorted(asm, key=lambda r: r['date'])[:7]
-    s_asm = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b><span class="dd">D-{diff(day, r["date"])}</span></td><td>{e(cut(r["title"], 40))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in asm)
+    wk = [dict(r, who=r['org'], src='m') for r in D['ministry'] if day < r['date'] <= end]
+    wk += [dict(r, who='국회', src='a') for r in D['assembly']
+           if (n := diff(day, r['date'])) is not None and n > 0 and (r['date'] <= end or (r.get('must') and n <= 30))]
+    wk = [r for r in wk if not any(same_event(r['title'], t['title']) for t in D['today'])]
+    # 우선순위: CJ그룹 관련·필수 → 국회 → 농식품부 → 그 외 부처 (같은 행사가 겹치면 앞 순위 것만 남김), 최대 10건
+    prio = lambda r: (0 if (r.get('cj') or r.get('must')) else 1 if r['src'] == 'a' else 2 if r['who'] == '농식품부' else 3)
+    pick = []
+    for r in sorted(wk, key=lambda r: (prio(r), r['date'], r.get('time') or '99')):
+        if not any(p['date'] == r['date'] and same_event(p['title'], r['title']) for p in pick):
+            pick.append(r)
+    wk = sorted(pick[:10], key=lambda r: (r['date'], r.get('time') or '99'))
+    def dd(r):
+        n = diff(day, r['date'])
+        return f'<span class="dd">D-{n}</span>' if r['date'] > end else ''
+    s_wk = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b>{dd(r)}</td><td>{"<span class=cj>CJ</span>" if r.get("cj") else ""}<span class="who">{e(r["who"])}</span> {e(cut(r["title"], 46))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in wk)
 
     # 집중이슈: 최근 7일, 유의·기회 우선
     fx = diverse(sorted(focus, key=lambda r: (rank.get(r['signal'], 9), -d(r['date']).toordinal())), 2)[:6]
@@ -100,8 +121,7 @@ def make(day):
 {f'<section class="key"><h2>오늘의 핵심</h2><ol>{s_key}</ol></section>' if s_key else ''}
 <div class="cols"><div class="col">
 {box('금일 정부·국회 일정', fmt(day), s_today)}
-{box('이번 주 부처 일정', '당사 관련', s_min)}
-{box('국회 주요 일정', '<span class="must">필수</span> 꼭 챙길 일정', s_asm)}
+{box('이번 주 주요 일정', '부처·국회 날짜순 · <span class="must">필수</span> 꼭 챙길 일정', s_wk)}
 </div><div class="col">
 {box('집중이슈', '유의 · 기회 · 관찰', s_focus, False)}
 {box('오늘의 주요 기사', '전일 12시 이후', '<ul class="news">' + s_news + '</ul>', False)}
