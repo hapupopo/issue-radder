@@ -175,7 +175,7 @@ def render(day, D, days):
               + (('<div class="grp">최근 3일 · 유의·기회</div>' + ''.join(n_item(r) for r in hot)) if hot else '')
               + ('<div class="grp">최근 3일 · 키워드별</div>' + grouped(rest, lambda r: r.get('kw'), n_item) if rest else ''))
 
-    press = sorted(D['press'], key=lambda r: r['date'], reverse=True)
+    press = sorted([r for r in D['press'] if since <= r['date'] <= day], key=lambda r: r['date'], reverse=True)
     s_press = fold([item([b(r['org']), fmt(r['date'])], r['title'], r['url'], r.get('why')) for r in press], 3)
 
     def st(r):
@@ -196,7 +196,7 @@ def render(day, D, days):
     s_sup = (''.join(s_item(r) for r in live) or '<div class="empty">현재 신청 가능한 공고 없음</div>') + more([s_item(r) for r in sup if r not in live], '접수기간 확인 필요')
 
 
-    ppl = sorted(D['people'], key=lambda r: r['date'], reverse=True)
+    ppl = sorted([r for r in D['people'] if since <= r['date'] <= day], key=lambda r: r['date'], reverse=True)
     s_people = fold([item([tag(r['kind'], 'risk' if r['kind'] == '부고' else ''), b(r['org']), fmt(r['date'])], r['detail'], r.get('url')) for r in ppl], 3)
 
     i = days.index(day)
@@ -220,8 +220,8 @@ def render(day, D, days):
 {section('news', '키워드 집중이슈 · 주요기사', '오늘 기사(전일 12시 이후 석간 포함)와 최근 3일 유의·기회만 펼침. 3일 넘은 기사는 싣지 않음. 같은 기사는 한 번만.', s_news, len(merged))}
 {section('assembly', '국회동향', '2주 안 일정(필수 행사는 30일 전부터)만 펼침.', s_asm, len(near))}
 {section('support', '정부지원사업 모니터링', '당사가 신청할 수 있는 공고만, 마감 가까운 순. 예산 확정·진행 중 과제·예상 공고·마감 건은 제외.', s_sup, len(live))}
-{section('press', '정부기관 보도자료', '대한민국 정책브리핑 등 당사 직접 관련 자료.', s_press, len(press), False)}
-{section('people', '주요 인사 · 부고', '관련 부처·상임위.', s_people, len(ppl), False)}
+{section('press', '정부기관 보도자료', '대한민국 정책브리핑 등 당사 직접 관련 자료. 최근 3일.', s_press, len(press), False)}
+{section('people', '주요 인사 · 부고', '관련 부처·상임위. 최근 3일.', s_people, len(ppl), False)}
 <nav class="pager">{pager}</nav>
 <p class="foot">공개자료를 자동 수집·요약한 내부 참고용 리포트입니다. 원문 링크로 사실을 확인하세요.</p>'''
     return page(f'이슈레이더 {fmt(day)}', body, depth=1)
