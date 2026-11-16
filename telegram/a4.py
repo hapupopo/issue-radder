@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from build import DATA, FILES, SITE, d, fmt, diff, load, is_today_news  # noqa: E402
+from build import DATA, FILES, SITE, NEWS_DAYS, d, fmt, diff, load, is_today_news  # noqa: E402
 
 e = lambda s: html.escape(str(s or ''), quote=True)
 WD = '월화수목금토일'
@@ -79,7 +79,8 @@ def latest_day():
 def make(day):
     D = load(day)
     x = d(day)
-    week_ago = (x - dt.timedelta(days=7)).isoformat()
+    # 사이트와 같은 기준: 오늘 포함 3일 전 날짜까지의 기사만 (KIM 요청 2026-11-16)
+    week_ago = (x - dt.timedelta(days=NEWS_DAYS)).isoformat()
     sig_cls = {'유의': 'y', '기회': 'g', '관찰': 'o'}
     rank = {'유의': 0, '기회': 1, '관찰': 2}
 
@@ -116,12 +117,14 @@ def make(day):
     wk = sorted(pick[:10], key=lambda r: (r['date'], r.get('time') or '99'))
     s_wk = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b></td><td>{"<span class=cj>CJ</span>" if r.get("cj") else ""}<span class="who">{e(r["who"])}</span> {e(cut(r["title"], 46))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in wk)
 
-    # 집중이슈: 최근 7일, 유의·기회 우선
+    # 집중이슈: 최근 3일, 유의·기회 우선
     fx = diverse(sorted(focus, key=lambda r: (rank.get(r['signal'], 9), -d(r['date']).toordinal())), 2)[:6]
     s_focus = ''.join(f'<div class="iss"><span class="tag {sig_cls.get(r["signal"], "o")}">{e(r["signal"])}</span><b>{e(cut(r["title"], 42))}</b><p>{e(cut(r.get("summary"), 80))}</p></div>' for r in fx)
 
     # 오늘 기사
-    news = sorted([r for r in D['news'] if is_today_news(r, day) and r.get('id') not in skip], key=lambda r: r['date'] + (r.get('time') or ''), reverse=True)[:5]
+    # 집중이슈·주요기사 통합(KIM 요청 2026-11-16): 위 집중이슈에 이미 나온 기사(같은 URL·제목)는 다시 싣지 않는다
+    shown = {r.get('url') for r in fx} | {_norm(r['title']) for r in fx} | {_norm(k.get('head')) for k in key[:3]}
+    news = sorted([r for r in D['news'] if is_today_news(r, day) and r.get('id') not in skip and r.get('url') not in shown and _norm(r['title']) not in shown], key=lambda r: r['date'] + (r.get('time') or ''), reverse=True)[:5]
     s_news = ''.join(f'<li>{e(cut(r["title"], 52))} <em>{e(r["outlet"])}</em></li>' for r in news) or '<li>오늘 기사 없음</li>'
 
     # 지원사업·R&D: 마감 남은 것 + 예정

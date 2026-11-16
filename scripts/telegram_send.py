@@ -5,6 +5,9 @@ token = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip()
 # 기본 채널(TELEGRAM_CHAT_ID)에 추가 수신처(TELEGRAM_CHAT_ID_EXTRA, 쉼표로 여러 개)를 더해 모두에게 보낸다
 chat = ','.join(x for x in [(os.environ.get('TELEGRAM_CHAT_ID') or '').strip(), (os.environ.get('TELEGRAM_CHAT_ID_EXTRA') or '').strip()] if x)
 token = token[3:] if token.lower().startswith('bot') else token
+# TELEGRAM_ONLY_MAIN=yes 이면 기본 채널(TELEGRAM_CHAT_ID)에만 보낸다(검수용 재발행 등)
+if (os.environ.get('TELEGRAM_ONLY_MAIN') or '').lower() == 'yes':
+    chat = (os.environ.get('TELEGRAM_CHAT_ID') or '').strip()
 if not token or not chat:
     sys.exit('TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 시크릿이 없습니다.')
 import html

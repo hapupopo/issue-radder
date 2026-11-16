@@ -1,0 +1,43 @@
+name: 텔레그램 재발행(수동)
+# 안내 문구 → A4 이미지(현재 코드로 다시 생성) → 이슈레이더 링크 순으로 다시 보낸다.
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: '맨 앞에 보낼 안내 문구(비우면 생략)'
+        required: false
+        default: '수정사항 반영 검수용 재발행'
+      only_main:
+        description: 'yes = 기본 채널(TELEGRAM_CHAT_ID)에만, no = 추가 수신처까지 모두'
+        required: false
+        default: 'yes'
+jobs:
+  resend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: A4 이미지 만들기
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk > /dev/null
+          npm i --no-save --silent playwright@1.47.2
+          npx playwright install --with-deps chromium > /dev/null
+          python3 telegram/a4.py
+          node scripts/render_a4.js
+          test -s telegram/a4/latest.png
+      - name: 이미지 보관(Actions 결과물)
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue-radar-a4-resend
+          path: telegram/a4/latest.png
+          retention-days: 30
+      - name: Send to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_ID_EXTRA: ${{ secrets.TELEGRAM_CHAT_ID_EXTRA }}
+          TELEGRAM_ONLY_MAIN: ${{ inputs.only_main }}
+          MSG: ${{ inputs.message }}
+        run: |
+          if [ -n "$MSG" ]; then printf '%s\n' "$MSG" > /tmp/msg.txt; python3 scripts/telegram_send.py /tmp/msg.txt; fi
+          python3 scripts/telegram_send_file.py telegram/a4/latest.png
+          python3 scripts/telegram_send.py telegram/latest-link.txt
