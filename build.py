@@ -43,9 +43,34 @@ def load(day):
     return {f: json.load(open(DATA / day / f'{f}.json', encoding='utf-8')) for f in FILES}
 
 
+PUBLISH = '07:20'  # 매일 발행 시각(KST)
+
+
+def window_start(day):
+    """기사 기준 시작일(KIM 요청 2026-11-17): 월요일은 금요일 발행 이후(주말 포함), 그 외는 전일 발행 이후."""
+    x = d(day)
+    return (x - dt.timedelta(days=3 if x.weekday() == 0 else 1)).isoformat()
+
+
+def window_label(day):
+    return '금요일 발행 이후·주말' if d(day).weekday() == 0 else '전일 발행 이후'
+
+
+def in_window(r, day, notime_base=False):
+    """직전 발행(07:20) 이후 ~ 당일 조간 기사인지. 시작일 기사는 07:20 이후 것만
+    (시각이 없는 건 직전 발행 때 이미 실린 것으로 보고 제외, 보도자료·인사처럼 시각이 원래 없는 자료는 notime_base=True로 포함)."""
+    dd, s = r.get('date') or '', window_start(day)
+    if not (s <= dd <= day):
+        return False
+    if dd == s:
+        t = r.get('time')
+        return t >= PUBLISH if t else notime_base
+    return True
+
+
 def is_today_news(r, day):
-    prev = (d(day) - dt.timedelta(days=1)).isoformat()
-    return r['date'] == day or (r['date'] == prev and (r.get('time') or '') >= '12:00')
+    """직전 발행 이후 기사(텔레그램 텍스트·A4 공용)."""
+    return in_window(r, day)
 
 
 def item(meta, title, url='', sub='', rel='', cls=''):
@@ -84,7 +109,6 @@ def grouped(rows, key, render_one, label_fmt='{k}'):
     return ''.join(more([render_one(r) for r in v], label_fmt.format(k=k)) for k, v in sorted(g.items(), key=lambda kv: -len(kv[1])))
 
 
-NEWS_DAYS = 3  # 사이트에 보이는 기사·집중이슈: 오늘 포함 3일 전 날짜까지(그보다 오래된 것은 제외)
 NON_APPLY_TYPES = {'예산', 'R&D 진행'}  # 당사가 신청하는 공고가 아닌 유형(국회 예산 확정, 타사 수행 중 과제 등)
 
 
@@ -111,23 +135,23 @@ def render(day, D, days):
     b = lambda s: f'<b>{e(s)}</b>'
     tag = lambda s, c='': f'<span class="tag {c}">{e(s)}</span>'
     today_rows = D['today']
-    since = (d(day) - dt.timedelta(days=NEWS_DAYS)).isoformat()
+    wl = window_label(day)
     # 집중이슈 + 주요기사 통합: 같은 기사(URL)는 한 건으로 합치고, 집중이슈의 신호·요약을 붙인다
     focus_by_url = {r['url']: r for r in D['focus'] if r.get('url')}
     used = set()
     merged = []
     for r in D['news']:
-        if not (since <= r['date'] <= day):
+        if not in_window(r, day):
             continue
         f = focus_by_url.get(r['url'])
         if f:
             used.add(f['id'])
         merged.append({'date': r['date'], 'time': r.get('time'), 'outlet': r.get('outlet'), 'kw': (f or {}).get('keyword') or r.get('issue'),
                        'kind': (f or {}).get('kind') or r.get('scope'), 'signal': (f or {}).get('signal'), 'summary': (f or {}).get('summary'),
-                       'title': r['title'], 'url': r['url'], 'today': is_today_news(r, day)})
+                       'title': r['title'], 'url': r['url'], 'today': r['date'] == day})
     for f in D['focus']:
         fd = f.get('date') or ''
-        if f['id'] in used or not (since <= fd <= day):
+        if f['id'] in used or not in_window(f, day):
             continue
         merged.append({'date': fd, 'time': None, 'outlet': None, 'kw': f.get('keyword'), 'kind': f.get('kind'), 'signal': f.get('signal'),
                        'summary': f.get('summary'), 'title': f['title'], 'url': f.get('url'), 'today': fd == day})
@@ -162,7 +186,7 @@ def render(day, D, days):
     past = [r for r in asm if r not in up][::-1]
     s_asm = (''.join(a_item(r) for r in near) or '<div class="empty">2주 안 일정 없음</div>') + more([a_item(r) for r in later], '이후 일정') + more([a_item(r, 'past') for r in past], '지난 일정')
 
-    # 집중이슈·주요기사(통합): 오늘 기사 + 최근 3일 유의·기회는 펼치고, 나머지는 키워드별로 접기
+    # 집중이슈·주요기사(통합): 당일 조간 우선. 직전 발행 이후 기사 중 유의·기회는 펼치고, 나머지는 키워드별로 접기
     sig = {'유의': 'risk', '기회': 'opp', '관찰': ''}
     n_item = lambda r, cls='': item(([tag(r['signal'], sig.get(r['signal'], ''))] if r.get('signal') else [])
                                     + [b(fmt(r['date']) + (' ' + r['time'] if r.get('time') else '')), e(r.get('outlet')), tag(r['kind']) if r.get('kind') else '', e(r['kw'])],
@@ -171,11 +195,11 @@ def render(day, D, days):
     t_rows = sorted(today_news, key=rank)
     hot = [r for r in merged if not r['today'] and r.get('signal') in ('유의', '기회')]
     rest = [r for r in merged if not r['today'] and r not in hot]
-    s_news = ((''.join(n_item(r, 'today') for r in t_rows) or '<div class="empty">오늘 기사 없음</div>')
-              + (('<div class="grp">최근 3일 · 유의·기회</div>' + ''.join(n_item(r) for r in hot)) if hot else '')
-              + ('<div class="grp">최근 3일 · 키워드별</div>' + grouped(rest, lambda r: r.get('kw'), n_item) if rest else ''))
+    s_news = ('<div class="grp">당일 조간</div>' + (''.join(n_item(r, 'today') for r in t_rows) or '<div class="empty">당일 조간 기사 없음</div>')
+              + (('<div class="grp">' + wl + ' · 유의·기회</div>' + ''.join(n_item(r) for r in hot)) if hot else '')
+              + ('<div class="grp">' + wl + ' · 키워드별</div>' + grouped(rest, lambda r: r.get('kw'), n_item) if rest else ''))
 
-    press = sorted([r for r in D['press'] if since <= r['date'] <= day], key=lambda r: r['date'], reverse=True)
+    press = sorted([r for r in D['press'] if in_window(r, day, True)], key=lambda r: r['date'], reverse=True)
     s_press = fold([item([b(r['org']), fmt(r['date'])], r['title'], r['url'], r.get('why')) for r in press], 3)
 
     def st(r):
@@ -196,7 +220,7 @@ def render(day, D, days):
     s_sup = (''.join(s_item(r) for r in live) or '<div class="empty">현재 신청 가능한 공고 없음</div>') + more([s_item(r) for r in sup if r not in live], '접수기간 확인 필요')
 
 
-    ppl = sorted([r for r in D['people'] if since <= r['date'] <= day], key=lambda r: r['date'], reverse=True)
+    ppl = sorted([r for r in D['people'] if in_window(r, day, True)], key=lambda r: r['date'], reverse=True)
     s_people = fold([item([tag(r['kind'], 'risk' if r['kind'] == '부고' else ''), b(r['org']), fmt(r['date'])], r['detail'], r.get('url')) for r in ppl], 3)
 
     i = days.index(day)
@@ -206,8 +230,8 @@ def render(day, D, days):
 
     kpi = [('오늘 당사 관련 일정', sum(1 for r in today_rows if r.get('rel')), '#today'),
            ('신청 마감 D-14 이내', len(due), '#support'),
-           ('오늘 주요 관련기사', len(today_news), '#news'),
-           ('최근 3일 기사', len(merged), '#news')]
+           ('당일 조간 기사', len(today_news), '#news'),
+           (wl + ' 기사', len(merged), '#news')]
     kpis = ''.join(f'<a class="card kpi" href="{h}"><div class="lab">{l}</div><div class="big">{v}</div></a>' for l, v, h in kpi)
 
     body = f'''
@@ -217,11 +241,11 @@ def render(day, D, days):
 <p class="legend"><span class="tag risk">유의</span><span class="tag opp">기회</span><span class="tag">관찰</span><span class="tag cj">CJ그룹</span> 회색 '○건' 줄을 누르면 접힌 내용이 펼쳐집니다.</p>
 {section('today', '금일 정부·국회 주요일정', '대통령·총리는 전체, 부처는 당사·그룹 관련만. 노란 선은 당사 연결 이슈.', s_today, len(today_rows))}
 {section('ministry', '정부 부처별 주요일정(주간)', '이투데이 경제·사회부처 주간 일정 중 당사 관련. 보라색은 CJ그룹 계열사 방문·간담회.', mins, len(m_up))}
-{section('news', '키워드 집중이슈 · 주요기사', '오늘 기사(전일 12시 이후 석간 포함)와 최근 3일 유의·기회만 펼침. 3일 넘은 기사는 싣지 않음. 같은 기사는 한 번만.', s_news, len(merged))}
+{section('news', '키워드 집중이슈 · 주요기사', f'당일 조간을 맨 위에, 그다음 {wl}(07:20 발행 이후) 기사. 월요일은 금요일 발행 이후·주말 포함. 같은 기사는 한 번만.', s_news, len(merged))}
 {section('assembly', '국회동향', '2주 안 일정(필수 행사는 30일 전부터)만 펼침.', s_asm, len(near))}
 {section('support', '정부지원사업 모니터링', '당사가 신청할 수 있는 공고만, 마감 가까운 순. 예산 확정·진행 중 과제·예상 공고·마감 건은 제외.', s_sup, len(live))}
-{section('press', '정부기관 보도자료', '대한민국 정책브리핑 등 당사 직접 관련 자료. 최근 3일.', s_press, len(press), False)}
-{section('people', '주요 인사 · 부고', '관련 부처·상임위. 최근 3일.', s_people, len(ppl), False)}
+{section('press', '정부기관 보도자료', '대한민국 정책브리핑 등 당사 직접 관련 자료. ' + wl + '.', s_press, len(press), False)}
+{section('people', '주요 인사 · 부고', '관련 부처·상임위. ' + wl + '.', s_people, len(ppl), False)}
 <nav class="pager">{pager}</nav>
 <p class="foot">공개자료를 자동 수집·요약한 내부 참고용 리포트입니다. 원문 링크로 사실을 확인하세요.</p>'''
     return page(f'이슈레이더 {fmt(day)}', body, depth=1)

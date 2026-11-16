@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from build import DATA, FILES, SITE, NEWS_DAYS, d, fmt, diff, load, is_today_news  # noqa: E402
+from build import DATA, FILES, SITE, d, fmt, diff, load, in_window  # noqa: E402
 
 e = lambda s: html.escape(str(s or ''), quote=True)
 WD = '월화수목금토일'
@@ -79,8 +79,6 @@ def latest_day():
 def make(day):
     D = load(day)
     x = d(day)
-    # 사이트와 같은 기준: 오늘 포함 3일 전 날짜까지의 기사만 (KIM 요청 2026-11-16)
-    week_ago = (x - dt.timedelta(days=NEWS_DAYS)).isoformat()
     sig_cls = {'유의': 'y', '기회': 'g', '관찰': 'o'}
     rank = {'유의': 0, '기회': 1, '관찰': 2}
 
@@ -90,7 +88,10 @@ def make(day):
     key = a4cfg.get('key', [])
     # a4.json "exclude": 이미지 집중이슈·주요기사에서 뺄 focus/news id 목록(반복 노출·확인 필요 건, 사이트에는 그대로)
     skip = set(a4cfg.get('exclude', []))
-    focus = [r for r in D['focus'] if r.get('date') and week_ago <= r['date'] <= day and not is_past(r, day) and r.get('id') not in skip]
+    # 집중이슈는 시각이 없어 같은 기사(URL)의 기사 날짜·시각을 붙여 발행 기준을 판단한다
+    nmap = {r['url']: r for r in D['news'] if r.get('url')}
+    D['focus'] = [dict(r, date=nmap[r['url']]['date'], time=nmap[r['url']].get('time')) if r.get('url') in nmap else r for r in D['focus']]
+    focus = [r for r in D['focus'] if r.get('date') and in_window(r, day) and not is_past(r, day) and r.get('id') not in skip]
     if not key:
         pick = diverse(sorted(focus, key=lambda r: (rank.get(r['signal'], 9), -d(r['date']).toordinal())), 1)[:3]
         key = [{'head': r['title'], 'body': cut(r.get('summary'), 60)} for r in pick]
@@ -117,14 +118,14 @@ def make(day):
     wk = sorted(pick[:10], key=lambda r: (r['date'], r.get('time') or '99'))
     s_wk = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b></td><td>{"<span class=cj>CJ</span>" if r.get("cj") else ""}<span class="who">{e(r["who"])}</span> {e(cut(r["title"], 46))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in wk)
 
-    # 집중이슈: 최근 3일, 유의·기회 우선
-    fx = diverse(sorted(focus, key=lambda r: (rank.get(r['signal'], 9), -d(r['date']).toordinal())), 2)[:6]
+    # 집중이슈: 직전 발행 이후(월요일은 금요일 발행 이후·주말), 당일 조간 우선 → 유의·기회 우선
+    fx = diverse(sorted(focus, key=lambda r: (r['date'] != day, rank.get(r['signal'], 9), -d(r['date']).toordinal())), 2)[:6]
     s_focus = ''.join(f'<div class="iss"><span class="tag {sig_cls.get(r["signal"], "o")}">{e(r["signal"])}</span><b>{e(cut(r["title"], 42))}</b><p>{e(cut(r.get("summary"), 80))}</p></div>' for r in fx)
 
     # 오늘 기사
     # 집중이슈·주요기사 통합(KIM 요청 2026-11-16): 위 집중이슈에 이미 나온 기사(같은 URL·제목)는 다시 싣지 않는다
     shown = {r.get('url') for r in fx} | {_norm(r['title']) for r in fx} | {_norm(k.get('head')) for k in key[:3]}
-    news = sorted([r for r in D['news'] if is_today_news(r, day) and r.get('id') not in skip and r.get('url') not in shown and _norm(r['title']) not in shown], key=lambda r: r['date'] + (r.get('time') or ''), reverse=True)[:5]
+    news = sorted([r for r in D['news'] if in_window(r, day) and r.get('id') not in skip and r.get('url') not in shown and _norm(r['title']) not in shown], key=lambda r: (r['date'] == day, r['date'] + (r.get('time') or '')), reverse=True)[:5]
     s_news = ''.join(f'<li>{e(cut(r["title"], 52))} <em>{e(r["outlet"])}</em></li>' for r in news) or '<li>오늘 기사 없음</li>'
 
     # 지원사업·R&D: 마감 남은 것 + 예정
@@ -150,7 +151,7 @@ def make(day):
 {box('이번 주 주요 일정', '부처·국회 날짜순 · <span class="must">필수</span> 꼭 챙길 일정', s_wk)}
 </div><div class="col">
 {box('집중이슈', '유의 · 기회 · 관찰', s_focus, False)}
-{box('오늘의 주요 기사', '전일 12시 이후', '<ul class="news">' + s_news + '</ul>', False)}
+{box('오늘의 주요 기사', '당일 조간 우선', '<ul class="news">' + s_news + '</ul>', False)}
 </div></div>
 <footer><span>CJ제일제당 전략지원부문 정책협력팀 · 공개자료를 요약한 내부 참고용 자료입니다.</span><span>전체 리포트 {SITE.replace("https://", "")}</span></footer>
 <script>/* A4 한 장에 맞을 때까지 글자 크기를 줄인다 */
