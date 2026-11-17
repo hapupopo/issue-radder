@@ -12,7 +12,7 @@ on:
         default: 'yes'
 jobs:
   send:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # 이미지 버전 고정(latest 변경 시 playwright 설치 멈춤 방지)
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
@@ -33,6 +33,9 @@ jobs:
         if: steps.guard.outputs.build == 'yes'
         continue-on-error: true
         timeout-minutes: 8   # 멈추면 8분 뒤 실패 처리 → 텍스트 브리핑으로 대체 전송
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          NEEDRESTART_MODE: a
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk > /dev/null
           npm i --no-save --silent playwright@1.47.2
