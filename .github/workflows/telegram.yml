@@ -13,6 +13,7 @@ on:
 jobs:
   send:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,6 +32,7 @@ jobs:
         id: a4
         if: steps.guard.outputs.build == 'yes'
         continue-on-error: true
+        timeout-minutes: 8   # 멈추면 8분 뒤 실패 처리 → 텍스트 브리핑으로 대체 전송
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk > /dev/null
           npm i --no-save --silent playwright@1.47.2
