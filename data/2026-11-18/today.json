@@ -1,0 +1,79 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "아세안·APEC 순방 중(중국 선전) — APEC CEO 서밋 참석, 시진핑 주석 내외 주최 환영만찬",
+  "place": "중국 선전",
+  "rel": "",
+  "note": "18일 새벽 선전 도착. 19일 APEC 본회의(보도)",
+  "url": "https://supple.kr/news/cmwl874ywyu0ujkundjshllio"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "14:30",
+  "title": "서민금융 현장방문 및 간담회",
+  "place": "서울 중구",
+  "rel": "",
+  "note": "16:15 12·29여객기참사 피해지원 및 추모위원회(정부서울청사), 18:30 경기 기초단체장 만찬 간담회",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14822818"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "예결위",
+  "time": "10:00",
+  "title": "예산안등조정소위 — 2027년도 예산안 증·감액 심사(3일차)",
+  "place": "본관 638호",
+  "rel": "정부 R&D",
+  "note": "기획처 차관 출석",
+  "url": "https://www.newspim.com/news/view/20261117001364"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "기후노동위",
+  "time": "14:00",
+  "title": "예산결산기금심사소위 → 소위 산회 후 전체회의",
+  "place": "본관 621호 / 622호",
+  "rel": "PHA·생분해",
+  "note": "기후부 1·2차관 전체회의 출석",
+  "url": "https://www.newspim.com/news/view/20261117001364"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "재경위",
+  "time": "10:00",
+  "title": "예산결산기금심사소위",
+  "place": "본관 431호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261117001364"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "산자위",
+  "time": "10:00",
+  "title": "중소벤처기업지식재산소위",
+  "place": "본관 534호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261117001364"
+ },
+ {
+  "id": "t07",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28)",
+  "place": "17개국 144개 매장",
+  "rel": "김 수출",
+  "note": "김·어묵 등 할인 판매",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209456"
+ }
+]
