@@ -1,0 +1,156 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "아세안·APEC 순방 마지막 일정(중국 선전) — APEC 정상회의",
+  "place": "중국 선전",
+  "rel": "",
+  "note": "16~19일 순방(보도)",
+  "url": "https://newstomato.com/ReadNews.aspx?no=1320181"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "",
+  "title": "2027학년도 대학수학능력시험 관리 대응",
+  "place": "",
+  "rel": "",
+  "note": "세부 시각 미공개 — 지스타2026 개막식 불참(보도)",
+  "url": "https://www.gametoc.co.kr/news/articleView.html?idxno=113179"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "본회의",
+  "time": "14:00",
+  "title": "본회의 — 민주유공자법 처리 추진, 국민의힘 필리버스터 예고",
+  "place": "본회의장",
+  "rel": "",
+  "note": "민주당은 24시간 뒤 종결 표결 후 20일 처리 계획(보도)",
+  "url": "https://www.news1.kr/politics/assembly/6358766"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "예결위",
+  "time": "10:00",
+  "title": "예산안등조정소위 — 2027년도 예산안 심사(4일차)",
+  "place": "본관 638호",
+  "rel": "정부 R&D",
+  "note": "기획처 차관 출석. 미래대응기금은 추후 일괄 심사(보도)",
+  "url": "https://www.newspim.com/news/view/20261118001448"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "기후노동위",
+  "time": "11:00",
+  "title": "예산결산기금심사소위",
+  "place": "본관 621호",
+  "rel": "PHA·생분해",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261118001448"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "정무위",
+  "time": "11:20",
+  "title": "전체회의(11:00 법안심사제1소위)",
+  "place": "본관 604호",
+  "rel": "식품물가",
+  "note": "공정위 위원장·부위원장 출석",
+  "url": "https://www.newspim.com/news/view/20261118001448"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "재경위",
+  "time": "11:00",
+  "title": "전체회의 / 15:00 조세소위",
+  "place": "본관 430호 / 431호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261118001448"
+ },
+ {
+  "id": "t08",
+  "cat": "국회",
+  "org": "산자위",
+  "time": "09:30",
+  "title": "중소벤처기업지식재산소위",
+  "place": "본관 534호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261118001448"
+ },
+ {
+  "id": "t09",
+  "cat": "국회",
+  "org": "의원실",
+  "time": "09:30",
+  "title": "임미애 의원실 「농업과 식재료 유통산업 상생 토론회」",
+  "place": "의원회관 제4간담회의실",
+  "rel": "식품정책",
+  "note": "농식품부 후원",
+  "url": "https://www.newspim.com/news/view/20261118001448"
+ },
+ {
+  "id": "t10",
+  "cat": "국회",
+  "org": "의원실",
+  "time": "13:20",
+  "title": "어기구 의원실 「폐플라스틱 열분해유 자원순환 활성화」 포럼",
+  "place": "의원회관 제2세미나실",
+  "rel": "PHA·생분해",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261118001448"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "13:10",
+  "title": "장관, 2026 전국 쌀 대축제",
+  "place": "세종",
+  "rel": "식품정책",
+  "note": "쌀 소비 촉진",
+  "url": "https://www.etoday.co.kr/news/view/2648220"
+ },
+ {
+  "id": "t12",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "미국 K-푸드 수출 출정식",
+  "place": "",
+  "rel": "가공식품 수출",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2648220"
+ },
+ {
+  "id": "t13",
+  "cat": "부처",
+  "org": "식약처",
+  "time": "09:00",
+  "title": "처장, 아시아·태평양 INFOSAN 국제회의",
+  "place": "서울",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14825724"
+ },
+ {
+  "id": "t14",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28)",
+  "place": "17개국 144개 매장",
+  "rel": "김 수출",
+  "note": "김·어묵 등 할인 판매",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209456"
+ }
+]
