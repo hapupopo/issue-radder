@@ -1,0 +1,123 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "14:00",
+  "title": "대통령 주재 수석보좌관회의",
+  "place": "청와대",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261119001461"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "10:10",
+  "title": "제12회 중견기업인의 날 기념식",
+  "place": "웨스틴조선호텔(서울)",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6360261"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "본회의",
+  "time": "",
+  "title": "본회의 — 민주유공자법 필리버스터 종결 표결 후 처리 예정",
+  "place": "본회의장",
+  "rel": "",
+  "note": "개회 시각 미공지(보도)",
+  "url": "https://www.segye.com/newsView/20261119516131"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "예결위",
+  "time": "10:00",
+  "title": "예산안등조정소위 — 감액 심사 마지막 날",
+  "place": "본관 638호",
+  "rel": "정부 R&D",
+  "note": "예결위 의결 11/30, 처리시한 12/2",
+  "url": "https://www.newspim.com/news/view/20261119001458"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "재경위",
+  "time": "10:00",
+  "title": "조세소위",
+  "place": "본관 431호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261119001458"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "과방위",
+  "time": "10:00",
+  "title": "법안심사제2소위",
+  "place": "",
+  "rel": "",
+  "note": "과기정통부 2차관 출석",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14828768"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "의원실",
+  "time": "14:00",
+  "title": "이만희 의원실 등 「바람직한 농지제도 개선방안」 토론회",
+  "place": "영천시 청소년수련관",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261119001458"
+ },
+ {
+  "id": "t08",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "10:30",
+  "title": "장관, 제7회 김치의 날 행사",
+  "place": "서울",
+  "rel": "가공식품 수출",
+  "note": "김치 수출 1.4억달러(10월 누계)",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14828768"
+ },
+ {
+  "id": "t09",
+  "cat": "부처",
+  "org": "중기부",
+  "time": "13:00",
+  "title": "김치 세계화 포럼",
+  "place": "광주 국립아시아문화전당",
+  "rel": "가공식품 수출",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14828767"
+ },
+ {
+  "id": "t10",
+  "cat": "부처",
+  "org": "식약처",
+  "time": "",
+  "title": "아태 INFOSAN 회의 2일차 — 21개국 식품안전사고 모의훈련",
+  "place": "서울",
+  "rel": "식품정책",
+  "note": "FAO·WHO 공동",
+  "url": "https://www.etoday.co.kr/news/view/2650339"
+ },
+ {
+  "id": "t11",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "",
+  "title": "2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28)",
+  "place": "17개국 144개 매장",
+  "rel": "김 수출",
+  "note": "",
+  "url": "https://www.foodtoday.or.kr/news/article.html?no=209456"
+ }
+]
