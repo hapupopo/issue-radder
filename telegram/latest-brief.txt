@@ -1,69 +1,28 @@
-📡 전략지원 이슈레이더 | 11/20(금)
-🔗 https://hapupopo.github.io/issue-radder/reports/2026-11-20.html
+📡 전략지원 이슈레이더 | 11/21(토)
+🔗 https://hapupopo.github.io/issue-radder/reports/2026-11-21.html
 
 ■ 정부 주요일정
-• 10:00 예결위 예산안등조정소위 — 감액 심사 마지막 날 [정부 R&D]
-• 14:00 의원실 이만희 의원실 등 「바람직한 농지제도 개선방안」 토론회 [식품정책]
-• 10:30 농식품부 장관, 제7회 김치의 날 행사 [가공식품 수출]
-• 13:00 중기부 김치 세계화 포럼 [가공식품 수출]
-• 식약처 아태 INFOSAN 회의 2일차 — 21개국 식품안전사고 모의훈련 [식품정책]
 • 해수부 2026 한국 수산식품 홍보주간(K-Seafood Global Weeks) 진행 중(11/7~28) [김 수출]
 
 ■ 국회 주요일정
-• 11/30(월) 상임위 2027년도 예산안 예비심사 기한 (D-10)
-• 11/30(월) 예결위 전체회의 예산안 의결(계획) (D-10)
-• 12/2(수) 2027년도 예산안 법정 처리기한 (D-12)
+• 11/30(월) 상임위 2027년도 예산안 예비심사 기한 (D-9)
+• 11/30(월) 예결위 전체회의 예산안 의결(계획) (D-9)
+• 12/2(수) 2027년도 예산안 법정 처리기한 (D-11)
 
 ■ 마감·기한
-• 2027 농업농촌현장애로단기해결기술개발(지방정부 주관) ~11/20(금) (D-0)
-• 2026 인천공항 면세점 연계 수산식품 판매홍보관 입점업체 모집(3차) ~11/20(금) (D-0)
-• 2027년도 정부 R&D 예산안(39.5조) 국회 확정 ~12/2(수) (D-12)
-• 2026년 K-푸드 콜드풀링 시범사업 이용업체 모집(변경공고) ~12/10(목) (D-20)
+• 2027년도 정부 R&D 예산안(39.5조) 국회 확정 ~12/2(수) (D-11)
+• 2026년 K-푸드 콜드풀링 시범사업 이용업체 모집(변경공고) ~12/10(목) (D-19)
 
 ■ 주요 관련기사
-• "전통 유통 기업 아냐"...CJ올리브영, AI 앞세워 '글로벌 테크 플랫폼' 도약 (지디넷코리아)
-  https://zdnet.co.kr/view/?no=20261119112308
-• 속도도, 긴장도 늦출 수 없다…'프런티어AI' 개발에 절반 투입 (머니투데이(서플 게재))
-  https://supple.kr/news/cmwnzi9plj8hekwp8gxbcogbq
-• 김이 땅에서 나온다고?…세계 70% 휩쓴 K푸드의 파격 변신 (한국경제)
-  https://www.hankyung.com/article/202611197192g
-• 미추홀구의회 안상미 의원, 다회용 컵 운영 개선 촉구 (국제뉴스)
-  https://www.gukjenews.com/news/articleView.html?idxno=3757587
-• 여야, 국방부 업무추진비·드론교육비 등 공방 끝에 '심사 보류'(종합) (뉴스1)
-  https://www.news1.kr/politics/assembly/6360065
-• [수출 1조달러 시대] 120억달러 넘어선 K푸드+…'역대 최단기간' (아시아경제)
-  https://view.asiae.co.kr/article/2026111917135905637
-• 수산식품 수출 10월까지 30억달러 '역대 최대'… EU 37% 급증 (파이낸셜뉴스)
-  https://www.fnnews.com/news/202611191655059375
-• K-푸드 수출 120억달러 돌파...미국서 'K-푸드 대도약' 선언 (머니투데이방송(MTN))
-  https://news.mtn.co.kr/article/2026111916002590274
-• 수출 1조 달러 시대…K-수산식품도 30억 달러 돌파 (김 9.6억달러로 1위) (아시아투데이)
-  https://www.asiatoday.co.kr/kn/view.php?key=20261119010007704
-• CJ제일제당, 3개국서 K씨푸드 요리교실…현지 요리대회도 진행 (퀴진케이·한국수산회) (뉴스핌)
-  https://newspim.com/news/view/20261119001174
-• 수출 1조 달러 시대 견인…올해 수산식품 누적 수출 역대 최고치 (데일리안)
-  https://www.dailian.co.kr/news/view/1716989/%EC%88%98%EC%B6%9C-1%EC%A1%B0-%EB%8B%AC%EB%9F%AC-%EC%8B%9C%EB%8C%80-%EA%B2%AC%EC%9D%B8%EC%98%AC%ED%95%B4-%EC%88%98%EC%82%B0%EC%8B%9D-2026
-• '라면·포도' 끌고 '비료·스마트팜' 밀고…K-푸드+ 수출 120억달러 돌파 (뉴스핌)
-  https://www.newspim.com/news/view/20261119000999
-• 박상준 강서구청장 "김해 유기성폐자원 시설 전면 백지화해야" (뉴스핌)
-  https://www.newspim.com/news/view/20261119000950
-• '고 이병철 39주기'···선영 찾은 이재현 CJ그룹 회장 (뉴스웨이)
-  https://newsway.co.kr/news/view?ud=2026111912190271862
-• K-푸드, 미국 주류시장 공략 본격화…뉴욕서 '글로벌 도약' 선언 (농식품부 수출 출정식) (한국영농신문)
-  https://www.youngnong.co.kr/news/articleView.html?idxno=72019
-• K-푸드, 미국 주류시장 공략 속도…H마트와 포도·배 공급망 확대 (헤럴드경제)
-  https://biz.heraldcorp.com/article/10942165
-• K푸드, 미국 외식·급식시장 공략…포도·배까지 판로 넓혀 (이투데이)
-  https://etoday.co.kr/news/view/2650137
-• 농식품 R&D, 푸드테크 사업화까지 잇는다…농기평·식품진흥원 협력 (한국영농신문)
-  https://www.youngnong.co.kr/news/articleView.html?idxno=72018
-• 쿠팡, PB 상품부터 친환경 포장 확대…제조·유통 손잡고 '착한 소비' 키운다 (테크M)
-  https://www.techm.kr/news/articleView.html?idxno=157518
-• CJ프레시웨이, 영남권 외식사업자 대상 '5스타지오니 피자 세미나' 개최 (뉴스1)
-  https://www.news1.kr/industry/distribution/6358876
-• 바이오소재 산업 키우려면…"기술개발 넘어 대량생산 지원해야" (아시아경제)
-  https://view.asiae.co.kr/article/2026111908180183915
-• 동성케미컬, 글로벌 통합 솔루션 기업 '잰걸음' (딜사이트)
-  https://dealsite.co.kr/articles/173069
-• VIG, 비이에프 키워 폐기물 플랫폼 확장…기업별 수익성 엇갈려 (IB토마토)
-  https://www.ibtomato.com/ExternalView.aspx?type=1&no=20175
+• 경북 유기성 폐자원 통합바이오가스화 사업 7개 시군 확대…5315억원 투입 (아주경제)
+  https://ajunews.com/view/20261121011721815
+• 용산구의회, 과대포장 방지 및 포장폐기물 감량 제도개선 촉구 결의안 채택 (웹이코노미)
+  https://www.webeconomy.co.kr/news/articleView.html?idxno=2385447
+• '적당한 내일은 없다'던 윤석환, CJ제일제당 실적 반등 시동 (한국금융신문)
+  https://www.fntimes.com/html/view.php?ud=202611201127554944923defd0cc_18
+• 경북, 폐자원으로 에너지 만드는 바이오가스 사업 7개 시·군으로 확대 (경향신문)
+  https://www.khan.co.kr/article/202611201108001/
+• CJ제일제당, 질병관리청과 '햇반 저단백밥' 안정적 공급 위한 민·관 협력 (푸드투데이)
+  https://www.foodtoday.or.kr/news/article.html?no=209922
+• K-푸드 열풍에 미국 간 '캔 김' (헤럴드경제)
+  https://biz.heraldcorp.com/article/10943651
