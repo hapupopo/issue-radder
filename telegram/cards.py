@@ -6,14 +6,14 @@
 출력: telegram/cards/card-1.html … card-4.html  (PNG 는 scripts/render_cards.js)
 사용: python3 telegram/cards.py [YYYY-MM-DD]
 """
-import json, sys, datetime as dt
+import json, re, sys, datetime as dt
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'telegram'))
 from build import DATA, SITE, d, fmt, load, in_window  # noqa: E402
-from a4 import e, cut, diverse, _norm, same_event, is_past, latest_day, WD  # noqa: E402
+from a4 import e, cut, diverse, prefer_major, is_major, _norm, same_event, is_past, latest_day, WD  # noqa: E402
 
 
 def label(kw):
@@ -48,10 +48,20 @@ def pick(day):
             sel.append(r)
     wk = sorted(sel[:8], key=lambda r: (r['date'], r.get('time') or '99'))
 
-    fx = diverse(sorted(focus, key=lambda r: (r['date'] != day, rank.get(r['signal'], 9), -d(r['date']).toordinal())), 2)[:5]
+    fx = diverse(sorted(focus, key=lambda r: (r['date'] != day, rank.get(r['signal'], 9), -d(r['date']).toordinal())), 2)
+    # 주요매체 우선(2026-11-24 KIM): 출처가 주요매체인 집중이슈를 먼저, 모자라면 나머지로 채운다(순서는 원래 우선순위).
+    def src(r):
+        if r.get('url') in nmap:
+            return nmap[r['url']].get('outlet', '')
+        m = re.search(r'\(([^()]*)\)\s*$', r.get('summary') or '')
+        return m.group(1) if m else ''
+    mj = [r for r in fx if is_major({'outlet': src(r)})]
+    keep = mj[:5] + [r for r in fx if r not in mj][:max(0, 5 - len(mj))]
+    fx = [r for r in fx if r in keep]
     shown = {r.get('url') for r in fx} | {_norm(r['title']) for r in fx} | {_norm(k.get('head')) for k in key[:3]}
     news = sorted([r for r in D['news'] if in_window(r, day) and r.get('id') not in skip and r.get('url') not in shown and _norm(r['title']) not in shown],
-                  key=lambda r: (r['date'] == day, r['date'] + (r.get('time') or '')), reverse=True)[:6]
+                  key=lambda r: (r['date'] == day, r['date'] + (r.get('time') or '')), reverse=True)
+    news = prefer_major(news, 6)
     return dict(key=key[:3], today=today, week=wk, focus=fx, news=news)
 
 

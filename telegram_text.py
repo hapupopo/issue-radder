@@ -31,6 +31,11 @@ def brief(D, day):
     if due:
         L += ['', '■ 마감·기한'] + [f"• {r['name']} ~{fmt(r['close'])} (D-{diff(day, r['close'])})" for r in due]
     tn = sorted([r for r in D['news'] if is_today_news(r, day)], key=lambda r: r['date'] + (r.get('time') or ''), reverse=True)
+    try:
+        from telegram.a4 import is_major  # 주요매체 기사를 앞에(2026-11-24 KIM)
+    except Exception:
+        sys.path.insert(0, str(ROOT / 'telegram')); from a4 import is_major
+    tn = [r for r in tn if is_major(r)] + [r for r in tn if not is_major(r)]
     if tn:
         L += ['', '■ 주요 관련기사']
         for r in tn:

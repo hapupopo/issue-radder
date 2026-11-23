@@ -21,6 +21,32 @@ def cut(s, n):
     return s if len(s) <= n else s[:n - 1].rstrip() + '…'
 
 
+def _majors():
+    p = ROOT / 'config' / 'major_outlets.json'
+    return json.load(open(p, encoding='utf-8')).get('outlets', []) if p.exists() else []
+
+
+def is_major(r):
+    o = r.get('outlet') or ''
+    return any(m in o for m in _majors())
+
+
+def prefer_major(rows, n):
+    """주요기사는 가급적 주요매체에서(2026-11-24 KIM). rows 는 이미 우선순위대로 정렬된 상태.
+    주요매체 기사를 먼저 n건까지, 모자라면 비주요매체로 채우되 주요매체 기사와 같은 issue 는 건너뛴다."""
+    major = [r for r in rows if is_major(r)]
+    sel = major[:n]
+    covered = {r.get('issue') for r in sel}
+    for r in rows:
+        if len(sel) >= n:
+            break
+        if r in sel or r.get('issue') in covered:
+            continue
+        sel.append(r)
+        covered.add(r.get('issue'))
+    return sel
+
+
 def diverse(rows, per):
     """같은 키워드가 한쪽에 몰리지 않도록 키워드별 per건까지만 먼저 고르고, 남는 자리는 나머지로 채운다."""
     cnt, first, rest = {}, [], []
@@ -125,7 +151,8 @@ def make(day):
     # 오늘 기사
     # 집중이슈·주요기사 통합(KIM 요청 2026-11-16): 위 집중이슈에 이미 나온 기사(같은 URL·제목)는 다시 싣지 않는다
     shown = {r.get('url') for r in fx} | {_norm(r['title']) for r in fx} | {_norm(k.get('head')) for k in key[:3]}
-    news = sorted([r for r in D['news'] if in_window(r, day) and r.get('id') not in skip and r.get('url') not in shown and _norm(r['title']) not in shown], key=lambda r: (r['date'] == day, r['date'] + (r.get('time') or '')), reverse=True)[:5]
+    news = sorted([r for r in D['news'] if in_window(r, day) and r.get('id') not in skip and r.get('url') not in shown and _norm(r['title']) not in shown], key=lambda r: (r['date'] == day, r['date'] + (r.get('time') or '')), reverse=True)
+    news = prefer_major(news, 5)
     s_news = ''.join(f'<li>{e(cut(r["title"], 52))} <em>{e(r["outlet"])}</em></li>' for r in news) or '<li>오늘 기사 없음</li>'
 
     # 지원사업·R&D: 마감 남은 것 + 예정
