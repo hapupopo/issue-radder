@@ -116,7 +116,7 @@ def make(day):
         if not any(p['date'] == r['date'] and same_event(p['title'], r['title']) for p in pick):
             pick.append(r)
     wk = sorted(pick[:10], key=lambda r: (r['date'], r.get('time') or '99'))
-    s_wk = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b></td><td>{"<span class=cj>CJ</span>" if r.get("cj") else ""}<span class="who">{e(r["who"])}</span> {e(cut(r["title"], 46))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in wk)
+    s_wk = ''.join(f'<tr><td class="t"><b>{fmt(r["date"])}</b></td><td>{"<span class=cj>그룹사</span>" if r.get("cj") else ""}<span class="who">{e(r["who"])}</span> {e(cut(r["title"], 46))}{"<span class=must>필수</span>" if r.get("must") else ""}</td></tr>' for r in wk)
 
     # 집중이슈: 직전 발행 이후(월요일은 금요일 발행 이후·주말), 당일 조간 우선 → 유의·기회 우선
     fx = diverse(sorted(focus, key=lambda r: (r['date'] != day, rank.get(r['signal'], 9), -d(r['date']).toordinal())), 2)[:6]
@@ -153,7 +153,7 @@ def make(day):
 {box('집중이슈', '유의 · 기회 · 관찰', s_focus, False)}
 {box('오늘의 주요 기사', '당일 조간 우선', '<ul class="news">' + s_news + '</ul>', False)}
 </div></div>
-<footer><span>CJ제일제당 전략지원부문 정책협력팀 · 공개자료를 요약한 내부 참고용 자료입니다.</span><span>전체 리포트 {SITE.replace("https://", "")}</span></footer>
+<footer><span>전략지원 · 공개자료를 요약한 참고용 자료입니다.</span><span>전체 리포트 {SITE.replace("https://", "")}</span></footer>
 <script>/* A4 한 장에 맞을 때까지 글자 크기를 줄인다 */
 (function(){{var s=12.2;var b=document.body;function over(){{return [].some.call(document.querySelectorAll('.col'),function(c){{return c.scrollHeight>c.clientHeight+1}})||b.scrollHeight>1123}}
 while(over()&&s>8.5){{s-=0.2;b.style.fontSize=s+'px'}}document.documentElement.dataset.fit=s}})();</script>

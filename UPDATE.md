@@ -53,10 +53,13 @@ claude.ai 대시보드 '전략지원 이슈레이더'(https://claude.ai/artifact
 
 ## 6. 텔레그램 자동 전송
 - 주말(토·일, KST)에는 자동 전송하지 않는다(2026-11-11 요청). 사이트 업데이트는 계속됨. 필요하면 Actions에서 수동 실행.
-**전송 순서(2026-11-03부터): ① 금일 정부·국회 주요일정(텍스트) → ② 전략지원 이슈레이더 A4 이미지 → ③ 이슈레이더 링크.** 텍스트 브리핑은 보내지 않는다(이미지 생성 실패 시에만 대체 전송).
+**전송 순서(2026-11-24부터, KIM 요청): ① 금일 정부·국회 주요일정(텍스트) → ② 전략지원 이슈레이더 카드뉴스 4장(앨범 한 묶음) → ③ 이슈레이더 링크.** 텍스트 브리핑은 보내지 않는다(이미지 생성 실패 시에만 대체 전송).
+카드뉴스(1080×1350, `telegram/cards.py` + `scripts/render_cards.js`, 전송 `scripts/telegram_send_album.py`): ① 오늘의 핵심(a4.json key 3건 + 다음 장 목차) ② 주요 일정(오늘 | 이번 주) ③ 집중이슈 5건 ④ 오늘의 주요기사 6건 + "자세한 내용은 함께 보내드린 링크를 참조하세요". 항목 고르는 기준은 아래 A4 규칙과 같다. QR은 넣지 않는다(텔레그램에서 QR을 눌러 열 수 없음).
+**외부 유출 대비(2026-11-23 KIM): 이미지에 회사명을 쓰지 않는다** — 하단 표기는 '전략지원', 집중이슈 'CJ제일제당' 분류는 '당사 이슈', 그룹사 일정 표시는 '그룹사'.
+(이전 A4 1장 이미지 `telegram/a4.py`·`scripts/render_a4.js`는 남겨 두었으나 자동 전송에는 쓰지 않는다.)
 A4 이미지 일정 구성(2026-11-15 KIM 요청): 좌측 '금일 정부·국회 일정'은 대통령→총리→국회→부처 순(각 구분 안에서 시간순). 그 아래 '이번 주 주요 일정'은 부처·국회 구분 없이 내일~6일 뒤 주요일정을 날짜순 한 목록(최대 10건, CJ관련·필수→국회→농식품부→기타 부처 우선, 이번 주 밖의 필수 일정은 넣지 않음). 금일 일정에 나온 행사와 부처·국회에 겹쳐 실린 같은 행사는 한 번만 나온다(telegram/a4.py same_event). A4 이미지에는 지원사업·R&D 칸을 넣지 않는다(사이트는 그대로). A4 집중이슈에서는 이미 지나간 일정 기사(제목 속 날짜가 모두 오늘 이전, 또는 날짜 없이 '예정·예고·개최' 등 예고 기사인데 기사 날짜가 오늘 이전)를 뺀다(telegram/a4.py is_past).
 (2026-11-18) ubuntu-latest 러너에서 playwright 설치가 멈춰 전송이 안 된 일이 있어, 러너를 ubuntu-24.04로 고정하고 A4 단계에 8분 타임아웃을 걸었다(멈추면 텍스트 브리핑으로 대체 전송).
-A4 이미지는 GitHub Actions 안에서 `telegram/a4.py`(HTML) + `scripts/render_a4.js`(PNG)로 만든다. 전송 없이 이미지만 확인하려면 Actions → '텔레그램 브리핑 전송' → Run workflow → send=no, 결과물(issue-radar-a4)에서 내려받는다.
+A4 이미지는 GitHub Actions 안에서 `telegram/a4.py`(HTML) + `scripts/render_a4.js`(PNG)로 만든다. 전송 없이 이미지만 확인하려면 Actions → '텔레그램 브리핑 전송' → Run workflow → send=no, 결과물(issue-radar-cards)에서 내려받는다.
 
 `build.py`가 `telegram_text.py`를 불러 `telegram/latest-schedule.txt`·`telegram/latest-brief.txt`(브리핑 + 리포트 링크)를 만들고, main에 push되면 GitHub Actions(`.github/workflows/telegram.yml`)가 텔레그램으로 보낸다.
 필요한 저장소 시크릿: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. 수동 재전송은 Actions 탭에서 'Run workflow'.
