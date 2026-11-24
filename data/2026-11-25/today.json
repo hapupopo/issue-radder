@@ -1,0 +1,211 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "",
+  "title": "통상 업무",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261125000010"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "",
+  "title": "공개 일정 확인 안 됨",
+  "place": "",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261125000010"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "예결위",
+  "time": "",
+  "title": "소소위 협상 이어감 — 비공개 세부예산 등 논의",
+  "place": "",
+  "rel": "정부 R&D",
+  "note": "예결위 의결 11/30·처리시한 12/2",
+  "url": "https://m.news.nate.com/view/20261125n02101"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "운영위",
+  "time": "10:00",
+  "title": "국회운영개선소위",
+  "place": "본관 319호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "정무위",
+  "time": "10:00",
+  "title": "법안심사제2소위",
+  "place": "본관 604호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "재경위",
+  "time": "10:00",
+  "title": "청원심사소위",
+  "place": "본관 530호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "국방위",
+  "time": "10:00",
+  "title": "법률안심사소위(국방부 차관 출석)",
+  "place": "본관 419호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t08",
+  "cat": "국회",
+  "org": "문체위",
+  "time": "10:00",
+  "title": "문화예술법안심사소위",
+  "place": "본관 506호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t09",
+  "cat": "국회",
+  "org": "복지위",
+  "time": "10:00",
+  "title": "법안심사제2소위",
+  "place": "본관 601호",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t10",
+  "cat": "국회",
+  "org": "정보위",
+  "time": "10:00",
+  "title": "전체회의",
+  "place": "본관 647호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t11",
+  "cat": "국회",
+  "org": "산자위",
+  "time": "14:00",
+  "title": "산업통상자원소위",
+  "place": "본관 534호",
+  "rel": "통상",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t12",
+  "cat": "국회",
+  "org": "국회",
+  "time": "09:30",
+  "title": "이개호 의원 등 「푸드테크 산업 육성 전략과 정책 과제」",
+  "place": "의원회관 제5간담회의실",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t13",
+  "cat": "국회",
+  "org": "국회",
+  "time": "14:00",
+  "title": "윤준병 의원 등 「GMO 표시제 실시와 한러 농업 협력」",
+  "place": "의원회관 제10간담회의실",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t14",
+  "cat": "국회",
+  "org": "국회",
+  "time": "16:00",
+  "title": "문대림 의원 등 「소비자의 삶터에서 먹거리와 일차의료를 잇다」",
+  "place": "의원회관 제1간담회의실",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261124001444"
+ },
+ {
+  "id": "t15",
+  "cat": "부처",
+  "org": "해수부",
+  "time": "09:30",
+  "title": "장관, 김 양식장 현장방문(신안)·10:50 어류 양식업계 간담회(목포)",
+  "place": "전남",
+  "rel": "김 수출",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2651252"
+ },
+ {
+  "id": "t16",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "10:00",
+  "title": "부총리, 비상경제장관회의 — 2027년 정기 탄력관세 운용계획",
+  "place": "",
+  "rel": "식품물가",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2651252"
+ },
+ {
+  "id": "t17",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "14:00",
+  "title": "장관, 국산 콩 소비 홍보 차담회",
+  "place": "서울",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2651252"
+ },
+ {
+  "id": "t18",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "그린바이오소재 활용 K-뷰티 산업 경쟁력 발표",
+  "place": "",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2651252"
+ },
+ {
+  "id": "t19",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "",
+  "title": "2027 천원의 아침밥 참여대학 모집 시작(~12/10)",
+  "place": "",
+  "rel": "식품정책",
+  "note": "570만식·지원단가 3,000원",
+  "url": "https://www.ajunews.com/view/20261124091556072"
+ }
+]
