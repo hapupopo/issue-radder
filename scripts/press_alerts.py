@@ -146,6 +146,16 @@ def main():
         send(f'…관련 보도자료 {len(new) - MAX_PER_RUN}건은 생략했습니다. 정책브리핑에서 확인해 주세요.')
     print(f'sent {min(len(new), MAX_PER_RUN)} / {len(new)}')
 
+def context(desc, hits):
+    """키워드가 나온 대목(앞뒤 80자)을 키워드별로 하나씩 보여준다(관련성 판단용)."""
+    out = []
+    for kw in dict.fromkeys(k for _, ks in hits for k in ks):
+        for part in kw.split('+'):
+            m = re.search(r'\s*'.join(map(re.escape, part.replace(' ', ''))), desc, re.I)
+            if m:
+                out.append('…' + desc[max(0, m.start() - 80):m.end() + 80] + '…'); break
+    return out
+
 def export(items, rules, excl, now):
     """매일 07:20 자료 수집(클라우드는 korea.kr 접속 불가)이 쓸 '키워드 후보' 목록을 파일로 남긴다.
     최근 96시간 게시분 중 키워드에 걸린 것만. 최종 채택은 수집 작업이 당사 관련성을 보고 판단한다."""
@@ -157,7 +167,7 @@ def export(items, rules, excl, now):
         hits = match(text, rules)
         if hits and now - a['ts'] <= timedelta(hours=MAX_AGE_H):
             out.append({'id': a['id'], 'date': a['ts'].strftime('%Y-%m-%d'), 'dept': a['dept'], 'title': a['title'],
-                        'desc': a['desc'][:300], 'url': a['link'],
+                        'desc': a['desc'][:300], 'url': a['link'], 'context': context(a['desc'], hits),
                         'hits': {n: ks for n, ks in hits}})
     data = {'updated': now.astimezone(KST).strftime('%Y-%m-%d %H:%M'), 'checked': len(items),
             'oldest': min(a['ts'] for a in items).strftime('%Y-%m-%d'), 'items': out}
