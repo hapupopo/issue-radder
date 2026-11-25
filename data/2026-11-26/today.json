@@ -1,0 +1,222 @@
+[
+ {
+  "id": "t01",
+  "cat": "대통령",
+  "org": "대통령",
+  "time": "14:00",
+  "title": "수석보좌관회의 주재",
+  "place": "청와대 여민관",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t02",
+  "cat": "총리",
+  "org": "총리",
+  "time": "10:00",
+  "title": "국가정책조정회의",
+  "place": "정부세종청사",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t03",
+  "cat": "국회",
+  "org": "예결위",
+  "time": "",
+  "title": "예산안등조정소위(소소위) — 미래대응기금 심사(11/26~27)",
+  "place": "본관 638호",
+  "rel": "정부 R&D",
+  "note": "법정 처리시한 12/2",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t04",
+  "cat": "국회",
+  "org": "산자위",
+  "time": "10:00",
+  "title": "전체회의",
+  "place": "본관 534호",
+  "rel": "통상",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t05",
+  "cat": "국회",
+  "org": "복지위",
+  "time": "10:00",
+  "title": "전체회의",
+  "place": "본관 601호",
+  "rel": "식품정책",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t06",
+  "cat": "국회",
+  "org": "기후환노위",
+  "time": "10:00",
+  "title": "고용노동법안심사소위",
+  "place": "본관 621호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t07",
+  "cat": "국회",
+  "org": "재경위",
+  "time": "10:00",
+  "title": "전체회의 — 안덕수 국세청장 후보자 인사청문회",
+  "place": "본관 430호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261125001326"
+ },
+ {
+  "id": "t08",
+  "cat": "국회",
+  "org": "외통위",
+  "time": "10:00",
+  "title": "전체회의",
+  "place": "본관 401호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t09",
+  "cat": "국회",
+  "org": "운영위",
+  "time": "10:00",
+  "title": "예산결산심사소위",
+  "place": "본관 318호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t10",
+  "cat": "국회",
+  "org": "문체위",
+  "time": "10:00",
+  "title": "문화예술법안심사소위",
+  "place": "본관 506호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t11",
+  "cat": "국회",
+  "org": "운영위",
+  "time": "10:30",
+  "title": "전체회의",
+  "place": "본관 319호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t12",
+  "cat": "국회",
+  "org": "성평등위",
+  "time": "10:30",
+  "title": "법안심사소위",
+  "place": "본관 550호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t13",
+  "cat": "국회",
+  "org": "국방위",
+  "time": "14:00",
+  "title": "전체회의",
+  "place": "본관 419호",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t14",
+  "cat": "국회",
+  "org": "국회",
+  "time": "10:30",
+  "title": "「세계가 주목하는 기후테크, 대한민국의 새로운 경쟁력으로」 토론회",
+  "place": "의원회관 제9간담회의실",
+  "rel": "",
+  "note": "",
+  "url": "https://www.newspim.com/news/view/20261125001326"
+ },
+ {
+  "id": "t15",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "13:10",
+  "title": "장관, 농촌공간 재생 현장 방문(밀양·울주)",
+  "place": "경남·울산",
+  "rel": "농식품 정책",
+  "note": "이투데이 주간일정 기준",
+  "url": "https://www.etoday.co.kr/news/view/2651252"
+ },
+ {
+  "id": "t16",
+  "cat": "부처",
+  "org": "농식품부",
+  "time": "15:00",
+  "title": "토마토갈색주름과실바이러스 피해 현장 점검",
+  "place": "익산",
+  "rel": "농식품 정책",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ },
+ {
+  "id": "t17",
+  "cat": "부처",
+  "org": "기후부",
+  "time": "14:00",
+  "title": "장관, 2035 제주 탄소중립 비전 선포식",
+  "place": "제주",
+  "rel": "",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2651252"
+ },
+ {
+  "id": "t18",
+  "cat": "부처",
+  "org": "재경부",
+  "time": "10:00",
+  "title": "부총리, 전략경제자문단 정책보고회 / 3분기 가계동향 발표",
+  "place": "",
+  "rel": "식품물가",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2651252"
+ },
+ {
+  "id": "t19",
+  "cat": "부처",
+  "org": "기획처",
+  "time": "10:00",
+  "title": "차관, 예결위 소위 심사(11/26·27)",
+  "place": "국회",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.etoday.co.kr/news/view/2651252"
+ },
+ {
+  "id": "t20",
+  "cat": "부처",
+  "org": "과기정통부",
+  "time": "14:00",
+  "title": "제11회 탄소중립기술특별위원회",
+  "place": "한국무역보험공사",
+  "rel": "정부 R&D",
+  "note": "",
+  "url": "https://www.newstong.co.kr/view3.aspx?seq=14841136"
+ }
+]
