@@ -1,0 +1,32 @@
+name: 정책브리핑 보도자료 후보 저장(아침 수집용)
+# 매일 07:20 자료 수집 작업(클라우드)은 정책브리핑(korea.kr)에 직접 접속하지 못해 보도자료가 누락됐음(11/25 확인).
+# GitHub이 07:20 전에 보도자료 목록(최근 10쪽)을 읽어 키워드 후보를 alerts/press-candidates.json 으로 저장한다.
+# 수집 작업은 이 파일을 보고 당사 관련 건을 data/날짜/press.json 에 넣는다(UPDATE.md 참고). 텔레그램 전송 없음.
+on:
+  schedule:
+    - cron: '23 21 * * *'   # 한국시간 06:23
+    - cron: '53 21 * * *'   # 한국시간 06:53(예약 누락 대비 재시도)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: press-candidates
+  cancel-in-progress: false
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 후보 목록 만들기
+        env:
+          PRESS_EXPORT: alerts/press-candidates.json
+        run: python3 scripts/press_alerts.py
+      - name: 저장소에 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add alerts/press-candidates.json
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "press candidates: $(TZ=Asia/Seoul date +%Y-%m-%d\ %H:%M)"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
+          exit 1

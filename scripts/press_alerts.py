@@ -20,6 +20,7 @@ token = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip()
 token = token[3:] if token.lower().startswith('bot') else token
 chat = (os.environ.get('TELEGRAM_CHAT_ID') or '').strip()   # 채널만(EXTRA 그룹에는 보내지 않음)
 DRY = (os.environ.get('DRY_RUN') or '').lower() in ('yes', 'true', '1')
+EXPORT = (os.environ.get('PRESS_EXPORT') or '').strip()   # 파일 경로: 아침 자료 수집용 후보 목록만 저장(전송·기록 없음)
 
 def squash(t):
     return re.sub(r'\s+', '', t or '').lower()
@@ -94,7 +95,7 @@ def fmt(a, hits):
 def main():
     rules, excl = load_rules()
     first = not os.path.exists(STATE)
-    seen = {} if (first or DRY) else json.load(open(STATE, encoding='utf-8'))
+    seen = {} if (first or DRY or EXPORT) else json.load(open(STATE, encoding='utf-8'))
     items, ids = [], set()
     for page in range(1, MAX_PAGES + 1):
         try:
@@ -109,6 +110,8 @@ def main():
     if not items:
         sys.exit('보도자료 목록을 읽지 못했습니다(화면 구조 변경 여부 확인 필요).')
     now = datetime.now(timezone.utc)
+    if EXPORT:
+        return export(items, rules, excl, now)
     new = []
     for a in items:
         if a['id'] in seen:
@@ -142,6 +145,27 @@ def main():
     if len(new) > MAX_PER_RUN:
         send(f'…관련 보도자료 {len(new) - MAX_PER_RUN}건은 생략했습니다. 정책브리핑에서 확인해 주세요.')
     print(f'sent {min(len(new), MAX_PER_RUN)} / {len(new)}')
+
+def export(items, rules, excl, now):
+    """매일 07:20 자료 수집(클라우드는 korea.kr 접속 불가)이 쓸 '키워드 후보' 목록을 파일로 남긴다.
+    최근 96시간 게시분 중 키워드에 걸린 것만. 최종 채택은 수집 작업이 당사 관련성을 보고 판단한다."""
+    out = []
+    for a in sorted(items, key=lambda x: int(x['id']), reverse=True):
+        text = squash(a['title'] + ' ' + a['desc'])
+        if any(x and x in text for x in excl):
+            continue
+        hits = match(text, rules)
+        if hits and now - a['ts'] <= timedelta(hours=MAX_AGE_H):
+            out.append({'id': a['id'], 'date': a['ts'].strftime('%Y-%m-%d'), 'dept': a['dept'], 'title': a['title'],
+                        'desc': a['desc'][:300], 'url': a['link'],
+                        'hits': {n: ks for n, ks in hits}})
+    data = {'updated': now.astimezone(KST).strftime('%Y-%m-%d %H:%M'), 'checked': len(items),
+            'oldest': min(a['ts'] for a in items).strftime('%Y-%m-%d'), 'items': out}
+    os.makedirs(os.path.dirname(EXPORT) or '.', exist_ok=True)
+    json.dump(data, open(EXPORT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    print(f'후보 저장: 목록 {len(items)}건 중 키워드 후보 {len(out)}건 → {EXPORT}')
+    for r in out:
+        print('-', r['date'], r['dept'], '|', r['title'], '|', ', '.join(r['hits']))
 
 if __name__ == '__main__':
     main()

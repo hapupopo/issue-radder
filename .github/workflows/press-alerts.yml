@@ -52,10 +52,10 @@ jobs:
         run: |
           sleep 1740   # 밤에도 연쇄는 이어 가되(아침 08시 정시 시작 보장) 위 단계에서 확인·전송은 생략
           W=repos/$GITHUB_REPOSITORY/actions/workflows/press-alerts.yml
-          waiting=0
-          for st in queued pending waiting requested; do
-            n=$(gh api "$W/runs?status=$st&per_page=1" -q '.total_count'); waiting=$((waiting + n))
-          done
-          if [ "$waiting" -gt 0 ]; then echo "이미 대기 중인 실행이 있어 새로 걸지 않음"; exit 0; fi
+          # 11/25 수정: total_count 는 GitHub 쪽 집계가 늦어 실제 실행이 없어도 1 이상으로 나와 연쇄가 끊겼음(11/24·25 아침).
+          # 실제 목록에서 '나 말고, 40분 안에 만들어진, 끝나지 않은 실행'만 센다(오래 멈춘 유령 실행은 무시).
+          since=$(date -u -d '40 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
+          waiting=$(gh api "$W/runs?per_page=20" -q "[.workflow_runs[] | select(.status != \"completed\" and .id != $GITHUB_RUN_ID and .created_at >= \"$since\")] | length")
+          if [ "${waiting:-0}" -gt 0 ]; then echo "이미 대기 중인 실행 ${waiting}건이 있어 새로 걸지 않음"; exit 0; fi
           gh api -X POST "$W/dispatches" -f ref=main -f 'inputs[dry_run]=no'
           echo "다음 실행 요청 완료"
