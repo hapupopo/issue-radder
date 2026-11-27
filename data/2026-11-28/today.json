@@ -1,0 +1,24 @@
+[
+ {
+  "id": "t01",
+  "cat": "총리",
+  "org": "총리",
+  "time": "14:00",
+  "title": "제1차 청년미래콘서트",
+  "place": "서울어린이대공원 파이팩토리",
+  "rel": "",
+  "note": "",
+  "url": "https://www.news1.kr/politics/assembly/6368904"
+ },
+ {
+  "id": "t02",
+  "cat": "국회",
+  "org": "예결위",
+  "time": "",
+  "title": "소소위 — 미래대응기금·보류사업·증액 심사(주말 협의)",
+  "place": "",
+  "rel": "정부 R&D",
+  "note": "예결위 심사기한 11/30, 법정 처리시한 12/2",
+  "url": "https://www.sedaily.com/article/20120074"
+ }
+]
